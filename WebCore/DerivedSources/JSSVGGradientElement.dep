@@ -1,0 +1,4 @@
+JSSVGGradientElement.h : SVGURIReference.idl SVGExternalResourcesRequired.idl SVGStylable.idl
+SVGURIReference.idl :
+SVGExternalResourcesRequired.idl :
+SVGStylable.idl :
