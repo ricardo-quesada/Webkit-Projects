@@ -793,7 +793,7 @@ bool CSSSelector::RareData::parseNth()
     } else {
         size_t n = argument.find('n');
         if (n != notFound) {
-            if (argument[0] == '-') {
+            if (argument.startsWith("-")) { //Ricardo: era asi: (argument[0] == '-') y lo machetie, deberia ser lo mismo
                 if (n == 1)
                     m_a = -1; // -n == -1n
                 else

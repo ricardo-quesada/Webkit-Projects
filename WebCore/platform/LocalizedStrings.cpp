@@ -448,34 +448,40 @@ String contextMenuItemTagInspectElement()
 
 #endif // ENABLE(CONTEXT_MENUS)
 
-String searchMenuNoRecentSearchesText()
+String searchMenuNoRecentSearchesText()  // Ricardo: las siguientes llamadas no estaban los metodos se pusieron todas a retornar new String()
 {
-    return localizationStrategy()->searchMenuNoRecentSearchesText();
+    return new String();
+    //return localizationStrategy()->searchMenuNoRecentSearchesText();
 }
 
 String searchMenuRecentSearchesText ()
 {
-    return localizationStrategy()->searchMenuRecentSearchesText ();
+    return new String();
+    //return localizationStrategy()->searchMenuRecentSearchesText ();
 }
 
 String searchMenuClearRecentSearchesText()
 {
-    return localizationStrategy()->searchMenuClearRecentSearchesText();
+    return new String();
+    //return localizationStrategy()->searchMenuClearRecentSearchesText();
 }
 
 String AXWebAreaText()
 {
-    return localizationStrategy()->AXWebAreaText();
+    return new String();
+    //return localizationStrategy()->AXWebAreaText();
 }
 
 String AXLinkText()
 {
-    return localizationStrategy()->AXLinkText();
+    return new String();   
+   // return localizationStrategy()->AXLinkText();
 }
 
 String AXListMarkerText()
 {
-    return localizationStrategy()->AXListMarkerText();
+    return new String();
+ //   return localizationStrategy()->AXListMarkerText();
 }
 
 String AXImageMapText()

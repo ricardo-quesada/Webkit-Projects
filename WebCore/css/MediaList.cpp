@@ -104,16 +104,18 @@ static String parseMediaDescriptor(const String& s)
     // "Each entry is truncated just before the first character that isn't a
     // US ASCII letter [a-zA-Z] (ISO 10646 hex 41-5a, 61-7a), digit [0-9] (hex 30-39),
     // or hyphen (hex 2d)."
-    int i;
+    //Ricardo: tuve q comentar lo siguiente xq 'c = s[i];' estaba fallando
+    int i =0;
+    /*int i;
     unsigned short c;
     for (i = 0; i < len; ++i) {
-        c = s[i];
+        c = s[i]; 
         if (! ((c >= 'a' && c <= 'z')
             || (c >= 'A' && c <= 'Z')
             || (c >= '1' && c <= '9')
             || (c == '-')))
             break;
-    }
+    }*/
     return s.left(i);
 }
 

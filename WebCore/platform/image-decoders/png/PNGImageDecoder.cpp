@@ -40,7 +40,7 @@
 #include "config.h"
 #include "PNGImageDecoder.h"
 
-#include "png.h"
+#include "png.h" //agregado en extraheaders
 #include <wtf/PassOwnPtr.h>
 
 #if defined(PNG_LIBPNG_VER_MAJOR) && defined(PNG_LIBPNG_VER_MINOR) && (PNG_LIBPNG_VER_MAJOR > 1 || (PNG_LIBPNG_VER_MAJOR == 1 && PNG_LIBPNG_VER_MINOR >= 4))

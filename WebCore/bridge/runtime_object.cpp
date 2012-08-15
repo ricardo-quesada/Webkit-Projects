@@ -53,9 +53,9 @@ RuntimeObject::~RuntimeObject()
 void RuntimeObject::invalidate()
 {
     ASSERT(m_instance);
-    if (m_instance)
+    //if (m_instance) // Ricardo, invalid or ambigous access
         m_instance->willInvalidateRuntimeObject();
-    m_instance = 0;
+    //m_instance = 0;
 }
 
 JSValue RuntimeObject::fallbackObjectGetter(ExecState* exec, JSValue slotBase, const Identifier& propertyName)

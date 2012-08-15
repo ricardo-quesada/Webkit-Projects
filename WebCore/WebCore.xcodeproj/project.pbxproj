@@ -1917,14 +1917,6 @@
 		215F2CBE15AAA35400584D2E /* TextureMapperGL.h in Headers */ = {isa = PBXBuildFile; fileRef = 215F15BF15AAA34C00584D2E /* TextureMapperGL.h */; };
 		215F2CC015AAA35400584D2E /* OpenTypeSanitizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 215F15C215AAA34C00584D2E /* OpenTypeSanitizer.h */; };
 		215F2CC215AAA35400584D2E /* OpenTypeUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 215F15C415AAA34C00584D2E /* OpenTypeUtilities.h */; };
-		215F2CC415AAA35400584D2E /* EGLDisplayOpenVG.h in Headers */ = {isa = PBXBuildFile; fileRef = 215F15C715AAA34C00584D2E /* EGLDisplayOpenVG.h */; };
-		215F2CC515AAA35400584D2E /* EGLUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 215F15C815AAA34C00584D2E /* EGLUtils.h */; };
-		215F2CC915AAA35400584D2E /* PainterOpenVG.h in Headers */ = {isa = PBXBuildFile; fileRef = 215F15CC15AAA34C00584D2E /* PainterOpenVG.h */; };
-		215F2CCB15AAA35400584D2E /* PlatformPathOpenVG.h in Headers */ = {isa = PBXBuildFile; fileRef = 215F15CE15AAA34C00584D2E /* PlatformPathOpenVG.h */; };
-		215F2CCD15AAA35400584D2E /* SharedResourceOpenVG.h in Headers */ = {isa = PBXBuildFile; fileRef = 215F15D015AAA34C00584D2E /* SharedResourceOpenVG.h */; };
-		215F2CCF15AAA35400584D2E /* SurfaceOpenVG.h in Headers */ = {isa = PBXBuildFile; fileRef = 215F15D215AAA34C00584D2E /* SurfaceOpenVG.h */; };
-		215F2CD115AAA35400584D2E /* TiledImageOpenVG.h in Headers */ = {isa = PBXBuildFile; fileRef = 215F15D415AAA34C00584D2E /* TiledImageOpenVG.h */; };
-		215F2CD315AAA35400584D2E /* VGUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 215F15D615AAA34C00584D2E /* VGUtils.h */; };
 		215F2CD615AAA35400584D2E /* FontPlatformData.h in Headers */ = {isa = PBXBuildFile; fileRef = 215F15DA15AAA34C00584D2E /* FontPlatformData.h */; };
 		215F2CDB15AAA35400584D2E /* Path.h in Headers */ = {isa = PBXBuildFile; fileRef = 215F15DF15AAA34C00584D2E /* Path.h */; };
 		215F2CDD15AAA35400584D2E /* PathTraversalState.h in Headers */ = {isa = PBXBuildFile; fileRef = 215F15E115AAA34C00584D2E /* PathTraversalState.h */; };
@@ -6308,6 +6300,10 @@
 		21AA784015AF50D200438715 /* WebScriptObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 21AA770515AF50D100438715 /* WebScriptObject.h */; };
 		21AA784115AF50D200438715 /* WebScriptObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = 21AA770615AF50D100438715 /* WebScriptObject.mm */; };
 		21AA784215AF50D200438715 /* WebScriptObjectPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 21AA770715AF50D100438715 /* WebScriptObjectPrivate.h */; };
+		4A20778815DACF4400D8D0FA /* SurfaceOpenVG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A20777715DACF4400D8D0FA /* SurfaceOpenVG.cpp */; };
+		4A20778915DACF4400D8D0FA /* SurfaceOpenVG.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A20777815DACF4400D8D0FA /* SurfaceOpenVG.h */; };
+		4A2077C415DB049600D8D0FA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A2077C315DB049500D8D0FA /* Security.framework */; };
+		4A2077F915DB075B00D8D0FA /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A2077F815DB075B00D8D0FA /* MobileCoreServices.framework */; };
 		4AD7B95E15D1D63F00C03812 /* BridgeJSC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AD7B95C15D1D63F00C03812 /* BridgeJSC.cpp */; };
 		4AD7B95F15D1D63F00C03812 /* BridgeJSC.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AD7B95D15D1D63F00C03812 /* BridgeJSC.h */; };
 		4AD7B98C15D1D86D00C03812 /* JavaMethod.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AD7B96215D1D86D00C03812 /* JavaMethod.h */; };
@@ -9385,23 +9381,6 @@
 		215F15C215AAA34C00584D2E /* OpenTypeSanitizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenTypeSanitizer.h; sourceTree = "<group>"; };
 		215F15C315AAA34C00584D2E /* OpenTypeUtilities.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OpenTypeUtilities.cpp; sourceTree = "<group>"; };
 		215F15C415AAA34C00584D2E /* OpenTypeUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenTypeUtilities.h; sourceTree = "<group>"; };
-		215F15C615AAA34C00584D2E /* EGLDisplayOpenVG.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EGLDisplayOpenVG.cpp; sourceTree = "<group>"; };
-		215F15C715AAA34C00584D2E /* EGLDisplayOpenVG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGLDisplayOpenVG.h; sourceTree = "<group>"; };
-		215F15C815AAA34C00584D2E /* EGLUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGLUtils.h; sourceTree = "<group>"; };
-		215F15C915AAA34C00584D2E /* GraphicsContextOpenVG.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GraphicsContextOpenVG.cpp; sourceTree = "<group>"; };
-		215F15CA15AAA34C00584D2E /* ImageOpenVG.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageOpenVG.cpp; sourceTree = "<group>"; };
-		215F15CB15AAA34C00584D2E /* PainterOpenVG.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PainterOpenVG.cpp; sourceTree = "<group>"; };
-		215F15CC15AAA34C00584D2E /* PainterOpenVG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PainterOpenVG.h; sourceTree = "<group>"; };
-		215F15CD15AAA34C00584D2E /* PathOpenVG.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PathOpenVG.cpp; sourceTree = "<group>"; };
-		215F15CE15AAA34C00584D2E /* PlatformPathOpenVG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlatformPathOpenVG.h; sourceTree = "<group>"; };
-		215F15CF15AAA34C00584D2E /* SharedResourceOpenVG.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SharedResourceOpenVG.cpp; sourceTree = "<group>"; };
-		215F15D015AAA34C00584D2E /* SharedResourceOpenVG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedResourceOpenVG.h; sourceTree = "<group>"; };
-		215F15D115AAA34C00584D2E /* SurfaceOpenVG.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SurfaceOpenVG.cpp; sourceTree = "<group>"; };
-		215F15D215AAA34C00584D2E /* SurfaceOpenVG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurfaceOpenVG.h; sourceTree = "<group>"; };
-		215F15D315AAA34C00584D2E /* TiledImageOpenVG.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TiledImageOpenVG.cpp; sourceTree = "<group>"; };
-		215F15D415AAA34C00584D2E /* TiledImageOpenVG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TiledImageOpenVG.h; sourceTree = "<group>"; };
-		215F15D515AAA34C00584D2E /* VGUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VGUtils.cpp; sourceTree = "<group>"; };
-		215F15D615AAA34C00584D2E /* VGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VGUtils.h; sourceTree = "<group>"; };
 		215F15D815AAA34C00584D2E /* FontCachePango.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FontCachePango.cpp; sourceTree = "<group>"; };
 		215F15D915AAA34C00584D2E /* FontCustomPlatformDataPango.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FontCustomPlatformDataPango.cpp; sourceTree = "<group>"; };
 		215F15DA15AAA34C00584D2E /* FontPlatformData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontPlatformData.h; sourceTree = "<group>"; };
@@ -14241,6 +14220,10 @@
 		21AA770515AF50D100438715 /* WebScriptObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebScriptObject.h; sourceTree = "<group>"; };
 		21AA770615AF50D100438715 /* WebScriptObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WebScriptObject.mm; sourceTree = "<group>"; };
 		21AA770715AF50D100438715 /* WebScriptObjectPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebScriptObjectPrivate.h; sourceTree = "<group>"; };
+		4A20777715DACF4400D8D0FA /* SurfaceOpenVG.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SurfaceOpenVG.cpp; sourceTree = "<group>"; };
+		4A20777815DACF4400D8D0FA /* SurfaceOpenVG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurfaceOpenVG.h; sourceTree = "<group>"; };
+		4A2077C315DB049500D8D0FA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		4A2077F815DB075B00D8D0FA /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		4AD7B95C15D1D63F00C03812 /* BridgeJSC.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BridgeJSC.cpp; sourceTree = "<group>"; };
 		4AD7B95D15D1D63F00C03812 /* BridgeJSC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgeJSC.h; sourceTree = "<group>"; };
 		4AD7B96215D1D86D00C03812 /* JavaMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JavaMethod.h; sourceTree = "<group>"; };
@@ -14300,6 +14283,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A2077F915DB075B00D8D0FA /* MobileCoreServices.framework in Frameworks */,
+				4A2077C415DB049600D8D0FA /* Security.framework in Frameworks */,
 				4AD7B9C615D3249F00C03812 /* CFNetwork.framework in Frameworks */,
 				4AD7B9B415D2BB1C00C03812 /* Foundation.framework in Frameworks */,
 				21AA630415AEA71F00438715 /* CoreGraphics.framework in Frameworks */,
@@ -17379,6 +17364,7 @@
 		215F13CE15AAA34B00584D2E /* graphics */ = {
 			isa = PBXGroup;
 			children = (
+				4A20776B15DACF4400D8D0FA /* openvg */,
 				4AD7B9BD15D2F9B000C03812 /* SimpleFontData.cpp */,
 				4AD7B9BE15D2F9B000C03812 /* SimpleFontData.h */,
 				215F13CF15AAA34B00584D2E /* ANGLEWebKitBridge.cpp */,
@@ -17481,7 +17467,6 @@
 				215F15B915AAA34C00584D2E /* MediaPlayerPrivate.h */,
 				215F15BA15AAA34C00584D2E /* opengl */,
 				215F15C015AAA34C00584D2E /* opentype */,
-				215F15C515AAA34C00584D2E /* openvg */,
 				215F15D715AAA34C00584D2E /* pango */,
 				215F15DE15AAA34C00584D2E /* Path.cpp */,
 				215F15DF15AAA34C00584D2E /* Path.h */,
@@ -18090,30 +18075,6 @@
 				215F15C415AAA34C00584D2E /* OpenTypeUtilities.h */,
 			);
 			path = opentype;
-			sourceTree = "<group>";
-		};
-		215F15C515AAA34C00584D2E /* openvg */ = {
-			isa = PBXGroup;
-			children = (
-				215F15C615AAA34C00584D2E /* EGLDisplayOpenVG.cpp */,
-				215F15C715AAA34C00584D2E /* EGLDisplayOpenVG.h */,
-				215F15C815AAA34C00584D2E /* EGLUtils.h */,
-				215F15C915AAA34C00584D2E /* GraphicsContextOpenVG.cpp */,
-				215F15CA15AAA34C00584D2E /* ImageOpenVG.cpp */,
-				215F15CB15AAA34C00584D2E /* PainterOpenVG.cpp */,
-				215F15CC15AAA34C00584D2E /* PainterOpenVG.h */,
-				215F15CD15AAA34C00584D2E /* PathOpenVG.cpp */,
-				215F15CE15AAA34C00584D2E /* PlatformPathOpenVG.h */,
-				215F15CF15AAA34C00584D2E /* SharedResourceOpenVG.cpp */,
-				215F15D015AAA34C00584D2E /* SharedResourceOpenVG.h */,
-				215F15D115AAA34C00584D2E /* SurfaceOpenVG.cpp */,
-				215F15D215AAA34C00584D2E /* SurfaceOpenVG.h */,
-				215F15D315AAA34C00584D2E /* TiledImageOpenVG.cpp */,
-				215F15D415AAA34C00584D2E /* TiledImageOpenVG.h */,
-				215F15D515AAA34C00584D2E /* VGUtils.cpp */,
-				215F15D615AAA34C00584D2E /* VGUtils.h */,
-			);
-			path = openvg;
 			sourceTree = "<group>";
 		};
 		215F15D715AAA34C00584D2E /* pango */ = {
@@ -22869,6 +22830,8 @@
 		215FD06615AA9C3300584D2E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4A2077F815DB075B00D8D0FA /* MobileCoreServices.framework */,
+				4A2077C315DB049500D8D0FA /* Security.framework */,
 				4AD7B9C515D3249F00C03812 /* CFNetwork.framework */,
 				21AA630315AEA71F00438715 /* CoreGraphics.framework */,
 				21AA630115AEA71500438715 /* CoreFoundation.framework */,
@@ -23492,6 +23455,15 @@
 				21AA770715AF50D100438715 /* WebScriptObjectPrivate.h */,
 			);
 			path = objc;
+			sourceTree = "<group>";
+		};
+		4A20776B15DACF4400D8D0FA /* openvg */ = {
+			isa = PBXGroup;
+			children = (
+				4A20777715DACF4400D8D0FA /* SurfaceOpenVG.cpp */,
+				4A20777815DACF4400D8D0FA /* SurfaceOpenVG.h */,
+			);
+			path = openvg;
 			sourceTree = "<group>";
 		};
 		4AD7B95B15D1D63F00C03812 /* jsc */ = {
@@ -24729,14 +24701,6 @@
 				215F2CBE15AAA35400584D2E /* TextureMapperGL.h in Headers */,
 				215F2CC015AAA35400584D2E /* OpenTypeSanitizer.h in Headers */,
 				215F2CC215AAA35400584D2E /* OpenTypeUtilities.h in Headers */,
-				215F2CC415AAA35400584D2E /* EGLDisplayOpenVG.h in Headers */,
-				215F2CC515AAA35400584D2E /* EGLUtils.h in Headers */,
-				215F2CC915AAA35400584D2E /* PainterOpenVG.h in Headers */,
-				215F2CCB15AAA35400584D2E /* PlatformPathOpenVG.h in Headers */,
-				215F2CCD15AAA35400584D2E /* SharedResourceOpenVG.h in Headers */,
-				215F2CCF15AAA35400584D2E /* SurfaceOpenVG.h in Headers */,
-				215F2CD115AAA35400584D2E /* TiledImageOpenVG.h in Headers */,
-				215F2CD315AAA35400584D2E /* VGUtils.h in Headers */,
 				215F2CD615AAA35400584D2E /* FontPlatformData.h in Headers */,
 				215F2CDB15AAA35400584D2E /* Path.h in Headers */,
 				215F2CDD15AAA35400584D2E /* PathTraversalState.h in Headers */,
@@ -27203,6 +27167,7 @@
 				4AD7B9B115D1D86D00C03812 /* JavaValueV8.h in Headers */,
 				4AD7B9B315D1D86D00C03812 /* JNIUtilityPrivate.h in Headers */,
 				4AD7B9C015D2F9B000C03812 /* SimpleFontData.h in Headers */,
+				4A20778915DACF4400D8D0FA /* SurfaceOpenVG.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -27249,7 +27214,7 @@
 		215FD05B15AA9C3300584D2E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0440;
 				ORGANIZATIONNAME = "christian.sanchez@fairplaylabs.com";
 			};
 			buildConfigurationList = 215FD05E15AA9C3300584D2E /* Build configuration list for PBXProject "WebCore" */;
@@ -29994,6 +29959,7 @@
 				4AD7B9AE15D1D86D00C03812 /* JavaNPObjectV8.cpp in Sources */,
 				4AD7B9B215D1D86D00C03812 /* JNIUtilityPrivate.cpp in Sources */,
 				4AD7B9BF15D2F9B000C03812 /* SimpleFontData.cpp in Sources */,
+				4A20778815DACF4400D8D0FA /* SurfaceOpenVG.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -30046,6 +30012,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
@@ -30062,6 +30029,7 @@
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
@@ -30090,6 +30058,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -30097,6 +30067,9 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
+					"TARGET_OS_IPHONE=1",
+					"TARGET_IPHONE_SIMULATOR=1",
+					"IOS=1",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -30104,6 +30077,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -30113,6 +30087,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -30120,6 +30096,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -30129,6 +30106,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/WebCore.dst;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WebCore/WebCore-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -30146,12 +30124,11 @@
 					"CHECK_HASHTABLE_ITERATORS=0",
 				);
 				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/..\"",
 					"\"$(SRCROOT)/../Extraheaders\"",
 					"\"$(SRCROOT)/icu\"",
 					"\"$(SRCROOT)/../JavaScriptCore\"",
 					"\"$(SRCROOT)/JavaScriptHeaders\"",
-					"$(HEADER_SEARCH_PATHS)",
-					"$(BUILT_PRODUCTS_DIR)",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -30164,6 +30141,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/WebCore.dst;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WebCore/WebCore-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -30185,12 +30163,11 @@
 					"\"$(SRCROOT)/icu\"",
 					"\"$(SRCROOT)/../JavaScriptCore\"",
 					"\"$(SRCROOT)/JavaScriptHeaders\"",
-					"$(BUILT_PRODUCTS_DIR)",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/..\" \"$(SRCROOT)/../Extraheaders\" \"$(SRCROOT)/icu\" \"$(SRCROOT)/../JavaScriptCore\" \"$(SRCROOT)/JavaScriptHeaders\" $(HEADER_SEARCH_PATHS) $(BUILT_PRODUCTS_DIR)";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../Extraheaders\" \"$(SRCROOT)/icu\" \"$(SRCROOT)/../JavaScriptCore\" \"$(SRCROOT)/JavaScriptHeaders\" $(HEADER_SEARCH_PATHS) $(BUILT_PRODUCTS_DIR)";
 			};
 			name = Release;
 		};

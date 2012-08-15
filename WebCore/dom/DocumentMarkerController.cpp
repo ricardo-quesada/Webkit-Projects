@@ -60,7 +60,9 @@ void DocumentMarkerController::addMarker(Range* range, DocumentMarker::MarkerTyp
     for (TextIterator markedText(range); !markedText.atEnd(); markedText.advance()) {
         RefPtr<Range> textPiece = markedText.range();
         int exception = 0;
-        DocumentMarker marker = {type, textPiece->startOffset(exception), textPiece->endOffset(exception), description, false, Vector<String>(), RetainPtr<id>()};
+        //DocumentMarker marker = {type, textPiece->startOffset(exception), textPiece->endOffset(exception), description, false, Vector<String>(), RetainPtr<id>()}; Ricardo: comento esto para aplicarle un cast explicito
+        DocumentMarker marker = {type, static_cast<unsigned int>(textPiece->startOffset(exception)), static_cast<unsigned int>(textPiece->endOffset(exception)), description, false, Vector<String>(), RetainPtr<id>()};
+
         addMarker(textPiece->startContainer(exception), marker);
     }
 }
@@ -71,7 +73,8 @@ void DocumentMarkerController::addMarker(Range* range, DocumentMarker::MarkerTyp
     for (TextIterator markedText(range); !markedText.atEnd(); markedText.advance()) {
         RefPtr<Range> textPiece = markedText.range();
         int exception = 0;
-        DocumentMarker marker = {type, textPiece->startOffset(exception), textPiece->endOffset(exception), description, false, interpretations, metadata};
+        DocumentMarker marker = {type, static_cast<unsigned int>(textPiece->startOffset(exception)), static_cast<unsigned int>(textPiece->endOffset(exception)), description, false, interpretations, metadata};
+        //DocumentMarker marker = {type, textPiece->startOffset(exception), textPiece->endOffset(exception), description, false, interpretations, metadata};//Ricardo: comento esto para aplicarle un cast explicito
         addMarker(textPiece->startContainer(exception), marker);
     }
 }
@@ -87,7 +90,9 @@ void DocumentMarkerController::addDictationPhraseWithAlternativesMarker(Range* r
     for (TextIterator markedText(range); !markedText.atEnd(); markedText.advance()) {
         RefPtr<Range> textPiece = markedText.range();
         int exception = 0;
-        DocumentMarker marker = {DocumentMarker::DictationPhraseWithAlternatives, textPiece->startOffset(exception), textPiece->endOffset(exception), "", false, Vector<String>(numAlternatives), RetainPtr<id>()};
+        DocumentMarker marker = {DocumentMarker::DictationPhraseWithAlternatives, static_cast<unsigned int>(textPiece->startOffset(exception)), static_cast<unsigned int>(textPiece->endOffset(exception)), "", false, Vector<String>(numAlternatives), RetainPtr<id>()};
+                                                                                                            
+        //DocumentMarker marker = {DocumentMarker::DictationPhraseWithAlternatives, textPiece->startOffset(exception), textPiece->endOffset(exception), "", false, Vector<String>(numAlternatives), RetainPtr<id>()};//Ricardo: comento esto para aplicarle un cast explicito
         for (size_t i = 0; i < numAlternatives; i++)
             marker.alternatives[i] = interpretations[i + 1];
         addMarker(textPiece->startContainer(exception), marker);
@@ -100,7 +105,8 @@ void DocumentMarkerController::addDictationResultMarker(Range* range, const Reta
     for (TextIterator markedText(range); !markedText.atEnd(); markedText.advance()) {
         RefPtr<Range> textPiece = markedText.range();
         int exception = 0;
-        DocumentMarker marker = {DocumentMarker::DictationResult, textPiece->startOffset(exception), textPiece->endOffset(exception), "", false, Vector<String>(), metadata};
+        DocumentMarker marker = {DocumentMarker::DictationResult, static_cast<unsigned int>(textPiece->startOffset(exception)), static_cast<unsigned int>(textPiece->endOffset(exception)), "", false, Vector<String>(), metadata};
+        //DocumentMarker marker = {DocumentMarker::DictationResult, textPiece->startOffset(exception), textPiece->endOffset(exception), "", false, Vector<String>(), metadata}; //Ricardo: Comento para hacer cast
         addMarker(textPiece->startContainer(exception), marker);
     }
 }

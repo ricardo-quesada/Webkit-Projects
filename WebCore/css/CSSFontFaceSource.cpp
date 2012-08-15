@@ -204,7 +204,7 @@ void CSSFontFaceSource::startLoadingTimerFired(Timer<WebCore::CSSFontFaceSource>
     if (CachedResourceLoader* cachedResourceLoader = m_fontSelector->cachedResourceLoader())
         m_font->beginLoadIfNeeded(cachedResourceLoader);
 
-    m_fontSelector = nullptr;
+ //   m_fontSelector = nullptr;
 }
 
 #if ENABLE(SVG_FONTS)

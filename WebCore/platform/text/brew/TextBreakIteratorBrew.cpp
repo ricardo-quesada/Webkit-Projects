@@ -31,6 +31,10 @@ using namespace WTF::Unicode;
 
 namespace WebCore {
 
+    bool isSpace (UChar var){ //Ricardo: Tuve q agregar este mae, xq mas abajo se usa y no esta en ningun lado
+        return true;
+    }
+    
 // Hack, not entirely correct
 static inline bool isCharStop(UChar c)
 {

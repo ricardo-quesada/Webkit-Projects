@@ -28,7 +28,7 @@
 
 #if USE(CFNETWORK)
 
-#include <CFNetwork/CFURLCredentialPriv.h>
+//#include <CFNetwork/CFURLCredentialPriv.h> //Ricardo: comente esto xq no lo encuentro :S
 
 typedef struct _CFURLAuthChallenge* CFURLAuthChallengeRef;
 typedef struct _CFURLProtectionSpace* CFURLProtectionSpaceRef;

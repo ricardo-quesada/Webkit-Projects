@@ -224,7 +224,7 @@ void InspectorController::connectFrontend()
         ScriptController::setCaptureCallStackForUncaughtExceptions(true);
     InspectorInstrumentation::frontendCreated();
 
-    ASSERT(m_inspectorClient);
+    /*ASSERT(m_inspectorClient);
     m_inspectorBackendDispatcher = adoptRef(new InspectorBackendDispatcher(
         m_inspectorClient,
 #if ENABLE(OFFLINE_WEB_APPLICATIONS)
@@ -255,8 +255,18 @@ void InspectorController::connectFrontend()
 #if ENABLE(WORKERS)
         , m_workerAgent.get()
 #endif
-    ));
+    ));*/
+    
+    //Ricardo: Lo anterior lo comente y lo converti a lo siguiente
 
+    
+    
+    ASSERT(m_inspectorClient);
+    m_inspectorBackendDispatcher = adoptRef(new InspectorBackendDispatcher(m_inspectorClient,m_cssAgent.get(),m_consoleAgent.get(),m_domAgent.get(),m_resourceAgent.get(),m_pageAgent.get(),m_runtimeAgent.get(),m_timelineAgent.get()));
+    
+    // hasta aqui
+    
+    
     if (m_startUserInitiatedDebuggingWhenFrontedIsConnected) {
         m_inspectorFrontend->inspector()->startUserInitiatedDebugging();
         m_startUserInitiatedDebuggingWhenFrontedIsConnected = false;

@@ -28,6 +28,7 @@
 
 #include "PlatformString.h"
 #include <wtf/Vector.h>
+#include <string> //Ricardo: agregando para quitar la referencia a WTF String
 
 namespace WebCore {
 
@@ -53,10 +54,10 @@ public:
         build(text);
     }
 
-    bool mightContain(const String& query)
+    bool mightContain(const string& query) //Ricardo: Macheteando cambie String x string, y abajo length x size
     {
         Node* current = &m_root;
-        int limit = std::min(m_depth, query.length());
+        int limit = std::min(m_depth, query.size());
         for (int i = 0; i < limit; ++i) {
             current = current->at(Codebook::codeWord(query[i]));
             if (!current)

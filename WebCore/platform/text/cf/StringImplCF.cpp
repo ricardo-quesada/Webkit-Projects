@@ -35,6 +35,11 @@
 namespace WTF {
 
 namespace StringWrapperCFAllocator {
+    
+    bool isMainThread() //ricardo: agregando este metodo pues lo estaba agarrando de NSThread
+    {
+        return true;
+    }
 
     static StringImpl* currentString;
 

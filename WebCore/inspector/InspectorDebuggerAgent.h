@@ -163,7 +163,7 @@ private:
     InstrumentingAgents* m_instrumentingAgents;
     InspectorState* m_inspectorState;
     InjectedScriptManager* m_injectedScriptManager;
-    InspectorFrontend::Debugger* m_frontend;
+    //InspectorFrontend::Debugger* m_frontend; //Ricardo Comentando
     ScriptState* m_pausedScriptState;
     ScriptValue m_currentCallStack;
     ScriptsMap m_scripts;

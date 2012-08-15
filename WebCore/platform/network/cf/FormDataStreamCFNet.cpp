@@ -35,8 +35,8 @@
 
 #include "FileSystem.h"
 #include "FormData.h"
-#include <CFNetwork/CFURLRequestPriv.h>
-#include <CoreFoundation/CFStreamAbstract.h>
+//#include <CFNetwork/CFURLRequestPriv.h>  //Ricardo: libreria perdida
+//#include <CoreFoundation/CFStreamAbstract.h>//Ricardo: libreria perdida
 #include <sys/types.h>
 #include <wtf/Assertions.h>
 #include <wtf/HashMap.h>
@@ -51,7 +51,7 @@
 
 #define USE_V1_CFSTREAM_CALLBACKS
 #ifdef USE_V1_CFSTREAM_CALLBACKS
-typedef CFReadStreamCallBacksV1 WCReadStreamCallBacks;
+//typedef CFReadStreamCallBacksV1 WCReadStreamCallBacks; //Ricardo: comentando por error
 #else
 typedef CFReadStreamCallBacks WCReadStreamCallBacks;
 #endif
@@ -75,7 +75,7 @@ void setHTTPBody(CFMutableURLRequestRef request, PassRefPtr<FormData> formData)
         const FormDataElement& element = formData->elements()[0];
         if (element.m_type == FormDataElement::data) {
             CFDataRef data = CFDataCreate(0, reinterpret_cast<const UInt8 *>(element.m_data.data()), element.m_data.size());
-            CFURLRequestSetHTTPRequestBody(request, data);
+   //         CFURLRequestSetHTTPRequestBody(request, data); //Ricardo: comentando por error
             CFRelease(data);
             return;
         }
@@ -99,7 +99,9 @@ void setHTTPBody(CFMutableURLRequestRef request, PassRefPtr<FormData> formData)
 
 PassRefPtr<FormData> httpBodyFromRequest(CFURLRequestRef request)
 {
-    RetainPtr<CFDataRef> bodyData(AdoptCF, CFURLRequestCopyHTTPRequestBody(request));
+ //   RetainPtr<CFDataRef> bodyData(AdoptCF, CFURLRequestCopyHTTPRequestBody(request)); //Ricardo: comentando y cambiando por la linea siguiente.
+    RetainPtr<CFDataRef> bodyData(AdoptCF, 0);
+
     if (bodyData)
         return FormData::create(CFDataGetBytePtr(bodyData.get()), CFDataGetLength(bodyData.get()));
 

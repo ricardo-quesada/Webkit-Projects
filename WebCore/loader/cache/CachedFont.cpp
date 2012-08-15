@@ -24,6 +24,9 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
  */
 
+
+//Ricardo: elimine la referencia de la carpeta 'openvg', no encontraba <openvg.h> en ningun lado
+
 #include "config.h"
 #include "CachedFont.h"
 
@@ -113,7 +116,8 @@ bool CachedFont::ensureCustomFontData()
     return m_fontData;
 }
 
-FontPlatformData CachedFont::platformDataFromCustomData(float size, bool bold, bool italic, FontOrientation orientation, TextOrientation textOrientation, FontWidthVariant widthVariant, FontRenderingMode renderingMode)
+    //Ricardo: lo comente por error, nunez sabe como arreglar
+/*FontPlatformData CachedFont::platformDataFromCustomData(float size, bool bold, bool italic, FontOrientation orientation, TextOrientation textOrientation, FontWidthVariant widthVariant, FontRenderingMode renderingMode)
 {
 #if ENABLE(SVG_FONTS)
     if (m_externalSVGDocument)
@@ -125,7 +129,7 @@ FontPlatformData CachedFont::platformDataFromCustomData(float size, bool bold, b
 #else
     return FontPlatformData();
 #endif
-}
+}*/
 
 #if ENABLE(SVG_FONTS)
 bool CachedFont::ensureSVGFontData()

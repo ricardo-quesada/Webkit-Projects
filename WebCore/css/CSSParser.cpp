@@ -315,8 +315,9 @@ static bool parseColorValue(CSSMutableStyleDeclaration* declaration, int propert
         return true;
     }
     RGBA32 color;
-    if (!CSSParser::parseColor(string, color, strict && string[0] != '#'))
-        return false;
+    //if (!CSSParser::parseColor(string, color, strict && string[0] != '#')) //Ricardo: Cambie esta linea x la siguiente, xq [] no sirven con WTF::String
+    if (!CSSParser::parseColor(string, color, true))
+  return false;
     CSSProperty property(propertyId, stylesheet->document()->cssPrimitiveValueCache()->createColorValue(color), important);
     declaration->addParsedProperty(property);
     return true;
@@ -2718,7 +2719,8 @@ PassRefPtr<CSSValue> CSSParser::parseAttr(CSSParserValueList* args)
     // CSS allows identifiers with "-" at the start, like "-webkit-mask-image".
     // But HTML attribute names can't have those characters, and we should not
     // even parse them inside attr().
-    if (attrName[0] == '-')
+    //if (attrName[0] == '-')
+        if (attrName.startsWith("-")) //Ricardo: comente la de arriba y la cambie x esto, debe ser lo mismo
         return 0;
 
     if (document() && document()->isHTMLDocument())
@@ -4357,7 +4359,9 @@ bool CSSParser::parseColor(const String &name, RGBA32& rgb, bool strict)
     CSSPrimitiveValue::UnitTypes expect = CSSPrimitiveValue::CSS_UNKNOWN;
 
     if (!strict && length >= 3) {
-        if (name[0] == '#') {
+        //if (name[0] == '#') { //Ricardo: comente y cambie x el de abajo
+        if (name.startsWith("#")) {
+
             if (Color::parseHexColor(characters + 1, length - 1, rgb))
                 return true;
         } else {
@@ -7118,6 +7122,6 @@ typedef unsigned YY_CHAR;
 // in the tokenizer during in each condition (tokenizer state).
 #define BEGIN yy_start = 1 + 2 *
 
-#include "tokenizer.cpp"
+//#include "tokenizer.cpp" //Ricardo: Comente esta vara xq no lo encontraba. pero si esta en derivered sources
 
 }

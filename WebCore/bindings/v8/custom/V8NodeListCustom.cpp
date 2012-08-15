@@ -29,7 +29,7 @@
  */
 
 #include "config.h"
-#include "V8NodeList.h" 
+//#include "V8NodeList.h" //Ricardo: comente esto xq no tengo los v8 compilados :(
 
 #include "NodeList.h"
 #include "V8Binding.h"

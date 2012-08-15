@@ -542,7 +542,6 @@
 		215FCF9715AA7BEC00584D2E /* StringStatics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 215FC86B15AA7BEB00584D2E /* StringStatics.cpp */; };
 		215FCF9815AA7BEC00584D2E /* TextPosition.h in Headers */ = {isa = PBXBuildFile; fileRef = 215FC86C15AA7BEB00584D2E /* TextPosition.h */; };
 		215FCF9915AA7BEC00584D2E /* WTFString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 215FC86D15AA7BEB00584D2E /* WTFString.cpp */; };
-		215FCF9A15AA7BEC00584D2E /* WTFString.h in Headers */ = {isa = PBXBuildFile; fileRef = 215FC86E15AA7BEB00584D2E /* WTFString.h */; };
 		215FCF9B15AA7BEC00584D2E /* ThreadFunctionInvocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 215FC86F15AA7BEB00584D2E /* ThreadFunctionInvocation.h */; };
 		215FCF9C15AA7BEC00584D2E /* ThreadIdentifierDataPthreads.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 215FC87015AA7BEB00584D2E /* ThreadIdentifierDataPthreads.cpp */; };
 		215FCF9D15AA7BEC00584D2E /* ThreadIdentifierDataPthreads.h in Headers */ = {isa = PBXBuildFile; fileRef = 215FC87115AA7BEB00584D2E /* ThreadIdentifierDataPthreads.h */; };
@@ -1158,7 +1157,6 @@
 		215FC86B15AA7BEB00584D2E /* StringStatics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StringStatics.cpp; sourceTree = "<group>"; };
 		215FC86C15AA7BEB00584D2E /* TextPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextPosition.h; sourceTree = "<group>"; };
 		215FC86D15AA7BEB00584D2E /* WTFString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WTFString.cpp; sourceTree = "<group>"; };
-		215FC86E15AA7BEB00584D2E /* WTFString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTFString.h; sourceTree = "<group>"; };
 		215FC86F15AA7BEB00584D2E /* ThreadFunctionInvocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreadFunctionInvocation.h; sourceTree = "<group>"; };
 		215FC87015AA7BEB00584D2E /* ThreadIdentifierDataPthreads.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ThreadIdentifierDataPthreads.cpp; sourceTree = "<group>"; };
 		215FC87115AA7BEB00584D2E /* ThreadIdentifierDataPthreads.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreadIdentifierDataPthreads.h; sourceTree = "<group>"; };
@@ -1249,6 +1247,7 @@
 		215FD05315AA92BB00584D2E /* libedit.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libedit.dylib; path = usr/lib/libedit.dylib; sourceTree = SDKROOT; };
 		215FD05515AA92C700584D2E /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		215FD05715AA92D800584D2E /* libobjc.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libobjc.dylib; path = usr/lib/libobjc.dylib; sourceTree = SDKROOT; };
+		4A20778F15DB02A500D8D0FA /* WTFString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTFString.h; sourceTree = "<group>"; };
 		4A92528815B52F17004051DB /* FastMalloc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FastMalloc.cpp; sourceTree = "<group>"; };
 		4A92528915B52F17004051DB /* FastMalloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastMalloc.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1972,6 +1971,7 @@
 		215FC85B15AA7BEB00584D2E /* text */ = {
 			isa = PBXGroup;
 			children = (
+				4A20778F15DB02A500D8D0FA /* WTFString.h */,
 				215FC85C15AA7BEB00584D2E /* AtomicString.cpp */,
 				215FC85D15AA7BEB00584D2E /* AtomicString.h */,
 				215FC85E15AA7BEB00584D2E /* AtomicStringHash.h */,
@@ -1990,7 +1990,6 @@
 				215FC86B15AA7BEB00584D2E /* StringStatics.cpp */,
 				215FC86C15AA7BEB00584D2E /* TextPosition.h */,
 				215FC86D15AA7BEB00584D2E /* WTFString.cpp */,
-				215FC86E15AA7BEB00584D2E /* WTFString.h */,
 			);
 			path = text;
 			sourceTree = "<group>";
@@ -2454,7 +2453,6 @@
 				215FCF9515AA7BEC00584D2E /* StringImplBase.h in Headers */,
 				215FCF9615AA7BEC00584D2E /* StringOperators.h in Headers */,
 				215FCF9815AA7BEC00584D2E /* TextPosition.h in Headers */,
-				215FCF9A15AA7BEC00584D2E /* WTFString.h in Headers */,
 				215FCF9B15AA7BEC00584D2E /* ThreadFunctionInvocation.h in Headers */,
 				215FCF9D15AA7BEC00584D2E /* ThreadIdentifierDataPthreads.h in Headers */,
 				215FCF9F15AA7BEC00584D2E /* Threading.h in Headers */,
@@ -2793,6 +2791,9 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
+					"TARGET_OS_IPHONE=1",
+					"TARGET_IPHONE_SIMULATOR=1",
+					"IOS=1",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;

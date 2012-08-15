@@ -696,7 +696,7 @@ CSSComputedStyleDeclaration::CSSComputedStyleDeclaration(PassRefPtr<Node> n, boo
     : m_node(n)
     , m_allowVisitedStyle(allowVisitedStyle)
 {
-    unsigned nameWithoutColonsStart = pseudoElementName[0] == ':' ? (pseudoElementName[1] == ':' ? 2 : 1) : 0;
+    unsigned nameWithoutColonsStart = 0;//pseudoElementName[0] == ':' ? (pseudoElementName[1] == ':' ? 2 : 1) : 0;
     m_pseudoElementSpecifier = CSSSelector::pseudoId(CSSSelector::parsePseudoType(
         AtomicString(pseudoElementName.substring(nameWithoutColonsStart))));
 }

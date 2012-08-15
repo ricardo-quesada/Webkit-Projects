@@ -22,7 +22,7 @@
 #define RetainPtr_h
 
 #include "HashTraits.h"
-#include "NullPtr.h"
+//#include "NullPtr.h"
 #include "TypeTraits.h"
 #include <algorithm>
 

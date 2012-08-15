@@ -242,7 +242,7 @@
 
 
 /* Copy the first part of user declarations.  */
-#line 1 "WebCore/css/CSSGrammar.y"
+#line 1 "WebCore/css/CSSGrammar.ymm"
 
 
 /*
@@ -324,7 +324,7 @@ using namespace HTMLNames;
 
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 typedef union YYSTYPE
-#line 64 "WebCore/css/CSSGrammar.y"
+#line 64 "WebCore/css/CSSGrammar.ymm"
 {
     bool boolean;
     char character;
@@ -360,7 +360,7 @@ typedef union YYSTYPE
 
 
 /* Copy the second part of user declarations.  */
-#line 89 "WebCore/css/CSSGrammar.y"
+#line 89 "WebCore/css/CSSGrammar.ym"
 
 
 static inline int cssyyerror(const char*)
@@ -2338,28 +2338,28 @@ yyreduce:
   switch (yyn)
     {
         case 9:
-#line 304 "WebCore/css/CSSGrammar.y"
+#line 304 "WebCore/css/CSSGrammar.ym"
     {
         static_cast<CSSParser*>(parser)->m_rule = (yyvsp[(4) - (6)].rule);
     ;}
     break;
 
   case 10:
-#line 310 "WebCore/css/CSSGrammar.y"
+#line 310 "WebCore/css/CSSGrammar.ym"
     {
         static_cast<CSSParser*>(parser)->m_keyframe = (yyvsp[(4) - (6)].keyframeRule);
     ;}
     break;
 
   case 11:
-#line 316 "WebCore/css/CSSGrammar.y"
+#line 316 "WebCore/css/CSSGrammar.ym"
     {
         /* can be empty */
     ;}
     break;
 
   case 12:
-#line 322 "WebCore/css/CSSGrammar.y"
+#line 322 "WebCore/css/CSSGrammar.ym"
     {
         CSSParser* p = static_cast<CSSParser*>(parser);
         if ((yyvsp[(4) - (5)].valueList)) {
@@ -2374,7 +2374,7 @@ yyreduce:
     break;
 
   case 13:
-#line 336 "WebCore/css/CSSGrammar.y"
+#line 336 "WebCore/css/CSSGrammar.ym"
     {
          CSSParser* p = static_cast<CSSParser*>(parser);
          p->m_mediaQuery = p->sinkFloatingMediaQuery((yyvsp[(4) - (5)].mediaQuery));
@@ -2382,7 +2382,7 @@ yyreduce:
     break;
 
   case 14:
-#line 343 "WebCore/css/CSSGrammar.y"
+#line 343 "WebCore/css/CSSGrammar.ym"
     {
         if ((yyvsp[(4) - (5)].selectorList)) {
             CSSParser* p = static_cast<CSSParser*>(parser);
@@ -2393,13 +2393,13 @@ yyreduce:
     break;
 
   case 21:
-#line 365 "WebCore/css/CSSGrammar.y"
+#line 365 "WebCore/css/CSSGrammar.ym"
     {
   ;}
     break;
 
   case 24:
-#line 375 "WebCore/css/CSSGrammar.y"
+#line 375 "WebCore/css/CSSGrammar.ym"
     {
      CSSParser* p = static_cast<CSSParser*>(parser);
      (yyval.rule) = static_cast<CSSParser*>(parser)->createCharsetRule((yyvsp[(3) - (5)].string));
@@ -2409,19 +2409,19 @@ yyreduce:
     break;
 
   case 25:
-#line 381 "WebCore/css/CSSGrammar.y"
+#line 381 "WebCore/css/CSSGrammar.ym"
     {
   ;}
     break;
 
   case 26:
-#line 383 "WebCore/css/CSSGrammar.y"
+#line 383 "WebCore/css/CSSGrammar.ym"
     {
   ;}
     break;
 
   case 27:
-#line 388 "WebCore/css/CSSGrammar.y"
+#line 388 "WebCore/css/CSSGrammar.ym"
     {
         // Ignore any @charset rule not at the beginning of the style sheet.
         (yyval.rule) = 0;
@@ -2429,7 +2429,7 @@ yyreduce:
     break;
 
   case 29:
-#line 396 "WebCore/css/CSSGrammar.y"
+#line 396 "WebCore/css/CSSGrammar.ym"
     {
      CSSParser* p = static_cast<CSSParser*>(parser);
      if ((yyvsp[(2) - (3)].rule) && p->m_styleSheet)
@@ -2438,26 +2438,26 @@ yyreduce:
     break;
 
   case 30:
-#line 404 "WebCore/css/CSSGrammar.y"
+#line 404 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.rule) = (yyvsp[(2) - (2)].rule);
     ;}
     break;
 
   case 37:
-#line 416 "WebCore/css/CSSGrammar.y"
+#line 416 "WebCore/css/CSSGrammar.ym"
     {
         static_cast<CSSParser*>(parser)->m_hadSyntacticallyValidCSSRule = true;
     ;}
     break;
 
   case 41:
-#line 425 "WebCore/css/CSSGrammar.y"
+#line 425 "WebCore/css/CSSGrammar.ym"
     { (yyval.ruleList) = 0; ;}
     break;
 
   case 42:
-#line 426 "WebCore/css/CSSGrammar.y"
+#line 426 "WebCore/css/CSSGrammar.ym"
     {
       (yyval.ruleList) = (yyvsp[(1) - (3)].ruleList);
       if ((yyvsp[(2) - (3)].rule)) {
@@ -2469,35 +2469,35 @@ yyreduce:
     break;
 
   case 53:
-#line 454 "WebCore/css/CSSGrammar.y"
+#line 454 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.rule) = static_cast<CSSParser*>(parser)->createImportRule((yyvsp[(3) - (6)].string), (yyvsp[(5) - (6)].mediaList));
     ;}
     break;
 
   case 54:
-#line 457 "WebCore/css/CSSGrammar.y"
+#line 457 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.rule) = 0;
     ;}
     break;
 
   case 55:
-#line 460 "WebCore/css/CSSGrammar.y"
+#line 460 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.rule) = 0;
     ;}
     break;
 
   case 56:
-#line 463 "WebCore/css/CSSGrammar.y"
+#line 463 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.rule) = 0;
     ;}
     break;
 
   case 57:
-#line 469 "WebCore/css/CSSGrammar.y"
+#line 469 "WebCore/css/CSSGrammar.ym"
     {
     static_cast<CSSParser*>(parser)->addNamespace((yyvsp[(3) - (6)].string), (yyvsp[(4) - (6)].string));
     (yyval.rule) = 0;
@@ -2505,59 +2505,59 @@ yyreduce:
     break;
 
   case 58:
-#line 473 "WebCore/css/CSSGrammar.y"
+#line 473 "WebCore/css/CSSGrammar.ym"
     {
     (yyval.rule) = 0;
 ;}
     break;
 
   case 59:
-#line 476 "WebCore/css/CSSGrammar.y"
+#line 476 "WebCore/css/CSSGrammar.ym"
     {
     (yyval.rule) = 0;
 ;}
     break;
 
   case 60:
-#line 479 "WebCore/css/CSSGrammar.y"
+#line 479 "WebCore/css/CSSGrammar.ym"
     {
     (yyval.rule) = 0;
 ;}
     break;
 
   case 61:
-#line 485 "WebCore/css/CSSGrammar.y"
+#line 485 "WebCore/css/CSSGrammar.ym"
     { (yyval.string).characters = 0; ;}
     break;
 
   case 62:
-#line 486 "WebCore/css/CSSGrammar.y"
+#line 486 "WebCore/css/CSSGrammar.ym"
     { (yyval.string) = (yyvsp[(1) - (2)].string); ;}
     break;
 
   case 65:
-#line 495 "WebCore/css/CSSGrammar.y"
+#line 495 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.string) = (yyvsp[(1) - (2)].string);
     ;}
     break;
 
   case 66:
-#line 501 "WebCore/css/CSSGrammar.y"
+#line 501 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.valueList) = 0;
     ;}
     break;
 
   case 67:
-#line 504 "WebCore/css/CSSGrammar.y"
+#line 504 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.valueList) = (yyvsp[(3) - (4)].valueList);
     ;}
     break;
 
   case 68:
-#line 510 "WebCore/css/CSSGrammar.y"
+#line 510 "WebCore/css/CSSGrammar.ym"
     {
         (yyvsp[(3) - (7)].string).lower();
         (yyval.mediaQueryExp) = static_cast<CSSParser*>(parser)->createFloatingMediaQueryExp((yyvsp[(3) - (7)].string), (yyvsp[(5) - (7)].valueList));
@@ -2565,7 +2565,7 @@ yyreduce:
     break;
 
   case 69:
-#line 517 "WebCore/css/CSSGrammar.y"
+#line 517 "WebCore/css/CSSGrammar.ym"
     {
         CSSParser* p = static_cast<CSSParser*>(parser);
         (yyval.mediaQueryExpList) = p->createFloatingMediaQueryExpList();
@@ -2574,7 +2574,7 @@ yyreduce:
     break;
 
   case 70:
-#line 522 "WebCore/css/CSSGrammar.y"
+#line 522 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.mediaQueryExpList) = (yyvsp[(1) - (5)].mediaQueryExpList);
         (yyval.mediaQueryExpList)->append(static_cast<CSSParser*>(parser)->sinkFloatingMediaQueryExp((yyvsp[(5) - (5)].mediaQueryExp)));
@@ -2582,42 +2582,42 @@ yyreduce:
     break;
 
   case 71:
-#line 529 "WebCore/css/CSSGrammar.y"
+#line 529 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.mediaQueryExpList) = static_cast<CSSParser*>(parser)->createFloatingMediaQueryExpList();
     ;}
     break;
 
   case 72:
-#line 532 "WebCore/css/CSSGrammar.y"
+#line 532 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.mediaQueryExpList) = (yyvsp[(3) - (3)].mediaQueryExpList);
     ;}
     break;
 
   case 73:
-#line 538 "WebCore/css/CSSGrammar.y"
+#line 538 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.mediaQueryRestrictor) = MediaQuery::None;
     ;}
     break;
 
   case 74:
-#line 541 "WebCore/css/CSSGrammar.y"
+#line 541 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.mediaQueryRestrictor) = MediaQuery::Only;
     ;}
     break;
 
   case 75:
-#line 544 "WebCore/css/CSSGrammar.y"
+#line 544 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.mediaQueryRestrictor) = MediaQuery::Not;
     ;}
     break;
 
   case 76:
-#line 550 "WebCore/css/CSSGrammar.y"
+#line 550 "WebCore/css/CSSGrammar.ym"
     {
         CSSParser* p = static_cast<CSSParser*>(parser);
         (yyval.mediaQuery) = p->createFloatingMediaQuery(p->sinkFloatingMediaQueryExpList((yyvsp[(1) - (1)].mediaQueryExpList)));
@@ -2625,7 +2625,7 @@ yyreduce:
     break;
 
   case 77:
-#line 555 "WebCore/css/CSSGrammar.y"
+#line 555 "WebCore/css/CSSGrammar.ym"
     {
         CSSParser* p = static_cast<CSSParser*>(parser);
         (yyvsp[(3) - (4)].string).lower();
@@ -2634,14 +2634,14 @@ yyreduce:
     break;
 
   case 78:
-#line 563 "WebCore/css/CSSGrammar.y"
+#line 563 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.mediaList) = static_cast<CSSParser*>(parser)->createMediaList();
      ;}
     break;
 
   case 80:
-#line 570 "WebCore/css/CSSGrammar.y"
+#line 570 "WebCore/css/CSSGrammar.ym"
     {
         CSSParser* p = static_cast<CSSParser*>(parser);
         (yyval.mediaList) = p->createMediaList();
@@ -2650,7 +2650,7 @@ yyreduce:
     break;
 
   case 81:
-#line 575 "WebCore/css/CSSGrammar.y"
+#line 575 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.mediaList) = (yyvsp[(1) - (4)].mediaList);
         if ((yyval.mediaList))
@@ -2659,35 +2659,35 @@ yyreduce:
     break;
 
   case 82:
-#line 580 "WebCore/css/CSSGrammar.y"
+#line 580 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.mediaList) = 0;
     ;}
     break;
 
   case 83:
-#line 586 "WebCore/css/CSSGrammar.y"
+#line 586 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.rule) = static_cast<CSSParser*>(parser)->createMediaRule((yyvsp[(3) - (7)].mediaList), (yyvsp[(6) - (7)].ruleList));
     ;}
     break;
 
   case 84:
-#line 589 "WebCore/css/CSSGrammar.y"
+#line 589 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.rule) = static_cast<CSSParser*>(parser)->createMediaRule(0, (yyvsp[(5) - (6)].ruleList));
     ;}
     break;
 
   case 85:
-#line 595 "WebCore/css/CSSGrammar.y"
+#line 595 "WebCore/css/CSSGrammar.ym"
     {
       (yyval.string) = (yyvsp[(1) - (2)].string);
   ;}
     break;
 
   case 86:
-#line 601 "WebCore/css/CSSGrammar.y"
+#line 601 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.rule) = (yyvsp[(7) - (8)].keyframesRule);
         (yyvsp[(7) - (8)].keyframesRule)->setNameInternal((yyvsp[(3) - (8)].string));
@@ -2695,12 +2695,12 @@ yyreduce:
     break;
 
   case 89:
-#line 613 "WebCore/css/CSSGrammar.y"
+#line 613 "WebCore/css/CSSGrammar.ym"
     { (yyval.keyframesRule) = static_cast<CSSParser*>(parser)->createKeyframesRule(); ;}
     break;
 
   case 90:
-#line 614 "WebCore/css/CSSGrammar.y"
+#line 614 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.keyframesRule) = (yyvsp[(1) - (3)].keyframesRule);
         if ((yyvsp[(2) - (3)].keyframeRule))
@@ -2709,14 +2709,14 @@ yyreduce:
     break;
 
   case 91:
-#line 622 "WebCore/css/CSSGrammar.y"
+#line 622 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.keyframeRule) = static_cast<CSSParser*>(parser)->createKeyframeRule((yyvsp[(1) - (6)].valueList));
     ;}
     break;
 
   case 92:
-#line 628 "WebCore/css/CSSGrammar.y"
+#line 628 "WebCore/css/CSSGrammar.ym"
     {
         CSSParser* p = static_cast<CSSParser*>(parser);
         (yyval.valueList) = p->createFloatingValueList();
@@ -2725,7 +2725,7 @@ yyreduce:
     break;
 
   case 93:
-#line 633 "WebCore/css/CSSGrammar.y"
+#line 633 "WebCore/css/CSSGrammar.ym"
     {
         CSSParser* p = static_cast<CSSParser*>(parser);
         (yyval.valueList) = (yyvsp[(1) - (5)].valueList);
@@ -2735,12 +2735,12 @@ yyreduce:
     break;
 
   case 94:
-#line 642 "WebCore/css/CSSGrammar.y"
+#line 642 "WebCore/css/CSSGrammar.ym"
     { (yyval.value).id = 0; (yyval.value).isInt = false; (yyval.value).fValue = (yyvsp[(1) - (1)].number); (yyval.value).unit = CSSPrimitiveValue::CSS_NUMBER; ;}
     break;
 
   case 95:
-#line 643 "WebCore/css/CSSGrammar.y"
+#line 643 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.value).id = 0; (yyval.value).isInt = false; (yyval.value).unit = CSSPrimitiveValue::CSS_NUMBER;
         CSSParserString& str = (yyvsp[(1) - (1)].string);
@@ -2754,7 +2754,7 @@ yyreduce:
     break;
 
   case 96:
-#line 657 "WebCore/css/CSSGrammar.y"
+#line 657 "WebCore/css/CSSGrammar.ym"
     {
         CSSParser* p = static_cast<CSSParser*>(parser);
         if ((yyvsp[(3) - (8)].selector))
@@ -2769,21 +2769,21 @@ yyreduce:
     break;
 
   case 97:
-#line 668 "WebCore/css/CSSGrammar.y"
+#line 668 "WebCore/css/CSSGrammar.ym"
     {
       (yyval.rule) = 0;
     ;}
     break;
 
   case 98:
-#line 671 "WebCore/css/CSSGrammar.y"
+#line 671 "WebCore/css/CSSGrammar.ym"
     {
       (yyval.rule) = 0;
     ;}
     break;
 
   case 99:
-#line 677 "WebCore/css/CSSGrammar.y"
+#line 677 "WebCore/css/CSSGrammar.ym"
     {
         CSSParser* p = static_cast<CSSParser*>(parser);
         (yyval.selector) = p->createFloatingSelector();
@@ -2793,7 +2793,7 @@ yyreduce:
     break;
 
   case 100:
-#line 683 "WebCore/css/CSSGrammar.y"
+#line 683 "WebCore/css/CSSGrammar.ym"
     {
         CSSParser* p = static_cast<CSSParser*>(parser);
         (yyval.selector) = (yyvsp[(2) - (2)].selector);
@@ -2805,7 +2805,7 @@ yyreduce:
     break;
 
   case 101:
-#line 691 "WebCore/css/CSSGrammar.y"
+#line 691 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.selector) = (yyvsp[(1) - (1)].selector);
         if ((yyval.selector))
@@ -2814,7 +2814,7 @@ yyreduce:
     break;
 
   case 102:
-#line 696 "WebCore/css/CSSGrammar.y"
+#line 696 "WebCore/css/CSSGrammar.ym"
     {
         CSSParser* p = static_cast<CSSParser*>(parser);
         (yyval.selector) = p->createFloatingSelector();
@@ -2823,189 +2823,189 @@ yyreduce:
     break;
 
   case 105:
-#line 709 "WebCore/css/CSSGrammar.y"
+#line 709 "WebCore/css/CSSGrammar.ym"
     {
         static_cast<CSSParser*>(parser)->startDeclarationsForMarginBox();
     ;}
     break;
 
   case 106:
-#line 711 "WebCore/css/CSSGrammar.y"
+#line 711 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.rule) = static_cast<CSSParser*>(parser)->createMarginAtRule((yyvsp[(1) - (7)].marginBox));
     ;}
     break;
 
   case 107:
-#line 717 "WebCore/css/CSSGrammar.y"
+#line 717 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.marginBox) = CSSSelector::TopLeftCornerMarginBox;
     ;}
     break;
 
   case 108:
-#line 720 "WebCore/css/CSSGrammar.y"
+#line 720 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.marginBox) = CSSSelector::TopLeftMarginBox;
     ;}
     break;
 
   case 109:
-#line 723 "WebCore/css/CSSGrammar.y"
+#line 723 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.marginBox) = CSSSelector::TopCenterMarginBox;
     ;}
     break;
 
   case 110:
-#line 726 "WebCore/css/CSSGrammar.y"
+#line 726 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.marginBox) = CSSSelector::TopRightMarginBox;
     ;}
     break;
 
   case 111:
-#line 729 "WebCore/css/CSSGrammar.y"
+#line 729 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.marginBox) = CSSSelector::TopRightCornerMarginBox;
     ;}
     break;
 
   case 112:
-#line 732 "WebCore/css/CSSGrammar.y"
+#line 732 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.marginBox) = CSSSelector::BottomLeftCornerMarginBox;
     ;}
     break;
 
   case 113:
-#line 735 "WebCore/css/CSSGrammar.y"
+#line 735 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.marginBox) = CSSSelector::BottomLeftMarginBox;
     ;}
     break;
 
   case 114:
-#line 738 "WebCore/css/CSSGrammar.y"
+#line 738 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.marginBox) = CSSSelector::BottomCenterMarginBox;
     ;}
     break;
 
   case 115:
-#line 741 "WebCore/css/CSSGrammar.y"
+#line 741 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.marginBox) = CSSSelector::BottomRightMarginBox;
     ;}
     break;
 
   case 116:
-#line 744 "WebCore/css/CSSGrammar.y"
+#line 744 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.marginBox) = CSSSelector::BottomRightCornerMarginBox;
     ;}
     break;
 
   case 117:
-#line 747 "WebCore/css/CSSGrammar.y"
+#line 747 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.marginBox) = CSSSelector::LeftTopMarginBox;
     ;}
     break;
 
   case 118:
-#line 750 "WebCore/css/CSSGrammar.y"
+#line 750 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.marginBox) = CSSSelector::LeftMiddleMarginBox;
     ;}
     break;
 
   case 119:
-#line 753 "WebCore/css/CSSGrammar.y"
+#line 753 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.marginBox) = CSSSelector::LeftBottomMarginBox;
     ;}
     break;
 
   case 120:
-#line 756 "WebCore/css/CSSGrammar.y"
+#line 756 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.marginBox) = CSSSelector::RightTopMarginBox;
     ;}
     break;
 
   case 121:
-#line 759 "WebCore/css/CSSGrammar.y"
+#line 759 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.marginBox) = CSSSelector::RightMiddleMarginBox;
     ;}
     break;
 
   case 122:
-#line 762 "WebCore/css/CSSGrammar.y"
+#line 762 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.marginBox) = CSSSelector::RightBottomMarginBox;
     ;}
     break;
 
   case 123:
-#line 769 "WebCore/css/CSSGrammar.y"
+#line 769 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.rule) = static_cast<CSSParser*>(parser)->createFontFaceRule();
     ;}
     break;
 
   case 124:
-#line 772 "WebCore/css/CSSGrammar.y"
+#line 772 "WebCore/css/CSSGrammar.ym"
     {
       (yyval.rule) = 0;
     ;}
     break;
 
   case 125:
-#line 775 "WebCore/css/CSSGrammar.y"
+#line 775 "WebCore/css/CSSGrammar.ym"
     {
       (yyval.rule) = 0;
     ;}
     break;
 
   case 126:
-#line 781 "WebCore/css/CSSGrammar.y"
+#line 781 "WebCore/css/CSSGrammar.ym"
     { (yyval.relation) = CSSSelector::DirectAdjacent; ;}
     break;
 
   case 127:
-#line 782 "WebCore/css/CSSGrammar.y"
+#line 782 "WebCore/css/CSSGrammar.ym"
     { (yyval.relation) = CSSSelector::IndirectAdjacent; ;}
     break;
 
   case 128:
-#line 783 "WebCore/css/CSSGrammar.y"
+#line 783 "WebCore/css/CSSGrammar.ym"
     { (yyval.relation) = CSSSelector::Child; ;}
     break;
 
   case 129:
-#line 787 "WebCore/css/CSSGrammar.y"
+#line 787 "WebCore/css/CSSGrammar.ym"
     { (yyval.integer) = (yyvsp[(1) - (1)].integer); ;}
     break;
 
   case 130:
-#line 788 "WebCore/css/CSSGrammar.y"
+#line 788 "WebCore/css/CSSGrammar.ym"
     { (yyval.integer) = 1; ;}
     break;
 
   case 131:
-#line 792 "WebCore/css/CSSGrammar.y"
+#line 792 "WebCore/css/CSSGrammar.ym"
     { (yyval.integer) = -1; ;}
     break;
 
   case 132:
-#line 793 "WebCore/css/CSSGrammar.y"
+#line 793 "WebCore/css/CSSGrammar.ym"
     { (yyval.integer) = 1; ;}
     break;
 
   case 133:
-#line 797 "WebCore/css/CSSGrammar.y"
+#line 797 "WebCore/css/CSSGrammar.ym"
     {
         CSSParser* p = static_cast<CSSParser*>(parser);
         p->markPropertyStart();
@@ -3013,7 +3013,7 @@ yyreduce:
     break;
 
   case 134:
-#line 804 "WebCore/css/CSSGrammar.y"
+#line 804 "WebCore/css/CSSGrammar.ym"
     {
         CSSParser* p = static_cast<CSSParser*>(parser);
         p->markSelectorListStart();
@@ -3021,7 +3021,7 @@ yyreduce:
     break;
 
   case 135:
-#line 811 "WebCore/css/CSSGrammar.y"
+#line 811 "WebCore/css/CSSGrammar.ym"
     {
         CSSParser* p = static_cast<CSSParser*>(parser);
         p->markSelectorListEnd();
@@ -3029,7 +3029,7 @@ yyreduce:
     break;
 
   case 136:
-#line 818 "WebCore/css/CSSGrammar.y"
+#line 818 "WebCore/css/CSSGrammar.ym"
     {
         CSSParser* p = static_cast<CSSParser*>(parser);
         (yyval.rule) = p->createStyleRule((yyvsp[(1) - (6)].selectorList));
@@ -3037,7 +3037,7 @@ yyreduce:
     break;
 
   case 137:
-#line 825 "WebCore/css/CSSGrammar.y"
+#line 825 "WebCore/css/CSSGrammar.ym"
     {
         if ((yyvsp[(1) - (1)].selector)) {
             CSSParser* p = static_cast<CSSParser*>(parser);
@@ -3050,7 +3050,7 @@ yyreduce:
     break;
 
   case 138:
-#line 834 "WebCore/css/CSSGrammar.y"
+#line 834 "WebCore/css/CSSGrammar.ym"
     {
         if ((yyvsp[(1) - (4)].selectorList) && (yyvsp[(4) - (4)].selector)) {
             CSSParser* p = static_cast<CSSParser*>(parser);
@@ -3063,35 +3063,35 @@ yyreduce:
     break;
 
   case 139:
-#line 843 "WebCore/css/CSSGrammar.y"
+#line 843 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.selectorList) = 0;
     ;}
     break;
 
   case 140:
-#line 849 "WebCore/css/CSSGrammar.y"
+#line 849 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.selector) = (yyvsp[(1) - (2)].selector);
     ;}
     break;
 
   case 141:
-#line 855 "WebCore/css/CSSGrammar.y"
+#line 855 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.selector) = (yyvsp[(1) - (1)].selector);
     ;}
     break;
 
   case 142:
-#line 859 "WebCore/css/CSSGrammar.y"
+#line 859 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.selector) = (yyvsp[(1) - (1)].selector);
     ;}
     break;
 
   case 143:
-#line 863 "WebCore/css/CSSGrammar.y"
+#line 863 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.selector) = (yyvsp[(2) - (2)].selector);
         if (!(yyvsp[(1) - (2)].selector))
@@ -3108,7 +3108,7 @@ yyreduce:
     break;
 
   case 144:
-#line 876 "WebCore/css/CSSGrammar.y"
+#line 876 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.selector) = (yyvsp[(3) - (3)].selector);
         if (!(yyvsp[(1) - (3)].selector))
@@ -3125,29 +3125,29 @@ yyreduce:
     break;
 
   case 145:
-#line 889 "WebCore/css/CSSGrammar.y"
+#line 889 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.selector) = 0;
     ;}
     break;
 
   case 146:
-#line 895 "WebCore/css/CSSGrammar.y"
+#line 895 "WebCore/css/CSSGrammar.ym"
     { (yyval.string).characters = 0; (yyval.string).length = 0; ;}
     break;
 
   case 147:
-#line 896 "WebCore/css/CSSGrammar.y"
+#line 896 "WebCore/css/CSSGrammar.ym"
     { static UChar star = '*'; (yyval.string).characters = &star; (yyval.string).length = 1; ;}
     break;
 
   case 148:
-#line 897 "WebCore/css/CSSGrammar.y"
+#line 897 "WebCore/css/CSSGrammar.ym"
     { (yyval.string) = (yyvsp[(1) - (2)].string); ;}
     break;
 
   case 149:
-#line 901 "WebCore/css/CSSGrammar.y"
+#line 901 "WebCore/css/CSSGrammar.ym"
     {
         CSSParser* p = static_cast<CSSParser*>(parser);
         (yyval.selector) = p->createFloatingSelector();
@@ -3156,7 +3156,7 @@ yyreduce:
     break;
 
   case 150:
-#line 906 "WebCore/css/CSSGrammar.y"
+#line 906 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.selector) = (yyvsp[(2) - (2)].selector);
         if ((yyval.selector))
@@ -3165,7 +3165,7 @@ yyreduce:
     break;
 
   case 151:
-#line 911 "WebCore/css/CSSGrammar.y"
+#line 911 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.selector) = (yyvsp[(1) - (1)].selector);
         if ((yyval.selector))
@@ -3174,7 +3174,7 @@ yyreduce:
     break;
 
   case 152:
-#line 916 "WebCore/css/CSSGrammar.y"
+#line 916 "WebCore/css/CSSGrammar.ym"
     {
         AtomicString namespacePrefix = (yyvsp[(1) - (2)].string);
         CSSParser* p = static_cast<CSSParser*>(parser);
@@ -3188,7 +3188,7 @@ yyreduce:
     break;
 
   case 153:
-#line 926 "WebCore/css/CSSGrammar.y"
+#line 926 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.selector) = (yyvsp[(3) - (3)].selector);
         if ((yyval.selector))
@@ -3197,7 +3197,7 @@ yyreduce:
     break;
 
   case 154:
-#line 931 "WebCore/css/CSSGrammar.y"
+#line 931 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.selector) = (yyvsp[(2) - (2)].selector);
         if ((yyval.selector))
@@ -3206,7 +3206,7 @@ yyreduce:
     break;
 
   case 155:
-#line 939 "WebCore/css/CSSGrammar.y"
+#line 939 "WebCore/css/CSSGrammar.ym"
     {
         if ((yyvsp[(1) - (1)].selector)) {
             CSSParser* p = static_cast<CSSParser*>(parser);
@@ -3218,7 +3218,7 @@ yyreduce:
     break;
 
   case 156:
-#line 947 "WebCore/css/CSSGrammar.y"
+#line 947 "WebCore/css/CSSGrammar.ym"
     {
         if ((yyvsp[(1) - (5)].selectorList) && (yyvsp[(5) - (5)].selector)) {
             CSSParser* p = static_cast<CSSParser*>(parser);
@@ -3230,14 +3230,14 @@ yyreduce:
     break;
 
   case 157:
-#line 955 "WebCore/css/CSSGrammar.y"
+#line 955 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.selectorList) = 0;
     ;}
     break;
 
   case 158:
-#line 961 "WebCore/css/CSSGrammar.y"
+#line 961 "WebCore/css/CSSGrammar.ym"
     {
         CSSParserString& str = (yyvsp[(1) - (1)].string);
         CSSParser* p = static_cast<CSSParser*>(parser);
@@ -3249,7 +3249,7 @@ yyreduce:
     break;
 
   case 159:
-#line 969 "WebCore/css/CSSGrammar.y"
+#line 969 "WebCore/css/CSSGrammar.ym"
     {
         static UChar star = '*';
         (yyval.string).characters = &star;
@@ -3258,14 +3258,14 @@ yyreduce:
     break;
 
   case 160:
-#line 977 "WebCore/css/CSSGrammar.y"
+#line 977 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.selector) = (yyvsp[(1) - (1)].selector);
     ;}
     break;
 
   case 161:
-#line 980 "WebCore/css/CSSGrammar.y"
+#line 980 "WebCore/css/CSSGrammar.ym"
     {
         if (!(yyvsp[(2) - (2)].selector))
             (yyval.selector) = 0;
@@ -3275,14 +3275,14 @@ yyreduce:
     break;
 
   case 162:
-#line 986 "WebCore/css/CSSGrammar.y"
+#line 986 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.selector) = 0;
     ;}
     break;
 
   case 163:
-#line 992 "WebCore/css/CSSGrammar.y"
+#line 992 "WebCore/css/CSSGrammar.ym"
     {
         CSSParser* p = static_cast<CSSParser*>(parser);
         (yyval.selector) = p->createFloatingSelector();
@@ -3294,7 +3294,7 @@ yyreduce:
     break;
 
   case 164:
-#line 1000 "WebCore/css/CSSGrammar.y"
+#line 1000 "WebCore/css/CSSGrammar.ym"
     {
         if ((yyvsp[(1) - (1)].string).characters[0] >= '0' && (yyvsp[(1) - (1)].string).characters[0] <= '9') {
             (yyval.selector) = 0;
@@ -3310,7 +3310,7 @@ yyreduce:
     break;
 
   case 168:
-#line 1018 "WebCore/css/CSSGrammar.y"
+#line 1018 "WebCore/css/CSSGrammar.ym"
     {
         CSSParser* p = static_cast<CSSParser*>(parser);
         (yyval.selector) = p->createFloatingSelector();
@@ -3322,7 +3322,7 @@ yyreduce:
     break;
 
   case 169:
-#line 1029 "WebCore/css/CSSGrammar.y"
+#line 1029 "WebCore/css/CSSGrammar.ym"
     {
         CSSParserString& str = (yyvsp[(1) - (2)].string);
         CSSParser* p = static_cast<CSSParser*>(parser);
@@ -3334,7 +3334,7 @@ yyreduce:
     break;
 
   case 170:
-#line 1040 "WebCore/css/CSSGrammar.y"
+#line 1040 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.selector) = static_cast<CSSParser*>(parser)->createFloatingSelector();
         (yyval.selector)->setAttribute(QualifiedName(nullAtom, (yyvsp[(3) - (4)].string), nullAtom));
@@ -3343,7 +3343,7 @@ yyreduce:
     break;
 
   case 171:
-#line 1045 "WebCore/css/CSSGrammar.y"
+#line 1045 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.selector) = static_cast<CSSParser*>(parser)->createFloatingSelector();
         (yyval.selector)->setAttribute(QualifiedName(nullAtom, (yyvsp[(3) - (8)].string), nullAtom));
@@ -3353,7 +3353,7 @@ yyreduce:
     break;
 
   case 172:
-#line 1051 "WebCore/css/CSSGrammar.y"
+#line 1051 "WebCore/css/CSSGrammar.ym"
     {
         AtomicString namespacePrefix = (yyvsp[(3) - (5)].string);
         CSSParser* p = static_cast<CSSParser*>(parser);
@@ -3365,7 +3365,7 @@ yyreduce:
     break;
 
   case 173:
-#line 1059 "WebCore/css/CSSGrammar.y"
+#line 1059 "WebCore/css/CSSGrammar.ym"
     {
         AtomicString namespacePrefix = (yyvsp[(3) - (9)].string);
         CSSParser* p = static_cast<CSSParser*>(parser);
@@ -3378,49 +3378,49 @@ yyreduce:
     break;
 
   case 174:
-#line 1071 "WebCore/css/CSSGrammar.y"
+#line 1071 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.integer) = CSSSelector::Exact;
     ;}
     break;
 
   case 175:
-#line 1074 "WebCore/css/CSSGrammar.y"
+#line 1074 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.integer) = CSSSelector::List;
     ;}
     break;
 
   case 176:
-#line 1077 "WebCore/css/CSSGrammar.y"
+#line 1077 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.integer) = CSSSelector::Hyphen;
     ;}
     break;
 
   case 177:
-#line 1080 "WebCore/css/CSSGrammar.y"
+#line 1080 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.integer) = CSSSelector::Begin;
     ;}
     break;
 
   case 178:
-#line 1083 "WebCore/css/CSSGrammar.y"
+#line 1083 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.integer) = CSSSelector::End;
     ;}
     break;
 
   case 179:
-#line 1086 "WebCore/css/CSSGrammar.y"
+#line 1086 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.integer) = CSSSelector::Contain;
     ;}
     break;
 
   case 182:
-#line 1097 "WebCore/css/CSSGrammar.y"
+#line 1097 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.selector) = static_cast<CSSParser*>(parser)->createFloatingSelector();
         (yyval.selector)->setMatch(CSSSelector::PagePseudoClass);
@@ -3433,7 +3433,7 @@ yyreduce:
     break;
 
   case 183:
-#line 1108 "WebCore/css/CSSGrammar.y"
+#line 1108 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.selector) = static_cast<CSSParser*>(parser)->createFloatingSelector();
         (yyval.selector)->setMatch(CSSSelector::PseudoClass);
@@ -3446,7 +3446,7 @@ yyreduce:
     break;
 
   case 184:
-#line 1117 "WebCore/css/CSSGrammar.y"
+#line 1117 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.selector) = static_cast<CSSParser*>(parser)->createFloatingSelector();
         (yyval.selector)->setMatch(CSSSelector::PseudoElement);
@@ -3458,7 +3458,7 @@ yyreduce:
     break;
 
   case 185:
-#line 1130 "WebCore/css/CSSGrammar.y"
+#line 1130 "WebCore/css/CSSGrammar.ym"
     {
         if ((yyvsp[(4) - (6)].selectorList)) {
             CSSParser *p = static_cast<CSSParser*>(parser);
@@ -3476,7 +3476,7 @@ yyreduce:
     break;
 
   case 186:
-#line 1145 "WebCore/css/CSSGrammar.y"
+#line 1145 "WebCore/css/CSSGrammar.ym"
     {
         CSSParser *p = static_cast<CSSParser*>(parser);
         (yyval.selector) = p->createFloatingSelector();
@@ -3490,7 +3490,7 @@ yyreduce:
     break;
 
   case 187:
-#line 1156 "WebCore/css/CSSGrammar.y"
+#line 1156 "WebCore/css/CSSGrammar.ym"
     {
         CSSParser *p = static_cast<CSSParser*>(parser);
         (yyval.selector) = p->createFloatingSelector();
@@ -3504,7 +3504,7 @@ yyreduce:
     break;
 
   case 188:
-#line 1167 "WebCore/css/CSSGrammar.y"
+#line 1167 "WebCore/css/CSSGrammar.ym"
     {
         CSSParser *p = static_cast<CSSParser*>(parser);
         (yyval.selector) = p->createFloatingSelector();
@@ -3526,7 +3526,7 @@ yyreduce:
     break;
 
   case 189:
-#line 1186 "WebCore/css/CSSGrammar.y"
+#line 1186 "WebCore/css/CSSGrammar.ym"
     {
         if (!(yyvsp[(4) - (6)].selector) || !(yyvsp[(4) - (6)].selector)->isSimple())
             (yyval.selector) = 0;
@@ -3546,14 +3546,14 @@ yyreduce:
     break;
 
   case 190:
-#line 1205 "WebCore/css/CSSGrammar.y"
+#line 1205 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.boolean) = (yyvsp[(1) - (1)].boolean);
     ;}
     break;
 
   case 191:
-#line 1208 "WebCore/css/CSSGrammar.y"
+#line 1208 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.boolean) = (yyvsp[(1) - (2)].boolean);
         if ( (yyvsp[(2) - (2)].boolean) )
@@ -3562,42 +3562,42 @@ yyreduce:
     break;
 
   case 192:
-#line 1213 "WebCore/css/CSSGrammar.y"
+#line 1213 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.boolean) = (yyvsp[(1) - (1)].boolean);
     ;}
     break;
 
   case 193:
-#line 1216 "WebCore/css/CSSGrammar.y"
+#line 1216 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.boolean) = false;
     ;}
     break;
 
   case 194:
-#line 1219 "WebCore/css/CSSGrammar.y"
+#line 1219 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.boolean) = false;
     ;}
     break;
 
   case 195:
-#line 1222 "WebCore/css/CSSGrammar.y"
+#line 1222 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.boolean) = (yyvsp[(1) - (2)].boolean);
     ;}
     break;
 
   case 196:
-#line 1225 "WebCore/css/CSSGrammar.y"
+#line 1225 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.boolean) = (yyvsp[(1) - (2)].boolean);
     ;}
     break;
 
   case 197:
-#line 1231 "WebCore/css/CSSGrammar.y"
+#line 1231 "WebCore/css/CSSGrammar.ym"
     {
         CSSParser* p = static_cast<CSSParser*>(parser);
         p->markPropertyStart();
@@ -3606,21 +3606,21 @@ yyreduce:
     break;
 
   case 198:
-#line 1236 "WebCore/css/CSSGrammar.y"
+#line 1236 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.boolean) = false;
     ;}
     break;
 
   case 199:
-#line 1239 "WebCore/css/CSSGrammar.y"
+#line 1239 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.boolean) = false;
     ;}
     break;
 
   case 200:
-#line 1242 "WebCore/css/CSSGrammar.y"
+#line 1242 "WebCore/css/CSSGrammar.ym"
     {
         CSSParser* p = static_cast<CSSParser*>(parser);
         p->markPropertyStart();
@@ -3629,14 +3629,14 @@ yyreduce:
     break;
 
   case 201:
-#line 1247 "WebCore/css/CSSGrammar.y"
+#line 1247 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.boolean) = false;
     ;}
     break;
 
   case 202:
-#line 1250 "WebCore/css/CSSGrammar.y"
+#line 1250 "WebCore/css/CSSGrammar.ym"
     {
         CSSParser* p = static_cast<CSSParser*>(parser);
         p->markPropertyStart();
@@ -3647,7 +3647,7 @@ yyreduce:
     break;
 
   case 203:
-#line 1257 "WebCore/css/CSSGrammar.y"
+#line 1257 "WebCore/css/CSSGrammar.ym"
     {
         CSSParser* p = static_cast<CSSParser*>(parser);
         p->markPropertyStart();
@@ -3656,7 +3656,7 @@ yyreduce:
     break;
 
   case 204:
-#line 1262 "WebCore/css/CSSGrammar.y"
+#line 1262 "WebCore/css/CSSGrammar.ym"
     {
         CSSParser* p = static_cast<CSSParser*>(parser);
         p->markPropertyStart();
@@ -3665,7 +3665,7 @@ yyreduce:
     break;
 
   case 205:
-#line 1270 "WebCore/css/CSSGrammar.y"
+#line 1270 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.boolean) = false;
         CSSParser* p = static_cast<CSSParser*>(parser);
@@ -3686,14 +3686,14 @@ yyreduce:
     break;
 
   case 206:
-#line 1288 "WebCore/css/CSSGrammar.y"
+#line 1288 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.boolean) = false;
     ;}
     break;
 
   case 207:
-#line 1292 "WebCore/css/CSSGrammar.y"
+#line 1292 "WebCore/css/CSSGrammar.ym"
     {
         /* The default movable type template has letter-spacing: .none;  Handle this by looking for
         error tokens at the start of an expr, recover the expr and then treat as an error, cleaning
@@ -3705,7 +3705,7 @@ yyreduce:
     break;
 
   case 208:
-#line 1301 "WebCore/css/CSSGrammar.y"
+#line 1301 "WebCore/css/CSSGrammar.ym"
     {
         /* When we encounter something like p {color: red !important fail;} we should drop the declaration */
         CSSParser* p = static_cast<CSSParser*>(parser);
@@ -3715,7 +3715,7 @@ yyreduce:
     break;
 
   case 209:
-#line 1308 "WebCore/css/CSSGrammar.y"
+#line 1308 "WebCore/css/CSSGrammar.ym"
     {
         /* Handle this case: div { text-align: center; !important } Just reduce away the stray !important. */
         (yyval.boolean) = false;
@@ -3723,7 +3723,7 @@ yyreduce:
     break;
 
   case 210:
-#line 1313 "WebCore/css/CSSGrammar.y"
+#line 1313 "WebCore/css/CSSGrammar.ym"
     {
         /* div { font-family: } Just reduce away this property with no value. */
         CSSParser* p = static_cast<CSSParser*>(parser);
@@ -3733,7 +3733,7 @@ yyreduce:
     break;
 
   case 211:
-#line 1320 "WebCore/css/CSSGrammar.y"
+#line 1320 "WebCore/css/CSSGrammar.ym"
     {
         /* if we come across rules with invalid values like this case: p { weight: *; }, just discard the rule */
         CSSParser* p = static_cast<CSSParser*>(parser);
@@ -3743,7 +3743,7 @@ yyreduce:
     break;
 
   case 212:
-#line 1327 "WebCore/css/CSSGrammar.y"
+#line 1327 "WebCore/css/CSSGrammar.ym"
     {
         /* if we come across: div { color{;color:maroon} }, ignore everything within curly brackets */
         (yyval.boolean) = false;
@@ -3751,24 +3751,24 @@ yyreduce:
     break;
 
   case 213:
-#line 1334 "WebCore/css/CSSGrammar.y"
+#line 1334 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.integer) = cssPropertyID((yyvsp[(1) - (2)].string));
     ;}
     break;
 
   case 214:
-#line 1340 "WebCore/css/CSSGrammar.y"
+#line 1340 "WebCore/css/CSSGrammar.ym"
     { (yyval.boolean) = true; ;}
     break;
 
   case 215:
-#line 1341 "WebCore/css/CSSGrammar.y"
+#line 1341 "WebCore/css/CSSGrammar.ym"
     { (yyval.boolean) = false; ;}
     break;
 
   case 216:
-#line 1345 "WebCore/css/CSSGrammar.y"
+#line 1345 "WebCore/css/CSSGrammar.ym"
     {
         CSSParser* p = static_cast<CSSParser*>(parser);
         (yyval.valueList) = p->createFloatingValueList();
@@ -3777,7 +3777,7 @@ yyreduce:
     break;
 
   case 217:
-#line 1350 "WebCore/css/CSSGrammar.y"
+#line 1350 "WebCore/css/CSSGrammar.ym"
     {
         CSSParser* p = static_cast<CSSParser*>(parser);
         (yyval.valueList) = (yyvsp[(1) - (3)].valueList);
@@ -3795,64 +3795,64 @@ yyreduce:
     break;
 
   case 218:
-#line 1364 "WebCore/css/CSSGrammar.y"
+#line 1364 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.valueList) = 0;
     ;}
     break;
 
   case 219:
-#line 1367 "WebCore/css/CSSGrammar.y"
+#line 1367 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.valueList) = 0;
     ;}
     break;
 
   case 220:
-#line 1370 "WebCore/css/CSSGrammar.y"
+#line 1370 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.valueList) = 0;
     ;}
     break;
 
   case 221:
-#line 1376 "WebCore/css/CSSGrammar.y"
+#line 1376 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.character) = '/';
     ;}
     break;
 
   case 222:
-#line 1379 "WebCore/css/CSSGrammar.y"
+#line 1379 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.character) = ',';
     ;}
     break;
 
   case 223:
-#line 1382 "WebCore/css/CSSGrammar.y"
+#line 1382 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.character) = 0;
   ;}
     break;
 
   case 224:
-#line 1388 "WebCore/css/CSSGrammar.y"
+#line 1388 "WebCore/css/CSSGrammar.ym"
     { (yyval.value) = (yyvsp[(1) - (1)].value); ;}
     break;
 
   case 225:
-#line 1389 "WebCore/css/CSSGrammar.y"
+#line 1389 "WebCore/css/CSSGrammar.ym"
     { (yyval.value) = (yyvsp[(2) - (2)].value); (yyval.value).fValue *= (yyvsp[(1) - (2)].integer); ;}
     break;
 
   case 226:
-#line 1390 "WebCore/css/CSSGrammar.y"
+#line 1390 "WebCore/css/CSSGrammar.ym"
     { (yyval.value).id = 0; (yyval.value).string = (yyvsp[(1) - (2)].string); (yyval.value).unit = CSSPrimitiveValue::CSS_STRING; ;}
     break;
 
   case 227:
-#line 1391 "WebCore/css/CSSGrammar.y"
+#line 1391 "WebCore/css/CSSGrammar.ym"
     {
       (yyval.value).id = cssValueKeywordID((yyvsp[(1) - (2)].string));
       (yyval.value).unit = CSSPrimitiveValue::CSS_IDENT;
@@ -3861,165 +3861,165 @@ yyreduce:
     break;
 
   case 228:
-#line 1397 "WebCore/css/CSSGrammar.y"
+#line 1397 "WebCore/css/CSSGrammar.ym"
     { (yyval.value).id = 0; (yyval.value).string = (yyvsp[(1) - (2)].string); (yyval.value).unit = CSSPrimitiveValue::CSS_DIMENSION; ;}
     break;
 
   case 229:
-#line 1398 "WebCore/css/CSSGrammar.y"
+#line 1398 "WebCore/css/CSSGrammar.ym"
     { (yyval.value).id = 0; (yyval.value).string = (yyvsp[(2) - (3)].string); (yyval.value).unit = CSSPrimitiveValue::CSS_DIMENSION; ;}
     break;
 
   case 230:
-#line 1399 "WebCore/css/CSSGrammar.y"
+#line 1399 "WebCore/css/CSSGrammar.ym"
     { (yyval.value).id = 0; (yyval.value).string = (yyvsp[(1) - (2)].string); (yyval.value).unit = CSSPrimitiveValue::CSS_URI; ;}
     break;
 
   case 231:
-#line 1400 "WebCore/css/CSSGrammar.y"
+#line 1400 "WebCore/css/CSSGrammar.ym"
     { (yyval.value).id = 0; (yyval.value).string = (yyvsp[(1) - (2)].string); (yyval.value).unit = CSSPrimitiveValue::CSS_UNICODE_RANGE; ;}
     break;
 
   case 232:
-#line 1401 "WebCore/css/CSSGrammar.y"
+#line 1401 "WebCore/css/CSSGrammar.ym"
     { (yyval.value).id = 0; (yyval.value).string = (yyvsp[(1) - (2)].string); (yyval.value).unit = CSSPrimitiveValue::CSS_PARSER_HEXCOLOR; ;}
     break;
 
   case 233:
-#line 1402 "WebCore/css/CSSGrammar.y"
+#line 1402 "WebCore/css/CSSGrammar.ym"
     { (yyval.value).id = 0; (yyval.value).string = CSSParserString(); (yyval.value).unit = CSSPrimitiveValue::CSS_PARSER_HEXCOLOR; ;}
     break;
 
   case 234:
-#line 1404 "WebCore/css/CSSGrammar.y"
+#line 1404 "WebCore/css/CSSGrammar.ym"
     {
       (yyval.value) = (yyvsp[(1) - (1)].value);
   ;}
     break;
 
   case 235:
-#line 1407 "WebCore/css/CSSGrammar.y"
+#line 1407 "WebCore/css/CSSGrammar.ym"
     {
       (yyval.value) = (yyvsp[(1) - (1)].value);
   ;}
     break;
 
   case 236:
-#line 1410 "WebCore/css/CSSGrammar.y"
+#line 1410 "WebCore/css/CSSGrammar.ym"
     {
       (yyval.value) = (yyvsp[(1) - (1)].value);
   ;}
     break;
 
   case 237:
-#line 1413 "WebCore/css/CSSGrammar.y"
+#line 1413 "WebCore/css/CSSGrammar.ym"
     { /* Handle width: %; */
       (yyval.value).id = 0; (yyval.value).unit = 0;
   ;}
     break;
 
   case 238:
-#line 1419 "WebCore/css/CSSGrammar.y"
+#line 1419 "WebCore/css/CSSGrammar.ym"
     { (yyval.value).id = 0; (yyval.value).isInt = true; (yyval.value).fValue = (yyvsp[(1) - (2)].number); (yyval.value).unit = CSSPrimitiveValue::CSS_NUMBER; ;}
     break;
 
   case 239:
-#line 1420 "WebCore/css/CSSGrammar.y"
+#line 1420 "WebCore/css/CSSGrammar.ym"
     { (yyval.value).id = 0; (yyval.value).isInt = false; (yyval.value).fValue = (yyvsp[(1) - (2)].number); (yyval.value).unit = CSSPrimitiveValue::CSS_NUMBER; ;}
     break;
 
   case 240:
-#line 1421 "WebCore/css/CSSGrammar.y"
+#line 1421 "WebCore/css/CSSGrammar.ym"
     { (yyval.value).id = 0; (yyval.value).fValue = (yyvsp[(1) - (2)].number); (yyval.value).unit = CSSPrimitiveValue::CSS_PERCENTAGE; ;}
     break;
 
   case 241:
-#line 1422 "WebCore/css/CSSGrammar.y"
+#line 1422 "WebCore/css/CSSGrammar.ym"
     { (yyval.value).id = 0; (yyval.value).fValue = (yyvsp[(1) - (2)].number); (yyval.value).unit = CSSPrimitiveValue::CSS_PX; ;}
     break;
 
   case 242:
-#line 1423 "WebCore/css/CSSGrammar.y"
+#line 1423 "WebCore/css/CSSGrammar.ym"
     { (yyval.value).id = 0; (yyval.value).fValue = (yyvsp[(1) - (2)].number); (yyval.value).unit = CSSPrimitiveValue::CSS_CM; ;}
     break;
 
   case 243:
-#line 1424 "WebCore/css/CSSGrammar.y"
+#line 1424 "WebCore/css/CSSGrammar.ym"
     { (yyval.value).id = 0; (yyval.value).fValue = (yyvsp[(1) - (2)].number); (yyval.value).unit = CSSPrimitiveValue::CSS_MM; ;}
     break;
 
   case 244:
-#line 1425 "WebCore/css/CSSGrammar.y"
+#line 1425 "WebCore/css/CSSGrammar.ym"
     { (yyval.value).id = 0; (yyval.value).fValue = (yyvsp[(1) - (2)].number); (yyval.value).unit = CSSPrimitiveValue::CSS_IN; ;}
     break;
 
   case 245:
-#line 1426 "WebCore/css/CSSGrammar.y"
+#line 1426 "WebCore/css/CSSGrammar.ym"
     { (yyval.value).id = 0; (yyval.value).fValue = (yyvsp[(1) - (2)].number); (yyval.value).unit = CSSPrimitiveValue::CSS_PT; ;}
     break;
 
   case 246:
-#line 1427 "WebCore/css/CSSGrammar.y"
+#line 1427 "WebCore/css/CSSGrammar.ym"
     { (yyval.value).id = 0; (yyval.value).fValue = (yyvsp[(1) - (2)].number); (yyval.value).unit = CSSPrimitiveValue::CSS_PC; ;}
     break;
 
   case 247:
-#line 1428 "WebCore/css/CSSGrammar.y"
+#line 1428 "WebCore/css/CSSGrammar.ym"
     { (yyval.value).id = 0; (yyval.value).fValue = (yyvsp[(1) - (2)].number); (yyval.value).unit = CSSPrimitiveValue::CSS_DEG; ;}
     break;
 
   case 248:
-#line 1429 "WebCore/css/CSSGrammar.y"
+#line 1429 "WebCore/css/CSSGrammar.ym"
     { (yyval.value).id = 0; (yyval.value).fValue = (yyvsp[(1) - (2)].number); (yyval.value).unit = CSSPrimitiveValue::CSS_RAD; ;}
     break;
 
   case 249:
-#line 1430 "WebCore/css/CSSGrammar.y"
+#line 1430 "WebCore/css/CSSGrammar.ym"
     { (yyval.value).id = 0; (yyval.value).fValue = (yyvsp[(1) - (2)].number); (yyval.value).unit = CSSPrimitiveValue::CSS_GRAD; ;}
     break;
 
   case 250:
-#line 1431 "WebCore/css/CSSGrammar.y"
+#line 1431 "WebCore/css/CSSGrammar.ym"
     { (yyval.value).id = 0; (yyval.value).fValue = (yyvsp[(1) - (2)].number); (yyval.value).unit = CSSPrimitiveValue::CSS_TURN; ;}
     break;
 
   case 251:
-#line 1432 "WebCore/css/CSSGrammar.y"
+#line 1432 "WebCore/css/CSSGrammar.ym"
     { (yyval.value).id = 0; (yyval.value).fValue = (yyvsp[(1) - (2)].number); (yyval.value).unit = CSSPrimitiveValue::CSS_MS; ;}
     break;
 
   case 252:
-#line 1433 "WebCore/css/CSSGrammar.y"
+#line 1433 "WebCore/css/CSSGrammar.ym"
     { (yyval.value).id = 0; (yyval.value).fValue = (yyvsp[(1) - (2)].number); (yyval.value).unit = CSSPrimitiveValue::CSS_S; ;}
     break;
 
   case 253:
-#line 1434 "WebCore/css/CSSGrammar.y"
+#line 1434 "WebCore/css/CSSGrammar.ym"
     { (yyval.value).id = 0; (yyval.value).fValue = (yyvsp[(1) - (2)].number); (yyval.value).unit = CSSPrimitiveValue::CSS_HZ; ;}
     break;
 
   case 254:
-#line 1435 "WebCore/css/CSSGrammar.y"
+#line 1435 "WebCore/css/CSSGrammar.ym"
     { (yyval.value).id = 0; (yyval.value).fValue = (yyvsp[(1) - (2)].number); (yyval.value).unit = CSSPrimitiveValue::CSS_KHZ; ;}
     break;
 
   case 255:
-#line 1436 "WebCore/css/CSSGrammar.y"
+#line 1436 "WebCore/css/CSSGrammar.ym"
     { (yyval.value).id = 0; (yyval.value).fValue = (yyvsp[(1) - (2)].number); (yyval.value).unit = CSSPrimitiveValue::CSS_EMS; ;}
     break;
 
   case 256:
-#line 1437 "WebCore/css/CSSGrammar.y"
+#line 1437 "WebCore/css/CSSGrammar.ym"
     { (yyval.value).id = 0; (yyval.value).fValue = (yyvsp[(1) - (2)].number); (yyval.value).unit = CSSParserValue::Q_EMS; ;}
     break;
 
   case 257:
-#line 1438 "WebCore/css/CSSGrammar.y"
+#line 1438 "WebCore/css/CSSGrammar.ym"
     { (yyval.value).id = 0; (yyval.value).fValue = (yyvsp[(1) - (2)].number); (yyval.value).unit = CSSPrimitiveValue::CSS_EXS; ;}
     break;
 
   case 258:
-#line 1439 "WebCore/css/CSSGrammar.y"
+#line 1439 "WebCore/css/CSSGrammar.ym"
     {
       (yyval.value).id = 0;
       (yyval.value).fValue = (yyvsp[(1) - (2)].number);
@@ -4031,7 +4031,7 @@ yyreduce:
     break;
 
   case 259:
-#line 1450 "WebCore/css/CSSGrammar.y"
+#line 1450 "WebCore/css/CSSGrammar.ym"
     {
         CSSParser* p = static_cast<CSSParser*>(parser);
         CSSParserFunction* f = p->createFloatingFunction();
@@ -4044,7 +4044,7 @@ yyreduce:
     break;
 
   case 260:
-#line 1459 "WebCore/css/CSSGrammar.y"
+#line 1459 "WebCore/css/CSSGrammar.ym"
     {
         CSSParser* p = static_cast<CSSParser*>(parser);
         CSSParserFunction* f = p->createFloatingFunction();
@@ -4057,45 +4057,45 @@ yyreduce:
     break;
 
   case 261:
-#line 1471 "WebCore/css/CSSGrammar.y"
+#line 1471 "WebCore/css/CSSGrammar.ym"
     { (yyval.value) = (yyvsp[(1) - (1)].value); ;}
     break;
 
   case 262:
-#line 1472 "WebCore/css/CSSGrammar.y"
+#line 1472 "WebCore/css/CSSGrammar.ym"
     { (yyval.value) = (yyvsp[(2) - (2)].value); (yyval.value).fValue *= (yyvsp[(1) - (2)].integer); ;}
     break;
 
   case 263:
-#line 1476 "WebCore/css/CSSGrammar.y"
+#line 1476 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.character) = '+';
     ;}
     break;
 
   case 264:
-#line 1479 "WebCore/css/CSSGrammar.y"
+#line 1479 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.character) = '-';
     ;}
     break;
 
   case 265:
-#line 1482 "WebCore/css/CSSGrammar.y"
+#line 1482 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.character) = '*';
     ;}
     break;
 
   case 266:
-#line 1485 "WebCore/css/CSSGrammar.y"
+#line 1485 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.character) = '/';
     ;}
     break;
 
   case 267:
-#line 1488 "WebCore/css/CSSGrammar.y"
+#line 1488 "WebCore/css/CSSGrammar.ym"
     {
         if (equalIgnoringCase("mod", (yyvsp[(1) - (2)].string).characters, (yyvsp[(1) - (2)].string).length))
             (yyval.character) = '%';
@@ -4105,7 +4105,7 @@ yyreduce:
     break;
 
   case 268:
-#line 1497 "WebCore/css/CSSGrammar.y"
+#line 1497 "WebCore/css/CSSGrammar.ym"
     {
         if ((yyvsp[(3) - (6)].valueList)) {
             (yyval.valueList) = (yyvsp[(3) - (6)].valueList);
@@ -4122,7 +4122,7 @@ yyreduce:
     break;
 
   case 269:
-#line 1512 "WebCore/css/CSSGrammar.y"
+#line 1512 "WebCore/css/CSSGrammar.ym"
     {
         CSSParser* p = static_cast<CSSParser*>(parser);
         (yyval.valueList) = p->createFloatingValueList();
@@ -4131,7 +4131,7 @@ yyreduce:
     break;
 
   case 270:
-#line 1517 "WebCore/css/CSSGrammar.y"
+#line 1517 "WebCore/css/CSSGrammar.ym"
     {
         CSSParser* p = static_cast<CSSParser*>(parser);
         if ((yyvsp[(1) - (3)].valueList) && (yyvsp[(2) - (3)].character)) {
@@ -4149,7 +4149,7 @@ yyreduce:
     break;
 
   case 271:
-#line 1531 "WebCore/css/CSSGrammar.y"
+#line 1531 "WebCore/css/CSSGrammar.ym"
     {
         if ((yyvsp[(1) - (3)].valueList) && (yyvsp[(2) - (3)].character) && (yyvsp[(3) - (3)].valueList)) {
             (yyval.valueList) = (yyvsp[(1) - (3)].valueList);
@@ -4165,21 +4165,21 @@ yyreduce:
     break;
 
   case 273:
-#line 1544 "WebCore/css/CSSGrammar.y"
+#line 1544 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.valueList) = 0;
     ;}
     break;
 
   case 274:
-#line 1550 "WebCore/css/CSSGrammar.y"
+#line 1550 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.valueList) = (yyvsp[(1) - (1)].valueList);
     ;}
     break;
 
   case 275:
-#line 1553 "WebCore/css/CSSGrammar.y"
+#line 1553 "WebCore/css/CSSGrammar.ym"
     {
         if ((yyvsp[(1) - (4)].valueList) && (yyvsp[(4) - (4)].valueList)) {
             (yyval.valueList) = (yyvsp[(1) - (4)].valueList);
@@ -4195,7 +4195,7 @@ yyreduce:
     break;
 
   case 276:
-#line 1568 "WebCore/css/CSSGrammar.y"
+#line 1568 "WebCore/css/CSSGrammar.ym"
     {
         CSSParser* p = static_cast<CSSParser*>(parser);
         CSSParserFunction* f = p->createFloatingFunction();
@@ -4208,28 +4208,28 @@ yyreduce:
     break;
 
   case 277:
-#line 1577 "WebCore/css/CSSGrammar.y"
+#line 1577 "WebCore/css/CSSGrammar.ym"
     {
         YYERROR;
     ;}
     break;
 
   case 278:
-#line 1584 "WebCore/css/CSSGrammar.y"
+#line 1584 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.string) = (yyvsp[(1) - (1)].string);
     ;}
     break;
 
   case 279:
-#line 1587 "WebCore/css/CSSGrammar.y"
+#line 1587 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.string) = (yyvsp[(1) - (1)].string);
     ;}
     break;
 
   case 280:
-#line 1593 "WebCore/css/CSSGrammar.y"
+#line 1593 "WebCore/css/CSSGrammar.ym"
     {
         CSSParser* p = static_cast<CSSParser*>(parser);
         CSSParserFunction* f = p->createFloatingFunction();
@@ -4242,56 +4242,56 @@ yyreduce:
     break;
 
   case 281:
-#line 1602 "WebCore/css/CSSGrammar.y"
+#line 1602 "WebCore/css/CSSGrammar.ym"
     {
         YYERROR;
     ;}
     break;
 
   case 282:
-#line 1610 "WebCore/css/CSSGrammar.y"
+#line 1610 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.rule) = 0;
     ;}
     break;
 
   case 283:
-#line 1613 "WebCore/css/CSSGrammar.y"
+#line 1613 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.rule) = 0;
     ;}
     break;
 
   case 284:
-#line 1619 "WebCore/css/CSSGrammar.y"
+#line 1619 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.rule) = 0;
     ;}
     break;
 
   case 285:
-#line 1622 "WebCore/css/CSSGrammar.y"
+#line 1622 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.rule) = 0;
     ;}
     break;
 
   case 286:
-#line 1628 "WebCore/css/CSSGrammar.y"
+#line 1628 "WebCore/css/CSSGrammar.ym"
     {
         (yyval.rule) = 0;
     ;}
     break;
 
   case 287:
-#line 1646 "WebCore/css/CSSGrammar.y"
+#line 1646 "WebCore/css/CSSGrammar.ym"
     {
         static_cast<CSSParser*>(parser)->invalidBlockHit();
     ;}
     break;
 
   case 288:
-#line 1649 "WebCore/css/CSSGrammar.y"
+#line 1649 "WebCore/css/CSSGrammar.ym"
     {
         static_cast<CSSParser*>(parser)->invalidBlockHit();
     ;}
@@ -4513,6 +4513,6 @@ yyreturn:
 }
 
 
-#line 1659 "WebCore/css/CSSGrammar.y"
+#line 1659 "WebCore/css/CSSGrammar.ym"
 
 
