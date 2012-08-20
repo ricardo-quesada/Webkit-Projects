@@ -30063,6 +30063,7 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -30091,6 +30092,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -30106,8 +30108,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/WebCore.dst;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_PREFIX_HEADER = "WebCore/WebCore-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -30141,8 +30142,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/WebCore.dst;
-				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_PREFIX_HEADER = "WebCore/WebCore-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
