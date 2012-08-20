@@ -50,6 +50,12 @@
 
 #include "RenderStyle.h"
 
+<<<<<<< HEAD
+=======
+//Ricardo: Agregando xq sigue usando los String de wtf
+
+
+>>>>>>> reverting String usage
 namespace WebCore {
 
 class AXObjectCache;
@@ -1206,7 +1212,11 @@ private:
     void detachParser();
 
     typedef void (*ArgumentsCallback)(const String& keyString, const String& valueString, Document*, void* data);
+<<<<<<< HEAD
     void processArguments(const String& features, void* data, ArgumentsCallback);
+=======
+    void processArguments(const String& features, void* data, ArgumentsCallback);//Ricardo: cambiando String x string
+>>>>>>> reverting String usage
 
     virtual bool isDocument() const { return true; }
 
