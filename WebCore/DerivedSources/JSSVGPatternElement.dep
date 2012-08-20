@@ -1,7 +1,0 @@
-JSSVGPatternElement.h : SVGURIReference.idl SVGTests.idl SVGLangSpace.idl SVGExternalResourcesRequired.idl SVGStylable.idl SVGFitToViewBox.idl
-SVGURIReference.idl :
-SVGTests.idl :
-SVGLangSpace.idl :
-SVGExternalResourcesRequired.idl :
-SVGStylable.idl :
-SVGFitToViewBox.idl :

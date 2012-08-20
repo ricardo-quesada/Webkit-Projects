@@ -1,6 +1,0 @@
-JSSVGFEImageElement.h : SVGURIReference.idl SVGLangSpace.idl SVGExternalResourcesRequired.idl SVGFilterPrimitiveStandardAttributes.idl SVGStylable.idl
-SVGURIReference.idl :
-SVGLangSpace.idl :
-SVGExternalResourcesRequired.idl :
-SVGFilterPrimitiveStandardAttributes.idl :
-SVGStylable.idl :
