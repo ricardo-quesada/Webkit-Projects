@@ -1664,8 +1664,6 @@
 		215F2A4715AAA35300584D2E /* SchedulePair.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 215F132915AAA34B00584D2E /* SchedulePair.cpp */; };
 		215F2A4815AAA35300584D2E /* SchedulePair.h in Headers */ = {isa = PBXBuildFile; fileRef = 215F132A15AAA34B00584D2E /* SchedulePair.h */; };
 		215F2A4915AAA35300584D2E /* SharedBufferCF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 215F132B15AAA34B00584D2E /* SharedBufferCF.cpp */; };
-		215F2A4A15AAA35300584D2E /* CertificateCFWin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 215F132D15AAA34B00584D2E /* CertificateCFWin.cpp */; };
-		215F2A4B15AAA35300584D2E /* CertificateCFWin.h in Headers */ = {isa = PBXBuildFile; fileRef = 215F132E15AAA34B00584D2E /* CertificateCFWin.h */; };
 		215F2A9C15AAA35400584D2E /* ContentType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 215F138215AAA34B00584D2E /* ContentType.cpp */; };
 		215F2A9D15AAA35400584D2E /* ContentType.h in Headers */ = {isa = PBXBuildFile; fileRef = 215F138315AAA34B00584D2E /* ContentType.h */; };
 		215F2A9E15AAA35400584D2E /* ContextMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 215F138415AAA34B00584D2E /* ContextMenu.cpp */; };
@@ -2010,7 +2008,6 @@
 		215F2E3715AAA35400584D2E /* BMPImageDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 215F174615AAA34C00584D2E /* BMPImageDecoder.h */; };
 		215F2E3815AAA35400584D2E /* BMPImageReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 215F174715AAA34C00584D2E /* BMPImageReader.cpp */; };
 		215F2E3915AAA35400584D2E /* BMPImageReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 215F174815AAA34C00584D2E /* BMPImageReader.h */; };
-		215F2E3A15AAA35400584D2E /* ImageDecoderCairo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 215F174A15AAA34C00584D2E /* ImageDecoderCairo.cpp */; };
 		215F2E3B15AAA35400584D2E /* ImageDecoderCG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 215F174C15AAA34C00584D2E /* ImageDecoderCG.cpp */; };
 		215F2E3C15AAA35400584D2E /* GIFImageDecoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 215F174E15AAA34C00584D2E /* GIFImageDecoder.cpp */; };
 		215F2E3D15AAA35400584D2E /* GIFImageDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 215F174F15AAA34C00584D2E /* GIFImageDecoder.h */; };
@@ -2026,11 +2023,8 @@
 		215F2E4715AAA35400584D2E /* ImageDecoderOpenVG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 215F175D15AAA34C00584D2E /* ImageDecoderOpenVG.cpp */; };
 		215F2E4815AAA35400584D2E /* PNGImageDecoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 215F175F15AAA34C00584D2E /* PNGImageDecoder.cpp */; };
 		215F2E4915AAA35400584D2E /* PNGImageDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 215F176015AAA34C00584D2E /* PNGImageDecoder.h */; };
-		215F2E4A15AAA35400584D2E /* ImageFrameQt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 215F176215AAA34C00584D2E /* ImageFrameQt.cpp */; };
-		215F2E4B15AAA35400584D2E /* ImageDecoderSkia.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 215F176415AAA34C00584D2E /* ImageDecoderSkia.cpp */; };
 		215F2E4C15AAA35400584D2E /* WEBPImageDecoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 215F176615AAA34C00584D2E /* WEBPImageDecoder.cpp */; };
 		215F2E4D15AAA35400584D2E /* WEBPImageDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 215F176715AAA34C00584D2E /* WEBPImageDecoder.h */; };
-		215F2E4E15AAA35400584D2E /* ImageDecoderWx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 215F176915AAA34C00584D2E /* ImageDecoderWx.cpp */; };
 		215F2E4F15AAA35400584D2E /* JPEGImageEncoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 215F176B15AAA34C00584D2E /* JPEGImageEncoder.cpp */; };
 		215F2E5015AAA35400584D2E /* JPEGImageEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 215F176C15AAA34C00584D2E /* JPEGImageEncoder.h */; };
 		215F2E5115AAA35400584D2E /* PNGImageEncoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 215F176D15AAA34C00584D2E /* PNGImageEncoder.cpp */; };
@@ -6298,6 +6292,9 @@
 		4A20778915DACF4400D8D0FA /* SurfaceOpenVG.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A20777815DACF4400D8D0FA /* SurfaceOpenVG.h */; };
 		4A2077C415DB049600D8D0FA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A2077C315DB049500D8D0FA /* Security.framework */; };
 		4A2077F915DB075B00D8D0FA /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A2077F815DB075B00D8D0FA /* MobileCoreServices.framework */; };
+		4AA9E7B815E2DD1800747162 /* TiledImageOpenVG.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AA9E7B715E2DD1800747162 /* TiledImageOpenVG.h */; };
+		4AA9E7BB15E2DD4E00747162 /* SharedResourceOpenVG.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AA9E7BA15E2DD4E00747162 /* SharedResourceOpenVG.h */; };
+		4AA9E7BD15E2F18800747162 /* VGUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AA9E7BC15E2F18800747162 /* VGUtils.h */; };
 		4AD7B95E15D1D63F00C03812 /* BridgeJSC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4AD7B95C15D1D63F00C03812 /* BridgeJSC.cpp */; };
 		4AD7B95F15D1D63F00C03812 /* BridgeJSC.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AD7B95D15D1D63F00C03812 /* BridgeJSC.h */; };
 		4AD7B98C15D1D86D00C03812 /* JavaMethod.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AD7B96215D1D86D00C03812 /* JavaMethod.h */; };
@@ -8912,8 +8909,6 @@
 		215F132915AAA34B00584D2E /* SchedulePair.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SchedulePair.cpp; sourceTree = "<group>"; };
 		215F132A15AAA34B00584D2E /* SchedulePair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchedulePair.h; sourceTree = "<group>"; };
 		215F132B15AAA34B00584D2E /* SharedBufferCF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SharedBufferCF.cpp; sourceTree = "<group>"; };
-		215F132D15AAA34B00584D2E /* CertificateCFWin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CertificateCFWin.cpp; sourceTree = "<group>"; };
-		215F132E15AAA34B00584D2E /* CertificateCFWin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CertificateCFWin.h; sourceTree = "<group>"; };
 		215F138115AAA34B00584D2E /* ColorData.gperf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ColorData.gperf; sourceTree = "<group>"; };
 		215F138215AAA34B00584D2E /* ContentType.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ContentType.cpp; sourceTree = "<group>"; };
 		215F138315AAA34B00584D2E /* ContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentType.h; sourceTree = "<group>"; };
@@ -9680,7 +9675,6 @@
 		215F174615AAA34C00584D2E /* BMPImageDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMPImageDecoder.h; sourceTree = "<group>"; };
 		215F174715AAA34C00584D2E /* BMPImageReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BMPImageReader.cpp; sourceTree = "<group>"; };
 		215F174815AAA34C00584D2E /* BMPImageReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMPImageReader.h; sourceTree = "<group>"; };
-		215F174A15AAA34C00584D2E /* ImageDecoderCairo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageDecoderCairo.cpp; sourceTree = "<group>"; };
 		215F174C15AAA34C00584D2E /* ImageDecoderCG.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageDecoderCG.cpp; sourceTree = "<group>"; };
 		215F174E15AAA34C00584D2E /* GIFImageDecoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GIFImageDecoder.cpp; sourceTree = "<group>"; };
 		215F174F15AAA34C00584D2E /* GIFImageDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIFImageDecoder.h; sourceTree = "<group>"; };
@@ -9696,11 +9690,8 @@
 		215F175D15AAA34C00584D2E /* ImageDecoderOpenVG.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageDecoderOpenVG.cpp; sourceTree = "<group>"; };
 		215F175F15AAA34C00584D2E /* PNGImageDecoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PNGImageDecoder.cpp; sourceTree = "<group>"; };
 		215F176015AAA34C00584D2E /* PNGImageDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNGImageDecoder.h; sourceTree = "<group>"; };
-		215F176215AAA34C00584D2E /* ImageFrameQt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageFrameQt.cpp; sourceTree = "<group>"; };
-		215F176415AAA34C00584D2E /* ImageDecoderSkia.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageDecoderSkia.cpp; sourceTree = "<group>"; };
 		215F176615AAA34C00584D2E /* WEBPImageDecoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WEBPImageDecoder.cpp; sourceTree = "<group>"; };
 		215F176715AAA34C00584D2E /* WEBPImageDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WEBPImageDecoder.h; sourceTree = "<group>"; };
-		215F176915AAA34C00584D2E /* ImageDecoderWx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageDecoderWx.cpp; sourceTree = "<group>"; };
 		215F176B15AAA34C00584D2E /* JPEGImageEncoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JPEGImageEncoder.cpp; sourceTree = "<group>"; };
 		215F176C15AAA34C00584D2E /* JPEGImageEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPEGImageEncoder.h; sourceTree = "<group>"; };
 		215F176D15AAA34C00584D2E /* PNGImageEncoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PNGImageEncoder.cpp; sourceTree = "<group>"; };
@@ -14267,6 +14258,9 @@
 		4A20777815DACF4400D8D0FA /* SurfaceOpenVG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurfaceOpenVG.h; sourceTree = "<group>"; };
 		4A2077C315DB049500D8D0FA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		4A2077F815DB075B00D8D0FA /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		4AA9E7B715E2DD1800747162 /* TiledImageOpenVG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TiledImageOpenVG.h; sourceTree = "<group>"; };
+		4AA9E7BA15E2DD4E00747162 /* SharedResourceOpenVG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedResourceOpenVG.h; sourceTree = "<group>"; };
+		4AA9E7BC15E2F18800747162 /* VGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VGUtils.h; sourceTree = "<group>"; };
 		4AD7B95C15D1D63F00C03812 /* BridgeJSC.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BridgeJSC.cpp; sourceTree = "<group>"; };
 		4AD7B95D15D1D63F00C03812 /* BridgeJSC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgeJSC.h; sourceTree = "<group>"; };
 		4AD7B96215D1D86D00C03812 /* JavaMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JavaMethod.h; sourceTree = "<group>"; };
@@ -17437,18 +17431,8 @@
 				215F132915AAA34B00584D2E /* SchedulePair.cpp */,
 				215F132A15AAA34B00584D2E /* SchedulePair.h */,
 				215F132B15AAA34B00584D2E /* SharedBufferCF.cpp */,
-				215F132C15AAA34B00584D2E /* win */,
 			);
 			path = cf;
-			sourceTree = "<group>";
-		};
-		215F132C15AAA34B00584D2E /* win */ = {
-			isa = PBXGroup;
-			children = (
-				215F132D15AAA34B00584D2E /* CertificateCFWin.cpp */,
-				215F132E15AAA34B00584D2E /* CertificateCFWin.h */,
-			);
-			path = win;
 			sourceTree = "<group>";
 		};
 		215F13CE15AAA34B00584D2E /* graphics */ = {
@@ -18457,7 +18441,6 @@
 				215F175915AAA34C00584D2E /* jpeg */,
 				215F175C15AAA34C00584D2E /* openvg */,
 				215F175E15AAA34C00584D2E /* png */,
-				215F176115AAA34C00584D2E /* qt */,
 				215F176315AAA34C00584D2E /* skia */,
 				215F176515AAA34C00584D2E /* webp */,
 				215F176815AAA34C00584D2E /* wx */,
@@ -18479,7 +18462,6 @@
 		215F174915AAA34C00584D2E /* cairo */ = {
 			isa = PBXGroup;
 			children = (
-				215F174A15AAA34C00584D2E /* ImageDecoderCairo.cpp */,
 			);
 			path = cairo;
 			sourceTree = "<group>";
@@ -18546,18 +18528,9 @@
 			path = png;
 			sourceTree = "<group>";
 		};
-		215F176115AAA34C00584D2E /* qt */ = {
-			isa = PBXGroup;
-			children = (
-				215F176215AAA34C00584D2E /* ImageFrameQt.cpp */,
-			);
-			path = qt;
-			sourceTree = "<group>";
-		};
 		215F176315AAA34C00584D2E /* skia */ = {
 			isa = PBXGroup;
 			children = (
-				215F176415AAA34C00584D2E /* ImageDecoderSkia.cpp */,
 			);
 			path = skia;
 			sourceTree = "<group>";
@@ -18574,7 +18547,6 @@
 		215F176815AAA34C00584D2E /* wx */ = {
 			isa = PBXGroup;
 			children = (
-				215F176915AAA34C00584D2E /* ImageDecoderWx.cpp */,
 			);
 			path = wx;
 			sourceTree = "<group>";
@@ -23550,6 +23522,9 @@
 		4A20776B15DACF4400D8D0FA /* openvg */ = {
 			isa = PBXGroup;
 			children = (
+				4AA9E7BC15E2F18800747162 /* VGUtils.h */,
+				4AA9E7BA15E2DD4E00747162 /* SharedResourceOpenVG.h */,
+				4AA9E7B715E2DD1800747162 /* TiledImageOpenVG.h */,
 				4A20777715DACF4400D8D0FA /* SurfaceOpenVG.cpp */,
 				4A20777815DACF4400D8D0FA /* SurfaceOpenVG.h */,
 			);
@@ -24662,7 +24637,6 @@
 				215F2A2015AAA35300584D2E /* AutodrainedPool.h in Headers */,
 				215F2A4315AAA35300584D2E /* BinaryPropertyList.h in Headers */,
 				215F2A4815AAA35300584D2E /* SchedulePair.h in Headers */,
-				215F2A4B15AAA35300584D2E /* CertificateCFWin.h in Headers */,
 				215F2A9D15AAA35400584D2E /* ContentType.h in Headers */,
 				215F2A9F15AAA35400584D2E /* ContextMenu.h in Headers */,
 				215F2AA115AAA35400584D2E /* ContextMenuItem.h in Headers */,
@@ -27371,6 +27345,9 @@
 				4AE7E6F615DEAA6A007DAC7B /* scrollbar_render.h in Headers */,
 				4AE7E76B15DEC1E7007DAC7B /* SoftLinking.h in Headers */,
 				4AE7E78215DEF200007DAC7B /* WebCoreNSStringExtras.h in Headers */,
+				4AA9E7B815E2DD1800747162 /* TiledImageOpenVG.h in Headers */,
+				4AA9E7BB15E2DD4E00747162 /* SharedResourceOpenVG.h in Headers */,
+				4AA9E7BD15E2F18800747162 /* VGUtils.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -28195,7 +28172,6 @@
 				215F2A4615AAA35300584D2E /* RunLoopTimerCF.cpp in Sources */,
 				215F2A4715AAA35300584D2E /* SchedulePair.cpp in Sources */,
 				215F2A4915AAA35300584D2E /* SharedBufferCF.cpp in Sources */,
-				215F2A4A15AAA35300584D2E /* CertificateCFWin.cpp in Sources */,
 				215F2A9C15AAA35400584D2E /* ContentType.cpp in Sources */,
 				215F2A9E15AAA35400584D2E /* ContextMenu.cpp in Sources */,
 				215F2AA015AAA35400584D2E /* ContextMenuItem.cpp in Sources */,
@@ -28211,7 +28187,6 @@
 				215F2AE515AAA35400584D2E /* GeolocationService.cpp in Sources */,
 				215F2E3615AAA35400584D2E /* BMPImageDecoder.cpp in Sources */,
 				215F2E3815AAA35400584D2E /* BMPImageReader.cpp in Sources */,
-				215F2E3A15AAA35400584D2E /* ImageDecoderCairo.cpp in Sources */,
 				215F2E3B15AAA35400584D2E /* ImageDecoderCG.cpp in Sources */,
 				215F2E3C15AAA35400584D2E /* GIFImageDecoder.cpp in Sources */,
 				215F2E3E15AAA35400584D2E /* GIFImageReader.cpp in Sources */,
@@ -28221,10 +28196,7 @@
 				215F2E4515AAA35400584D2E /* JPEGImageDecoder.cpp in Sources */,
 				215F2E4715AAA35400584D2E /* ImageDecoderOpenVG.cpp in Sources */,
 				215F2E4815AAA35400584D2E /* PNGImageDecoder.cpp in Sources */,
-				215F2E4A15AAA35400584D2E /* ImageFrameQt.cpp in Sources */,
-				215F2E4B15AAA35400584D2E /* ImageDecoderSkia.cpp in Sources */,
 				215F2E4C15AAA35400584D2E /* WEBPImageDecoder.cpp in Sources */,
-				215F2E4E15AAA35400584D2E /* ImageDecoderWx.cpp in Sources */,
 				215F2E4F15AAA35400584D2E /* JPEGImageEncoder.cpp in Sources */,
 				215F2E5115AAA35400584D2E /* PNGImageEncoder.cpp in Sources */,
 				215F2E5315AAA35400584D2E /* JPEGImageEncoder.cpp in Sources */,
@@ -30367,6 +30339,7 @@
 					"ENABLE_WTF_MULTIPLE_THREADS=0",
 					"ENABLE_JSC_MULTIPLE_THREADS=0",
 					"CHECK_HASHTABLE_ITERATORS=0",
+					"SKIA=1",
 				);
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/..\"",
@@ -30374,6 +30347,8 @@
 					"\"$(SRCROOT)/icu\"",
 					"\"$(SRCROOT)/../JavaScriptCore\"",
 					"\"$(SRCROOT)/JavaScriptHeaders\"",
+					"\"$(SRCROOT)/../Extraheaders/libjpeg\"",
+					"\"$(SRCROOT)/../Extraheaders/libpng\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -30400,6 +30375,7 @@
 					"ENABLE_WTF_MULTIPLE_THREADS=0",
 					"ENABLE_JSC_MULTIPLE_THREADS=0",
 					"CHECK_HASHTABLE_ITERATORS=0",
+					"SKIA=1",
 				);
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/..\"",
@@ -30407,6 +30383,8 @@
 					"\"$(SRCROOT)/icu\"",
 					"\"$(SRCROOT)/../JavaScriptCore\"",
 					"\"$(SRCROOT)/JavaScriptHeaders\"",
+					"\"$(SRCROOT)/../Extraheaders/libjpeg\"",
+					"\"$(SRCROOT)/../Extraheaders/libpng\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";

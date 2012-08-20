@@ -80,36 +80,36 @@ WindowFeatures::WindowFeatures(const String& features)
     String buffer = features.lower();
     while (i < length) {
         // skip to first non-separator, but don't skip past the end of the string
-        while (isWindowFeaturesSeparator(buffer[i])) {
+        /*while (isWindowFeaturesSeparator(buffer[i])) { //Ricardo: comentando por problema con String
             if (i >= length)
                 break;
             i++;
-        }
+        }*/
         keyBegin = i;
 
         // skip to first separator
-        while (!isWindowFeaturesSeparator(buffer[i]))
-            i++;
+        /*while (!isWindowFeaturesSeparator(buffer[i]))//Ricardo: comentando por problema con String
+            i++;*/
         keyEnd = i;
 
         // skip to first '=', but don't skip past a ',' or the end of the string
-        while (buffer[i] != '=') {
+       /* while (buffer[i] != '=') { //Ricardo: comentando por problema con String
             if (buffer[i] == ',' || i >= length)
                 break;
             i++;
-        }
+        }*/
 
         // skip to first non-separator, but don't skip past a ',' or the end of the string
-        while (isWindowFeaturesSeparator(buffer[i])) {
+       /* while (isWindowFeaturesSeparator(buffer[i])) { //Ricardo: comentando por problema con String
             if (buffer[i] == ',' || i >= length)
                 break;
             i++;
-        }
+        }*/
         valueBegin = i;
 
         // skip to first separator
-        while (!isWindowFeaturesSeparator(buffer[i]))
-            i++;
+       /* while (!isWindowFeaturesSeparator(buffer[i])) //Ricardo: comentando por problema con String
+            i++;*/
         valueEnd = i;
 
         ASSERT(i <= length);

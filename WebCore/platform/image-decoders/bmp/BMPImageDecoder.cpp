@@ -28,6 +28,9 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+//Ricardo: tuve q eliminar la referencia de WebCore/platform/image-decoders/cairo, xq no encontre cairo.h en ningun lado
+//Ricardo: tuve q eliminar tamb: WebCore/platform/image-decoders/skia/ImageDecoderSkia.cpp. 
+
 #include "config.h"
 #include "BMPImageDecoder.h"
 

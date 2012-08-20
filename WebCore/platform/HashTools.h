@@ -17,6 +17,8 @@
  * Boston, MA 02110-1301, USA.
  */
 
+//Ricardo: borre la referencia de WebCore/platform/image-decoders/wx/ImageDecoderWx.cpp. xq no encuentro las cosas wx/...
+
 #ifndef HashTools_h
 #define HashTools_h
 

@@ -33,7 +33,8 @@ namespace WebCore {
 
 NativeImagePtr ImageFrame::asNewNativeImage() const
 {
-    int bytesPerRow = width() * sizeof(PixelData);
+    //Ricardo: no se encontraba ni: BBitmap, uint8, uint16... tuve q comentarlo para continuar.
+   /* int bytesPerRow = width() * sizeof(PixelData);
     OwnPtr<BBitmap> bitmap(new BBitmap(BRect(0, 0, width() - 1, height() - 1), 0, B_RGBA32, bytesPerRow));
 
     const uint8* source = reinterpret_cast<const uint8*>(m_bytes);
@@ -66,8 +67,10 @@ NativeImagePtr ImageFrame::asNewNativeImage() const
         destination += bytesPerRow;
         source += bytesPerRow;
     }
-
     return bitmap.release();
+*/
+    CGImageRef bitmap;
+    return bitmap;
 }
 
 } // namespace WebCore

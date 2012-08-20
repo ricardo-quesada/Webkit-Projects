@@ -71,7 +71,10 @@ NativeImagePtr ImageFrame::asNewNativeImage() const
         }
     }
 
-    return tiledImage;
+    //Ricardo: no me estaba aceptando este return
+    //return tiledImage;
+    NativeImagePtr nativeptr; //Tuve q devolver este mae a lo loco
+    return nativeptr;
 }
 
 }

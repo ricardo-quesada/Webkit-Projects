@@ -17,6 +17,8 @@
  * Boston, MA 02110-1301, USA.
  */
 
+//Ricardo: elimine la carpeta de qt de WebCore/platform/image-decoders/qt
+
 #ifndef TiledImageOpenVG_h
 #define TiledImageOpenVG_h
 
