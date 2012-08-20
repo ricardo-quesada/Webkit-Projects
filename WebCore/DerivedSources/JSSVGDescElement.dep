@@ -1,0 +1,3 @@
+JSSVGDescElement.h : SVGLangSpace.idl SVGStylable.idl
+SVGLangSpace.idl :
+SVGStylable.idl :

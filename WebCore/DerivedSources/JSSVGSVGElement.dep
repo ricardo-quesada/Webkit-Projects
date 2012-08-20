@@ -1,0 +1,8 @@
+JSSVGSVGElement.h : SVGTests.idl SVGLangSpace.idl SVGExternalResourcesRequired.idl SVGStylable.idl SVGLocatable.idl SVGFitToViewBox.idl SVGZoomAndPan.idl
+SVGTests.idl :
+SVGLangSpace.idl :
+SVGExternalResourcesRequired.idl :
+SVGStylable.idl :
+SVGLocatable.idl :
+SVGFitToViewBox.idl :
+SVGZoomAndPan.idl :
