@@ -357,9 +357,9 @@ String CSSMutableStyleDeclaration::getLayeredShorthandValue(const int* propertie
                     // Color only belongs in the last layer.
                     if (properties[j] == CSSPropertyBackgroundColor) {
                         if (i != numLayers - 1)
-                            value = 0;
+                            value = nullptr;
                     } else if (i != 0) // Other singletons only belong in the first layer.
-                        value = 0;
+                        value = nullptr;
                 }
             }
 

@@ -231,9 +231,9 @@ void CachedFrame::clear()
     for (int i = m_childFrames.size() - 1; i >= 0; --i)
         m_childFrames[i]->clear();
 
-    m_document = 0;
-    m_view = 0;
-    m_mousePressNode = 0;
+    m_document = nullptr; //Ricardo: reemplazando 0
+    m_view = nullptr; //Ricardo: reemplazando 0
+    m_mousePressNode = nullptr; //Ricardo: reemplazando 0
     m_url = KURL();
 
     m_cachedFramePlatformData.clear();

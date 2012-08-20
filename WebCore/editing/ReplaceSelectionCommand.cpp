@@ -506,8 +506,8 @@ void ReplaceSelectionCommand::removeUnrenderedTextNodesAtEnds()
         && !enclosingNodeWithTag(firstPositionInOrBeforeNode(m_lastLeafInserted.get()), scriptTag)) {
         if (m_firstNodeInserted == m_lastLeafInserted) {
             removeNode(m_lastLeafInserted.get());
-            m_lastLeafInserted = 0;
-            m_firstNodeInserted = 0;
+            m_lastLeafInserted = nullptr; //Ricardo: cambiando 0
+            m_firstNodeInserted = nullptr; //Ricardo: cambiando 0
             return;
         }
         RefPtr<Node> previous = m_lastLeafInserted->traversePreviousNode();
@@ -521,8 +521,8 @@ void ReplaceSelectionCommand::removeUnrenderedTextNodesAtEnds()
         m_firstNodeInserted->isTextNode()) {
         if (m_firstNodeInserted == m_lastLeafInserted) {
             removeNode(m_firstNodeInserted.get());
-            m_firstNodeInserted = 0;
-            m_lastLeafInserted = 0;
+            m_firstNodeInserted = nullptr; //Ricardo: cambiando 0
+            m_lastLeafInserted = nullptr; //Ricardo: cambiando 0
             return;
         }
         RefPtr<Node> next = m_firstNodeInserted->traverseNextSibling();

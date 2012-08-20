@@ -361,7 +361,7 @@ void XMLDocumentParser::notifyFinished(CachedResource* unusedResource)
     m_pendingScript = 0;
 
     RefPtr<Element> e = m_scriptElement;
-    m_scriptElement = 0;
+    m_scriptElement = nullptr;//Ricardo: reemplazando 0
 
     ScriptElement* scriptElement = toScriptElement(e.get());
     ASSERT(scriptElement);
@@ -376,7 +376,7 @@ void XMLDocumentParser::notifyFinished(CachedResource* unusedResource)
         scriptElement->dispatchLoadEvent();
     }
 
-    m_scriptElement = 0;
+    m_scriptElement = nullptr;//Ricardo: reemplazando 0
 
     if (!isDetached() && !m_requestingScript)
         resumeParsing();

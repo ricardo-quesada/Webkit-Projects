@@ -86,7 +86,7 @@ void DocumentWriter::replaceDocument(const String& source, Document* ownerDocume
 
 void DocumentWriter::clear()
 {
-    m_decoder = 0;
+    m_decoder = nullptr; //Ricardo: reemplazando 0
     m_receivedData = false;
     if (!m_encodingWasChosenByUser)
         m_encoding = String();

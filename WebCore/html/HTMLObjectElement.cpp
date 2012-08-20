@@ -160,7 +160,8 @@ static void mapDataParamToSrc(Vector<String>* paramNames, Vector<String>* paramV
 
 static bool shouldNotPerformURLAdjustment()
 {
-    static bool shouldNotPerformURLAdjustment = applicationIsNASAHD() && !_CFExecutableLinkedOnOrAfter(CFSystemVersionTelluride);
+    //static bool shouldNotPerformURLAdjustment = applicationIsNASAHD() && !_CFExecutableLinkedOnOrAfter(CFSystemVersionTelluride); //Ricardo: comentando para eliminar
+    static bool shouldNotPerformURLAdjustment = applicationIsNASAHD();
     return shouldNotPerformURLAdjustment;
 }
 
@@ -402,7 +403,9 @@ void HTMLObjectElement::childrenChanged(bool changedByParser, Node* beforeChange
 
 bool HTMLObjectElement::isURLAttribute(Attribute *attr) const
 {
-    return (attr->name() == dataAttr || (attr->name() == usemapAttr && attr->value().string()[0] != '#'));
+   // return (attr->name() == dataAttr || (attr->name() == usemapAttr && attr->value().string()[0] != '#')); //Ricardo: comentando para eliminar lo de string
+
+    return (attr->name() == dataAttr || (attr->name() == usemapAttr));
 }
 
 const QualifiedName& HTMLObjectElement::imageSourceAttributeName() const

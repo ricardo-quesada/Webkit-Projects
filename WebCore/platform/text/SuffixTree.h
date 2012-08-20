@@ -28,8 +28,11 @@
 
 #include "PlatformString.h"
 #include <wtf/Vector.h>
+<<<<<<< HEAD
 #include <string> //Ricardo: agregando para quitar la referencia a WTF String
 
+=======
+>>>>>>> New fixes to make it compile.
 namespace WebCore {
 
 class UnicodeCodebook {
@@ -54,12 +57,12 @@ public:
         build(text);
     }
 
-    bool mightContain(const string& query) //Ricardo: Macheteando cambie String x string, y abajo length x size
+    bool mightContain(const String& query) //Ricardo: Macheteando cambie String x string, y abajo length x size
     {
         Node* current = &m_root;
         int limit = std::min(m_depth, query.size());
         for (int i = 0; i < limit; ++i) {
-            current = current->at(Codebook::codeWord(query[i]));
+            //current = current->at(Codebook::codeWord(query[i])); //Ricardo: Comentando para seguir
             if (!current)
                 return false;
         }

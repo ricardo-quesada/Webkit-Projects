@@ -124,7 +124,7 @@ ObjcInstance::~ObjcInstance()
 
     if ([_instance.get() respondsToSelector:@selector(finalizeForWebScript)])
         [_instance.get() performSelector:@selector(finalizeForWebScript)];
-    _instance = 0;
+    _instance = nullptr;
 
     [pool drain];
 }

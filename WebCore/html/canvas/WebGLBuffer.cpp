@@ -87,7 +87,7 @@ bool WebGLBuffer::associateBufferDataImpl(ArrayBuffer* array, GC3Dintptr byteOff
                        byteLength);
             }
         } else
-            m_elementArrayBuffer = 0;
+            m_elementArrayBuffer = nullptr; //Ricardo: reemplazando 0
         return true;
     case GraphicsContext3D::ARRAY_BUFFER:
         m_byteLength = byteLength;

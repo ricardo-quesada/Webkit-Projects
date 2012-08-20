@@ -148,6 +148,11 @@ bool CrossOriginPreflightResultCacheItem::allowsRequest(bool includeCredentials,
         return false;
     return true;
 }
+    
+    bool isMainThread() //ricardo: agregando este metodo pues lo estaba agarrando de NSThread
+    {
+        return true;
+    }
 
 CrossOriginPreflightResultCache& CrossOriginPreflightResultCache::shared()
 {

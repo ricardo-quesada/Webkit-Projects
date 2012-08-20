@@ -4,6 +4,8 @@
 #ifndef InspectorFrontend_h
 #define InspectorFrontend_h
 
+
+#include "InspectorValues.h"//Ricardo: agregando referencias para q me aparezca lo necesario de database
 #include <PlatformString.h>
 #include <wtf/PassRefPtr.h>
 
@@ -92,6 +94,58 @@ public:
     };
 
     Network* network() { return &m_network; }
+<<<<<<< HEAD
+=======
+    
+    
+    //Ricardo: Agregando las porciones de database
+    
+//#if ENABLE(SQL_DATABASE)
+    class Database {
+    public:
+        Database(InspectorFrontendChannel* inspectorFrontendChannel) : m_inspectorFrontendChannel(inspectorFrontendChannel) { }
+        
+        void sqlTransactionFailed(int transactionId, PassRefPtr<InspectorObject> sqlError);
+        void setInspectorFrontendChannel(InspectorFrontendChannel* inspectorFrontendChannel) { m_inspectorFrontendChannel = inspectorFrontendChannel; }
+        InspectorFrontendChannel* getInspectorFrontendChannel() { return m_inspectorFrontendChannel; }
+    private:
+        InspectorFrontendChannel* m_inspectorFrontendChannel;
+    };
+    
+    Database* database() { return &m_database; }
+    
+//#endif // ENABLE(SQL_DATABASE)
+//#if ENABLE(INDEXED_DATABASE)
+    
+    
+//#endif // ENABLE(INDEXED_DATABASE)
+
+    
+    
+    
+    
+//#if ENABLE(JAVASCRIPT_DEBUGGER)
+    class Profiler {
+    public:
+        Profiler(InspectorFrontendChannel* inspectorFrontendChannel) : m_inspectorFrontendChannel(inspectorFrontendChannel) { }
+        //void addProfileHeader(PassRefPtr<TypeBuilder::Profiler::ProfileHeader> header);
+        void addHeapSnapshotChunk(int uid, const String& chunk);
+        void finishHeapSnapshot(int uid);
+        void setRecordingProfile(bool isProfiling);
+        void resetProfiles();
+        void reportHeapSnapshotProgress(int done, int total);
+        void setInspectorFrontendChannel(InspectorFrontendChannel* inspectorFrontendChannel) { m_inspectorFrontendChannel = inspectorFrontendChannel; }
+        InspectorFrontendChannel* getInspectorFrontendChannel() { return m_inspectorFrontendChannel; }
+    private:
+        InspectorFrontendChannel* m_inspectorFrontendChannel;
+    };
+    
+    Profiler* profiler() { return &m_profiler; }
+    
+//#endif // ENABLE(JAVASCRIPT_DEBUGGER)
+    
+    //////////////Hasta aqui //////////////////
+>>>>>>> New fixes to make it compile.
 
     class DOM {
     public:
@@ -134,6 +188,18 @@ private:
     Page m_page;
     Console m_console;
     Network m_network;
+<<<<<<< HEAD
+=======
+    //Ricardo: agregando esta parte tamb
+//#if ENABLE(SQL_DATABASE)
+    Database m_database;
+//#endif // ENABLE(SQL_DATABASE)
+//#if ENABLE(JAVASCRIPT_DEBUGGER)
+    Profiler m_profiler;
+//#endif // ENABLE(JAVASCRIPT_DEBUGGER)
+
+    ///////////// hasta aqui tamb ////////////
+>>>>>>> New fixes to make it compile.
     DOM m_dom;
     Timeline m_timeline;
 };

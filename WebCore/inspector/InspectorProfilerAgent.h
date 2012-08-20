@@ -105,7 +105,7 @@ private:
     InspectorConsoleAgent* m_consoleAgent;
     Page* m_inspectedPage;
     InspectorState* m_inspectorState;
-    //InspectorFrontend::Profiler* m_frontend; Ricardo: Comentando
+    InspectorFrontend::Profiler* m_frontend; //Ricardo: Comentando
     bool m_enabled;
     bool m_recordingUserInitiatedProfile;
     int m_currentUserInitiatedProfileNumber;

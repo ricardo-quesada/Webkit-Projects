@@ -909,7 +909,7 @@ void XMLDocumentParser::endElementNs()
             if (m_pendingScript)
                 pauseParsing();
         } else
-            m_scriptElement = 0;
+            m_scriptElement = nullptr;//Ricado: reemplazando 0
 
         // JavaScript may have detached the parser
         if (isDetached())
@@ -1323,7 +1323,7 @@ void XMLDocumentParser::doEnd()
                 xmlParseChunk(context(), 0, 0, 1);
             }
 
-            m_context = 0;
+            m_context = nullptr;//Ricado: reemplazando 0
         }
     }
 

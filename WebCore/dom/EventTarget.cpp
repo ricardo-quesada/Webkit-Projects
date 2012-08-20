@@ -44,16 +44,26 @@ namespace WebCore {
 #ifndef NDEBUG
 static int gEventDispatchForbidden = 0;
 
+<<<<<<< HEAD
+=======
+    //Ricardo: Tuve q cambiarlo x inMainThread1 por redefinicion
+    bool isMainThread1() //ricardo: agregando este metodo pues lo estaba agarrando de NSThread
+    {
+        return true;
+    }
+    
+    
+>>>>>>> New fixes to make it compile.
 void forbidEventDispatch()
 {
-    if (!isMainThread())
+    if (!isMainThread1())
         return;
     ++gEventDispatchForbidden;
 }
 
 void allowEventDispatch()
 {
-    if (!isMainThread())
+    if (!isMainThread1())
         return;
     if (gEventDispatchForbidden > 0)
         --gEventDispatchForbidden;
@@ -61,7 +71,7 @@ void allowEventDispatch()
 
 bool eventDispatchForbidden()
 {
-    if (!isMainThread())
+    if (!isMainThread1())
         return false;
     return gEventDispatchForbidden > 0;
 }

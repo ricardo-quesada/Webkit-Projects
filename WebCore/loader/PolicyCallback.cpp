@@ -88,7 +88,7 @@ void PolicyCallback::set(const ResourceRequest& request, PassRefPtr<FormState> f
 void PolicyCallback::set(ContentPolicyDecisionFunction function, void* argument)
 {
     m_request = ResourceRequest();
-    m_formState = 0;
+    m_formState = nullptr;//Ricardo: reemplazando 0
     m_frameName = String();
 
     m_navigationFunction = 0;
@@ -117,7 +117,7 @@ void PolicyCallback::call(PolicyAction action)
 void PolicyCallback::clearRequest()
 {
     m_request = ResourceRequest();
-    m_formState = 0;
+    m_formState = nullptr;//Ricardo: reemplazando 0
     m_frameName = String();
 }
 

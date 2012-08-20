@@ -499,7 +499,7 @@ bool CompositeAnimation::isAnimatingProperty(int property, bool acceleratedOnly,
 
 bool CompositeAnimation::pauseAnimationAtTime(const AtomicString& name, double t)
 {
-    if (!name)
+    /*if (!name)
         return false;
 
     m_keyframeAnimations.checkConsistency();
@@ -514,6 +514,21 @@ bool CompositeAnimation::pauseAnimationAtTime(const AtomicString& name, double t
         return true;
     }
 
+    return false;*/
+    //Ricardo: asi era, lo cambie x esto
+    if (name){
+        m_keyframeAnimations.checkConsistency();
+        
+        RefPtr<KeyframeAnimation> keyframeAnim = m_keyframeAnimations.get(name.impl());
+        if (!keyframeAnim || !keyframeAnim->running())
+            return false;
+        
+        int count = keyframeAnim->m_animation->iterationCount();
+        if ((t >= 0.0) && (!count || (t <= count * keyframeAnim->duration()))) {
+            keyframeAnim->freezeAtTime(t);
+            return true;
+        }
+    }
     return false;
 }
 

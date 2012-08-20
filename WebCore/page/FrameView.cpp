@@ -247,7 +247,7 @@ void FrameView::reset()
     m_visuallyNonEmptyPixelCount = 0;
     m_isVisuallyNonEmpty = false;
     m_firstVisuallyNonEmptyLayoutCallbackPending = true;
-    m_maintainScrollPositionAnchor = 0;
+    m_maintainScrollPositionAnchor = nullptr; //Ricardo: reemplazando 0;
 }
 
 bool FrameView::isFrameView() const 
@@ -257,7 +257,7 @@ bool FrameView::isFrameView() const
 
 void FrameView::clearFrame()
 {
-    m_frame = 0;
+    m_frame = nullptr; //Ricardo: reemplazando 0;
 }
 
 void FrameView::resetScrollbars()
@@ -1564,7 +1564,7 @@ void FrameView::setScrollPosition(const IntPoint& scrollPoint)
 {
     bool wasInProgrammaticScroll = m_inProgrammaticScroll;
     m_inProgrammaticScroll = true;
-    m_maintainScrollPositionAnchor = 0;
+    m_maintainScrollPositionAnchor = nullptr; //Ricardo: reemplazando 0;
     ScrollView::setScrollPosition(scrollPoint);
     m_inProgrammaticScroll = wasInProgrammaticScroll;
 }
@@ -2551,7 +2551,7 @@ void FrameView::setWasScrolledByUser(bool wasScrolledByUser)
 {
     if (m_inProgrammaticScroll)
         return;
-    m_maintainScrollPositionAnchor = 0;
+    m_maintainScrollPositionAnchor = nullptr; //Ricardo: reemplazando 0;
     m_wasScrolledByUser = wasScrolledByUser;
 }
 

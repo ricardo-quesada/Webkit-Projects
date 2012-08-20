@@ -290,7 +290,7 @@ void DeleteSelectionCommand::saveTypingStyleState()
     if (enclosingNodeOfType(m_selectionToDelete.start(), isMailBlockquote))
         m_deleteIntoBlockquoteStyle = EditingStyle::create(m_selectionToDelete.end());
     else
-        m_deleteIntoBlockquoteStyle = 0;
+        m_deleteIntoBlockquoteStyle = nullptr;//Ricardo: cambiando 0
 }
 
 bool DeleteSelectionCommand::handleSpecialCaseBRDelete()
@@ -493,7 +493,7 @@ void DeleteSelectionCommand::handleGeneralDelete()
         while (node && node != m_downstreamEnd.deprecatedNode()) {
             if (comparePositions(firstPositionInOrBeforeNode(node.get()), m_downstreamEnd) >= 0) {
                 // traverseNextSibling just blew past the end position, so stop deleting
-                node = 0;
+                node = nullptr;//Ricardo: cambiando 0
             } else if (!m_downstreamEnd.deprecatedNode()->isDescendantOf(node.get())) {
                 RefPtr<Node> nextNode = node->traverseNextSibling();
                 // if we just removed a node from the end container, update end position so the
@@ -509,7 +509,7 @@ void DeleteSelectionCommand::handleGeneralDelete()
                 Node* n = node->lastDescendant();
                 if (m_downstreamEnd.deprecatedNode() == n && m_downstreamEnd.deprecatedEditingOffset() >= caretMaxOffset(n)) {
                     removeNode(node.get());
-                    node = 0;
+                    node = nullptr;//Ricardo: cambiando 0
                 } else
                     node = node->traverseNextNode();
             }
@@ -704,11 +704,11 @@ void DeleteSelectionCommand::calculateTypingStyleAfterDelete()
     // If we deleted into a blockquote, but are now no longer in a blockquote, use the alternate typing style
     if (m_deleteIntoBlockquoteStyle && !enclosingNodeOfType(m_endingPosition, isMailBlockquote, CanCrossEditingBoundary))
         m_typingStyle = m_deleteIntoBlockquoteStyle;
-    m_deleteIntoBlockquoteStyle = 0;
+    m_deleteIntoBlockquoteStyle = nullptr;//Ricardo: cambiando 0
 
     m_typingStyle->prepareToApplyAt(m_endingPosition);
     if (m_typingStyle->isEmpty())
-        m_typingStyle = 0;
+        m_typingStyle = nullptr;//Ricardo: cambiando 0
     VisiblePosition visibleEnd(m_endingPosition);
     if (m_typingStyle && 
         isStartOfParagraph(visibleEnd) &&
@@ -724,7 +724,7 @@ void DeleteSelectionCommand::calculateTypingStyleAfterDelete()
         // applyStyle can destroy the placeholder that was at m_endingPosition if it needs to 
         // move it, but it will set an endingSelection() at [movedPlaceholder, 0] if it does so.
         m_endingPosition = endingSelection().start();
-        m_typingStyle = 0;
+        m_typingStyle = nullptr;//Ricardo: cambiando 0
     }
     // This is where we've deleted all traces of a style but not a whole paragraph (that's handled above).
     // In this case if we start typing, the new characters should have the same style as the just deleted ones,

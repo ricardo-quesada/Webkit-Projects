@@ -207,7 +207,7 @@ void SubresourceLoader::didFinishLoading(double finishTime)
     if (m_client)
         m_client->didFinishLoading(this, finishTime);
     
-    m_handle = 0;
+    m_handle = nullptr;//Ricardo: reemplazando 0
 
     if (cancelled())
         return;
@@ -227,7 +227,7 @@ void SubresourceLoader::didFail(const ResourceError& error)
     if (m_client)
         m_client->didFail(this, error);
     
-    m_handle = 0;
+    m_handle = nullptr;//Ricardo: reemplazando 0
     
     if (cancelled())
         return;

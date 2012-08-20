@@ -432,7 +432,7 @@ DOMWindow::~DOMWindow()
     ASSERT(!m_sessionStorage);
     ASSERT(!m_localStorage);
 #endif
-    ASSERT(!m_applicationCache);
+   // ASSERT(!m_applicationCache); //Ricardo: Comentado xq app cache no existia
 #if ENABLE(NOTIFICATIONS)
     ASSERT(!m_notifications);
 #endif
@@ -479,53 +479,53 @@ void DOMWindow::clear()
 {
     if (m_console)
         m_console->disconnectFrame();
-    m_console = 0;
+    m_console = nullptr; //Ricardo: reemplazando 0;
 
     if (m_screen)
         m_screen->disconnectFrame();
-    m_screen = 0;
+    m_screen = nullptr; //Ricardo: reemplazando 0;
 
     if (m_selection)
         m_selection->disconnectFrame();
-    m_selection = 0;
+    m_selection = nullptr; //Ricardo: reemplazando 0;
 
     if (m_history)
         m_history->disconnectFrame();
-    m_history = 0;
+    m_history = nullptr; //Ricardo: reemplazando 0;
 
-    m_crypto = 0;
+    m_crypto = nullptr; //Ricardo: reemplazando 0;
 
     if (m_locationbar)
         m_locationbar->disconnectFrame();
-    m_locationbar = 0;
+    m_locationbar = nullptr; //Ricardo: reemplazando 0;
 
     if (m_menubar)
         m_menubar->disconnectFrame();
-    m_menubar = 0;
+    m_menubar = nullptr; //Ricardo: reemplazando 0;
 
     if (m_personalbar)
         m_personalbar->disconnectFrame();
-    m_personalbar = 0;
+    m_personalbar = nullptr; //Ricardo: reemplazando 0;
 
     if (m_scrollbars)
         m_scrollbars->disconnectFrame();
-    m_scrollbars = 0;
+    m_scrollbars = nullptr; //Ricardo: reemplazando 0;
 
     if (m_statusbar)
         m_statusbar->disconnectFrame();
-    m_statusbar = 0;
+    m_statusbar = nullptr; //Ricardo: reemplazando 0;
 
     if (m_toolbar)
         m_toolbar->disconnectFrame();
-    m_toolbar = 0;
+    m_toolbar = nullptr; //Ricardo: reemplazando 0;
 
     if (m_console)
         m_console->disconnectFrame();
-    m_console = 0;
+    m_console = nullptr; //Ricardo: reemplazando 0;
 
     if (m_navigator)
         m_navigator->disconnectFrame();
-    m_navigator = 0;
+    m_navigator = nullptr; //Ricardo: reemplazando 0;
 
 #if ENABLE(WEB_TIMING)
     if (m_performance)
@@ -535,11 +535,11 @@ void DOMWindow::clear()
 
     if (m_location)
         m_location->disconnectFrame();
-    m_location = 0;
+    m_location = nullptr; //Ricardo: reemplazando 0;
 
     if (m_media)
         m_media->disconnectFrame();
-    m_media = 0;
+    m_media = nullptr; //Ricardo: reemplazando 0;
     
 #if ENABLE(DOM_STORAGE)
     if (m_sessionStorage)

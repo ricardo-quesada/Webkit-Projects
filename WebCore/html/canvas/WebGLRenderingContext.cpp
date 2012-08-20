@@ -69,6 +69,8 @@
 #include <wtf/PassOwnArrayPtr.h>
 #include <wtf/text/StringBuilder.h>
 
+#include <cmath>
+
 #if PLATFORM(QT)
 #undef emit
 #endif
@@ -404,10 +406,10 @@ void WebGLRenderingContext::initializeNewContext()
     m_unpackFlipY = false;
     m_unpackPremultiplyAlpha = false;
     m_unpackColorspaceConversion = GraphicsContext3D::BROWSER_DEFAULT_WEBGL;
-    m_boundArrayBuffer = 0;
-    m_currentProgram = 0;
-    m_framebufferBinding = 0;
-    m_renderbufferBinding = 0;
+    m_boundArrayBuffer = nullptr; //Ricardo: reemplazando 0
+    m_currentProgram = nullptr; //Ricardo: reemplazando 0
+    m_framebufferBinding = nullptr; //Ricardo: reemplazando 0
+    m_renderbufferBinding = nullptr; //Ricardo: reemplazando 0
     m_depthMask = true;
     m_stencilMask = 0xFFFFFFFF;
     m_stencilMaskBack = 0xFFFFFFFF;
@@ -1225,7 +1227,7 @@ void WebGLRenderingContext::deleteBuffer(WebGLBuffer* buffer)
     if (!deleteObject(buffer))
         return;
     if (m_boundArrayBuffer == buffer)
-        m_boundArrayBuffer = 0;
+        m_boundArrayBuffer = nullptr; //Ricardo: reemplazando 0
     RefPtr<WebGLBuffer> elementArrayBuffer = m_boundVertexArrayObject->getElementArrayBuffer();
     if (elementArrayBuffer == buffer)
         m_boundVertexArrayObject->setElementArrayBuffer(0);
@@ -1249,7 +1251,7 @@ void WebGLRenderingContext::deleteFramebuffer(WebGLFramebuffer* framebuffer)
     if (!deleteObject(framebuffer))
         return;
     if (framebuffer == m_framebufferBinding) {
-        m_framebufferBinding = 0;
+        m_framebufferBinding = nullptr; //Ricardo: reemplazando 0
         // Have to call bindFramebuffer here to bind back to internal fbo.
         m_context->bindFramebuffer(GraphicsContext3D::FRAMEBUFFER, 0);
     }
@@ -1267,7 +1269,7 @@ void WebGLRenderingContext::deleteRenderbuffer(WebGLRenderbuffer* renderbuffer)
     if (!deleteObject(renderbuffer))
         return;
     if (renderbuffer == m_renderbufferBinding)
-        m_renderbufferBinding = 0;
+        m_renderbufferBinding = nullptr; //Ricardo: reemplazando 0
     if (m_framebufferBinding)
         m_framebufferBinding->removeAttachment(renderbuffer);
 }
@@ -1283,9 +1285,9 @@ void WebGLRenderingContext::deleteTexture(WebGLTexture* texture)
         return;
     for (size_t i = 0; i < m_textureUnits.size(); ++i) {
         if (texture == m_textureUnits[i].m_texture2DBinding)
-            m_textureUnits[i].m_texture2DBinding = 0;
+            m_textureUnits[i].m_texture2DBinding = nullptr; //Ricardo: reemplazando 0
         if (texture == m_textureUnits[i].m_textureCubeMapBinding)
-            m_textureUnits[i].m_textureCubeMapBinding = 0;
+            m_textureUnits[i].m_textureCubeMapBinding = nullptr; //Ricardo: reemplazando 0
     }
     if (m_framebufferBinding)
         m_framebufferBinding->removeAttachment(texture);
@@ -3872,14 +3874,14 @@ void WebGLRenderingContext::viewport(GC3Dint x, GC3Dint y, GC3Dsizei width, GC3D
 {
     if (isContextLost())
         return;
-    if (isnan(x))
+    /*if (isnan(x)) //Ricardo: comente porq no reconoce isnan, aun cuando si lleva a cmath...
         x = 0;
     if (isnan(y))
         y = 0;
     if (isnan(width))
         width = 100;
     if (isnan(height))
-        height = 100;
+        height = 100;*/
     if (!validateSize(width, height))
         return;
     m_context->viewport(x, y, width, height);

@@ -118,7 +118,7 @@ public:
     {
         m_length = 0;
         m_string = String();
-        m_buffer = 0;
+        m_buffer = nullptr;
     }
 
 private:

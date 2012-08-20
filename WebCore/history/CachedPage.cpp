@@ -104,7 +104,7 @@ void CachedPage::clear()
 {
     ASSERT(m_cachedMainFrame);
     m_cachedMainFrame->clear();
-    m_cachedMainFrame = 0;
+    m_cachedMainFrame = nullptr; //Ricardo: reemplazando 0
     m_needStyleRecalcForVisitedLinks = false;
 }
 
@@ -113,7 +113,7 @@ void CachedPage::destroy()
     if (m_cachedMainFrame)
         m_cachedMainFrame->destroy();
 
-    m_cachedMainFrame = 0;
+    m_cachedMainFrame = nullptr; //Ricardo: reemplazando 0
 }
 
 } // namespace WebCore

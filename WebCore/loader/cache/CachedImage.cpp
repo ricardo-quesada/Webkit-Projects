@@ -237,7 +237,7 @@ void CachedImage::checkShouldPaintBrokenImage()
 void CachedImage::clear()
 {
     destroyDecodedData();
-    m_image = 0;
+    m_image = nullptr; //Ricardo: reemplazando 0;
     setEncodedSize(0);
 }
 
@@ -330,7 +330,7 @@ void CachedImage::destroyDecodedData()
     if (isSafeToMakePurgeable() && canDeleteImage && !isLoading()) {
         // Image refs the data buffer so we should not make it purgeable while the image is alive. 
         // Invoking addClient() will reconstruct the image object.
-        m_image = 0;
+        m_image = nullptr; //Ricardo: reemplazando 0
         setDecodedSize(0);
         if (!MemoryCache::shouldMakeResourcePurgeableOnEviction())
             makePurgeable(true);

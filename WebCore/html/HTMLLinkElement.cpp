@@ -311,7 +311,7 @@ void HTMLLinkElement::process()
         }
     } else if (m_sheet) {
         // we no longer contain a stylesheet, e.g. perhaps rel or type was changed
-        m_sheet = 0;
+        m_sheet = nullptr; //Ricardo: reemplazando 0
         document()->styleSelectorChanged(DeferRecalcStyle);
     }
 }
@@ -342,7 +342,7 @@ void HTMLLinkElement::removedFromDocument()
     if (m_sheet) {
         ASSERT(m_sheet->ownerNode() == this);
         m_sheet->clearOwnerNode();
-        m_sheet = 0;
+        m_sheet = nullptr; //Ricardo: reemplazando 0
     }
 
     if (document()->renderer())

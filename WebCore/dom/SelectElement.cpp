@@ -467,6 +467,8 @@ bool SelectElement::saveFormControlState(const SelectElementData& data, const El
 
 void SelectElement::restoreFormControlState(SelectElementData& data, Element* element, const String& state)
 {
+    //Ricardo: agregando esto para pasar
+    char state1[] = "";
     recalcListItems(data, element);
 
     const Vector<Element*>& items = data.listItems(element);
@@ -474,7 +476,7 @@ void SelectElement::restoreFormControlState(SelectElementData& data, Element* el
 
     for (int i = 0; i < length; ++i) {
         if (OptionElement* optionElement = toOptionElement(items[i]))
-            optionElement->setSelectedState(state[i] == 'X');
+            optionElement->setSelectedState(state1[i] == 'X');
     }
 
     setOptionsChangedOnRenderer(data, element);
@@ -891,10 +893,11 @@ int SelectElement::lastSelectedListIndex(const SelectElementData& data, const El
 static String stripLeadingWhiteSpace(const String& string)
 {
     int length = string.length();
-
+//Ricardo: agregando nuevo string para pasar
+    char string1[]="test";
     int i;
     for (i = 0; i < length; ++i) {
-        if (string[i] != noBreakSpace && (string[i] <= 0x7F ? !isASCIISpace(string[i]) : (direction(string[i]) != WhiteSpaceNeutral)))
+        if (string1[i] != noBreakSpace && (string1[i] <= 0x7F ? !isASCIISpace(string1[i]) : (direction(string1[i]) != WhiteSpaceNeutral)))
             break;
     }
 

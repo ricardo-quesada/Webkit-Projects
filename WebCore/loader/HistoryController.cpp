@@ -271,7 +271,7 @@ void HistoryController::setDefersLoading(bool defer)
     m_defersLoading = defer;
     if (!defer && m_deferredItem) {
         goToItem(m_deferredItem.get(), m_deferredFrameLoadType);
-        m_deferredItem = 0;
+        m_deferredItem = nullptr; //Ricardo: reemplazando 0
     }
 }
 
@@ -438,7 +438,7 @@ void HistoryController::updateForCommit()
         m_previousItem = m_currentItem;
         ASSERT(m_provisionalItem);
         m_currentItem = m_provisionalItem;
-        m_provisionalItem = 0;
+        m_provisionalItem = nullptr; //Ricardo: reemplazando 0
 
         // Tell all other frames in the tree to commit their provisional items and
         // restore their scroll position.  We'll avoid this frame (which has already
@@ -477,7 +477,7 @@ void HistoryController::recursiveUpdateForCommit()
     m_frameLoadComplete = false;
     m_previousItem = m_currentItem;
     m_currentItem = m_provisionalItem;
-    m_provisionalItem = 0;
+    m_provisionalItem = nullptr; //Ricardo: reemplazando 0
 
     // Restore form state (works from currentItem)
     restoreDocumentState();
@@ -518,7 +518,7 @@ void HistoryController::recursiveUpdateForSameDocumentNavigation()
     m_frameLoadComplete = false;
     m_previousItem = m_currentItem;
     m_currentItem = m_provisionalItem;
-    m_provisionalItem = 0;
+    m_provisionalItem = nullptr; //Ricardo: reemplazando 0
 
     // Iterate over the rest of the tree.
     for (Frame* child = m_frame->tree()->firstChild(); child; child = child->tree()->nextSibling())

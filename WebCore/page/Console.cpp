@@ -68,7 +68,7 @@ Frame* Console::frame() const
 void Console::disconnectFrame()
 {
     if (m_memory)
-        m_memory = 0;
+        m_memory = nullptr; //Ricardo: reemplazando 0
     m_frame = 0;
 }
 

@@ -1348,7 +1348,7 @@ void FrameLoader::setupForReplace()
 {
     setState(FrameStateProvisional);
     m_provisionalDocumentLoader = m_documentLoader;
-    m_documentLoader = 0;
+    m_documentLoader = nullptr; //Ricardo: reemplazando 0
     detachChildren();
 }
 

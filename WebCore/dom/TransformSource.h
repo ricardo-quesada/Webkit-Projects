@@ -16,6 +16,7 @@
  * the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
  * Boston, MA 02110-1301, USA.
  */
+//Ricardo: me eche TransformSourceQt.cpp de dom
 
 #ifndef TransformSource_h
 #define TransformSource_h

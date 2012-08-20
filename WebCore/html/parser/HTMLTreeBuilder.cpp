@@ -52,13 +52,13 @@
 #include "XMLNames.h"
 #include <wtf/unicode/CharacterNames.h>
 
-#include "SoftLinking.h"
-#include <DataDetectorsCore/DDDFACache.h>
-#include <DataDetectorsCore/DDDFAScanner.h>
-SOFT_LINK_PRIVATE_FRAMEWORK(DataDetectorsCore)
-SOFT_LINK(DataDetectorsCore, DDDFACacheCreateFromFramework, DDDFACacheRef, (), ())
-SOFT_LINK(DataDetectorsCore, DDDFAScannerCreateFromCache, DDDFAScannerRef, (DDDFACacheRef cache), (cache))
-SOFT_LINK(DataDetectorsCore, DDDFAScannerFirstResultInUnicharArray, Boolean, (DDDFAScannerRef scanner, const UniChar* str, unsigned length, int* startPos, int* endPos), (scanner, str, length, startPos, endPos))
+//#include "SoftLinking.h"
+//#include <DataDetectorsCore/DDDFACache.h> //Ricardo: headers de lib privadas
+//#include <DataDetectorsCore/DDDFAScanner.h> //Ricardo: headers de lib privadas
+//SOFT_LINK_PRIVATE_FRAMEWORK(DataDetectorsCore)
+//SOFT_LINK(DataDetectorsCore, DDDFACacheCreateFromFramework, DDDFACacheRef, (), ())
+//SOFT_LINK(DataDetectorsCore, DDDFAScannerCreateFromCache, DDDFAScannerRef, (DDDFACacheRef cache), (cache))
+//SOFT_LINK(DataDetectorsCore, DDDFAScannerFirstResultInUnicharArray, Boolean, (DDDFAScannerRef scanner, const UniChar* str, unsigned length, int* startPos, int* endPos), (scanner, str, length, startPos, endPos))
 
 namespace WebCore {
 
@@ -2459,7 +2459,8 @@ void HTMLTreeBuilder::insertPhoneNumberLink(const String &s)
 // 2. Wraps the phone number in a tel: link
 // 3. Goes back to 1 if a phone number is found in the rest of the string
 // 4. Appends the rest of the string as a text node
-void HTMLTreeBuilder::linkifyPhoneNumbers(const String &s)
+    //Ricardo: comente este metodo x el problema con la lib privada
+/*void HTMLTreeBuilder::linkifyPhoneNumbers(const String &s)
 {
     static DDDFACacheRef phoneNumbersCache = DDDFACacheCreateFromFramework();
     static DDDFAScannerRef phoneNumbersScanner = phoneNumbersCache ? DDDFAScannerCreateFromCache(phoneNumbersCache) : 0;
@@ -2501,7 +2502,7 @@ void HTMLTreeBuilder::linkifyPhoneNumbers(const String &s)
     } else {
         m_tree.insertTextNode(s);
     }
-}
+}*/
 
 // Looks at the ancestors of the element to determine whether we're inside an element which disallows parsing phone numbers
 static inline bool disallowTelephoneNumberParsing(Element* element)

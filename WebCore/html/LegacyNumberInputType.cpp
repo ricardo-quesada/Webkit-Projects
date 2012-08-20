@@ -40,6 +40,7 @@
 #include "RenderTextControl.h"
 #include <limits>
 #include <wtf/PassOwnPtr.h>
+#include "ExceptionCode.h" //Ricardo: Agregue esta referencia para q agarrara INVALID_STATE_ERR
 
 namespace WebCore {
 

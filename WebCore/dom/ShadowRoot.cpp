@@ -94,7 +94,7 @@ void ShadowContentSelector::attachChildrenFor(ShadowContentElement* contentEleme
             continue;
 
         forceReattach(child);
-        m_children[i] = 0;
+        m_children[i] = nullptr;//Ricardo: cambiando un 0
     }
 
     m_activeElement = 0;

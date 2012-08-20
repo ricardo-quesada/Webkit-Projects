@@ -121,7 +121,7 @@ void FrameTree::removeChild(Frame* child)
     std::swap(newLocationForPrevious, child->tree()->m_previousSibling);
 
     child->tree()->m_previousSibling = 0;
-    child->tree()->m_nextSibling = 0;
+    child->tree()->m_nextSibling = nullptr; //Ricardo: reemplazando 0;
 
     m_childCount--;
 }

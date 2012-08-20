@@ -114,7 +114,7 @@ ScriptExecutionContext::~ScriptExecutionContext()
 #if ENABLE(DATABASE)
     if (m_databaseThread) {
         ASSERT(m_databaseThread->terminationRequested());
-        m_databaseThread = 0;
+        m_databaseThread = nullptr; //Ricardo: cambiando 0
     }
 #endif
 #if ENABLE(BLOB) || ENABLE(FILE_SYSTEM)
@@ -146,7 +146,7 @@ DatabaseThread* ScriptExecutionContext::databaseThread()
         // because in that case we already had a database thread and terminated it and should not create another.
         m_databaseThread = DatabaseThread::create();
         if (!m_databaseThread->start())
-            m_databaseThread = 0;
+            m_databaseThread = nullptr; //Ricardo: cambiando un 0
     }
 
     return m_databaseThread.get();

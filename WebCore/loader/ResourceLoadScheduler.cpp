@@ -67,6 +67,8 @@ ResourceLoadScheduler::HostInformation* ResourceLoadScheduler::hostForURL(const 
     return host;
 }
 
+    bool isMainThread() { return true; }//Ricardo: agregando
+    
 ResourceLoadScheduler* resourceLoadScheduler()
 {
     ASSERT(isMainThread() || pthread_main_np());

@@ -134,14 +134,19 @@ void ProcessingInstruction::checkStyleSheet()
 #endif
             return;
 
-        String href = attrs.get("href");
-        String alternate = attrs.get("alternate");
+        //Ricardo: elimino los String, para usar char*
+        //String href = attrs.get("href");
+        char* href = "";
+        //String alternate = attrs.get("alternate");
+        char* alternate = "";
         m_alternate = alternate == "yes";
         m_title = attrs.get("title");
         m_media = attrs.get("media");
 
-        if (href.length() > 1 && href[0] == '#') {
-            m_localHref = href.substring(1);
+       // if (href.size() > 1 && href[0] == '#') { //Ricardo: comentando estas lineas para poner un if fake
+         //   m_localHref = href.substring(1); //Ricardo: Esta la elimine para seguir
+        if (href[0] == '#') {
+            
 #if ENABLE(XSLT)
             // We need to make a synthetic XSLStyleSheet that is embedded.  It needs to be able
             // to kick off import/include loads that can hang off some parent sheet.
@@ -287,7 +292,7 @@ void ProcessingInstruction::removedFromDocument()
     if (m_sheet) {
         ASSERT(m_sheet->ownerNode() == this);
         m_sheet->clearOwnerNode();
-        m_sheet = 0;
+        m_sheet = nullptr; //Ricardo: cambiando 0 x nullptr
     }
 
     if (m_cachedSheet)

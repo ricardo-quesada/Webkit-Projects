@@ -91,7 +91,7 @@ void CSSImageValue::clearCachedImage()
 {
     if (m_image && m_image->isCachedImage())
         static_cast<StyleCachedImage*>(m_image.get())->cachedImage()->removeClient(this);
-    m_image = 0;
+    m_image = nullptr;
     m_accessedImage = false;
 }
 

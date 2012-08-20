@@ -91,8 +91,8 @@ void InspectorProfilerAgent::addProfile(PassRefPtr<ScriptProfile> prpProfile, un
 {
     RefPtr<ScriptProfile> profile = prpProfile;
     m_profiles.add(profile->uid(), profile);
-    if (m_frontend)
-        m_frontend->addProfileHeader(createProfileHeader(*profile));
+    //if (m_frontend) //Ricardo: comentando
+      //  m_frontend->addProfileHeader(createProfileHeader(*profile));
     addProfileFinishedMessageToConsole(profile, lineNumber, sourceURL);
 }
 
@@ -157,8 +157,8 @@ void InspectorProfilerAgent::disable()
         return;
     m_enabled = false;
     PageScriptDebugServer::shared().recompileAllJSFunctionsSoon();
-    if (m_frontend)
-        m_frontend->profilerWasDisabled();
+    //if (m_frontend) //Ricardo: comentando
+      //  m_frontend->profilerWasDisabled();
 }
 
 void InspectorProfilerAgent::enable(bool skipRecompile)
@@ -168,8 +168,8 @@ void InspectorProfilerAgent::enable(bool skipRecompile)
     m_enabled = true;
     if (!skipRecompile)
         PageScriptDebugServer::shared().recompileAllJSFunctionsSoon();
-    if (m_frontend)
-        m_frontend->profilerWasEnabled();
+    //if (m_frontend) //Ricardo: comentando
+      //  m_frontend->profilerWasEnabled();
 }
 
 String InspectorProfilerAgent::getCurrentUserInitiatedProfileName(bool incrementProfileNumber)
@@ -365,8 +365,8 @@ void InspectorProfilerAgent::takeHeapSnapshot(ErrorString*, bool detailed)
     RefPtr<ScriptHeapSnapshot> snapshot = ScriptProfiler::takeHeapSnapshot(title, detailed ? &progress : 0);
     if (snapshot) {
         m_snapshots.add(snapshot->uid(), snapshot);
-        if (m_frontend)
-            m_frontend->addProfileHeader(createSnapshotHeader(*snapshot));
+        //if (m_frontend)//Ricardo: comentando
+          //  m_frontend->addProfileHeader(createSnapshotHeader(*snapshot));
     }
 }
 

@@ -26,8 +26,9 @@
 #ifndef WTF_PassOwnPtr_h
 #define WTF_PassOwnPtr_h
 
-#include "Assertions.h"
 #include "NullPtr.h"
+#include "Assertions.h"
+
 #include "OwnPtrCommon.h"
 #include "TypeTraits.h"
 

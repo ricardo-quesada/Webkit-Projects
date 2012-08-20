@@ -26,8 +26,9 @@
 #ifndef WTF_PassOwnArrayPtr_h
 #define WTF_PassOwnArrayPtr_h
 
-#include "Assertions.h"
 #include "NullPtr.h"
+#include "Assertions.h"
+
 #include "TypeTraits.h"
 
 namespace WTF {

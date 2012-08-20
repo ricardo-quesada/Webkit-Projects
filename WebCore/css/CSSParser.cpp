@@ -238,8 +238,8 @@ void CSSParser::parseSheet(CSSStyleSheet* sheet, const String& string, int start
     setupParser("", string, "");
     cssyyparse(this);
     m_ruleRangeMap = 0;
-    m_currentRuleData = 0;
-    m_rule = 0;
+    m_currentRuleData = nullptr;
+    m_rule = nullptr;
 }
 
 PassRefPtr<CSSRule> CSSParser::parseRule(CSSStyleSheet* sheet, const String& string)
@@ -429,7 +429,7 @@ bool CSSParser::parseValue(CSSMutableStyleDeclaration* declaration, int property
 
     cssyyparse(this);
 
-    m_rule = 0;
+    m_rule = nullptr;
 
     bool ok = false;
     if (m_hasFontFaceOnlyValues)
@@ -477,7 +477,7 @@ bool CSSParser::parseColor(CSSMutableStyleDeclaration* declaration, const String
 
     setupParser("@-webkit-decls{color:", string, "} ");
     cssyyparse(this);
-    m_rule = 0;
+    m_rule = nullptr;
 
     return (m_numParsedProperties && m_parsedProperties[0]->m_id == CSSPropertyColor);
 }
@@ -530,7 +530,7 @@ bool CSSParser::parseDeclaration(CSSMutableStyleDeclaration* declaration, const 
 
     setupParser("@-webkit-decls{", string, "} ");
     cssyyparse(this);
-    m_rule = 0;
+    m_rule = nullptr;
 
     bool ok = false;
     if (m_hasFontFaceOnlyValues)
@@ -552,7 +552,7 @@ bool CSSParser::parseDeclaration(CSSMutableStyleDeclaration* declaration, const 
 
     if (styleSourceData) {
         *styleSourceData = m_currentRuleData->styleSourceData.release();
-        m_currentRuleData = 0;
+        m_currentRuleData = nullptr;
         m_inStyleRuleOrDeclaration = false;
     }
     return ok;
@@ -2901,7 +2901,7 @@ void CSSParser::parseFillRepeat(RefPtr<CSSValue>& value1, RefPtr<CSSValue>& valu
     if (id == CSSValueRepeat || id == CSSValueNoRepeat || id == CSSValueRound || id == CSSValueSpace)
         value1 = primitiveValueCache()->createIdentifierValue(id);
     else {
-        value1 = 0;
+        value1 = nullptr;
         return;
     }
 
@@ -2975,7 +2975,7 @@ bool CSSParser::parseFillProperty(int propId, int& propId1, int& propId2,
 
     bool allowComma = false;
 
-    retValue1 = retValue2 = 0;
+    retValue1 = retValue2 = nullptr;
     propId1 = propId;
     propId2 = propId;
     if (propId == CSSPropertyBackgroundPosition) {
@@ -3316,7 +3316,7 @@ bool CSSParser::parseAnimationProperty(int propId, RefPtr<CSSValue>& result)
     RefPtr<CSSValue> value;
     bool allowComma = false;
 
-    result = 0;
+    result = nullptr;
 
     while ((val = m_valueList->current())) {
         RefPtr<CSSValue> currValue;
@@ -3822,7 +3822,7 @@ PassRefPtr<CSSValueList> CSSParser::parseFontFamily()
             break;
     }
     if (!list->length())
-        list = 0;
+        list = nullptr;
     return list.release();
 }
 
@@ -4600,12 +4600,12 @@ struct ShadowParseContext {
         }
 
         // Now reset for the next shadow value.
-        x = 0;
-        y = 0;
-        blur = 0;
-        spread = 0;
-        style = 0;
-        color = 0;
+        x = nullptr;
+        y = nullptr;
+        blur = nullptr;
+        spread = nullptr;
+        style = nullptr;
+        color = nullptr;
 
         allowX = true;
         allowColor = true;

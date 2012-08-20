@@ -128,7 +128,8 @@ void HTMLImageElement::parseMappedAttribute(Attribute* attr)
     else if (attrName == valignAttr)
         addCSSProperty(attr, CSSPropertyVerticalAlign, attr->value());
     else if (attrName == usemapAttr) {
-        if (attr->value().string()[0] == '#')
+        //if (attr->value().string()[0] == '#') //Ricardo: comentando para seguir
+        if(true)
             usemap = attr->value();
         else
             usemap = document()->completeURL(stripLeadingAndTrailingHTMLSpaces(attr->value())).string();
@@ -323,8 +324,8 @@ bool HTMLImageElement::isURLAttribute(Attribute* attr) const
 {
     return attr->name() == srcAttr
         || attr->name() == lowsrcAttr
-        || attr->name() == longdescAttr
-        || (attr->name() == usemapAttr && attr->value().string()[0] != '#');
+    || attr->name() == longdescAttr;
+        //|| (attr->name() == usemapAttr && attr->value().string()[0] != '#'); //Ricardo: comentando por problema de strings
 }
 
 const AtomicString& HTMLImageElement::alt() const

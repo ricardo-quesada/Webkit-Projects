@@ -59,7 +59,7 @@ PassRefPtr<DocumentThreadableLoader> DocumentThreadableLoader::create(Document* 
 {
     RefPtr<DocumentThreadableLoader> loader = adoptRef(new DocumentThreadableLoader(document, client, LoadAsynchronously, request, options, optionalOutgoingReferrer));
     if (!loader->m_loader)
-        loader = 0;
+        loader = nullptr; //Ricardo: reemplazando 0
     return loader.release();
 }
 
@@ -166,8 +166,8 @@ void DocumentThreadableLoader::cancel()
 
     m_loader->cancel();
     m_loader->clearClient();
-    m_loader = 0;
-    m_client = 0;
+    m_loader = nullptr; //Ricardo: reemplazando 0
+    m_client = nullptr; //Ricardo: reemplazando 0
 }
 
 void DocumentThreadableLoader::setDefersLoading(bool value)
@@ -350,7 +350,7 @@ void DocumentThreadableLoader::loadRequest(const ResourceRequest& request, Secur
         bool shouldBufferData = m_options.shouldBufferData || m_actualRequest;
 
         // Clear the loader so that any callbacks from SubresourceLoader::create will not have the old loader.
-        m_loader = 0;
+        m_loader = nullptr; //Ricardo: reemplazando 0
         m_loader = resourceLoadScheduler()->scheduleSubresourceLoad(m_document->frame(), this, request, ResourceLoadPriorityMedium, securityCheck, sendLoadCallbacks,
                                                                     sniffContent, m_optionalOutgoingReferrer, shouldBufferData);
         return;

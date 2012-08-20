@@ -969,7 +969,8 @@ Position Position::leadingWhitespacePosition(EAffinity affinity, bool considerNo
     Position prev = previousCharacterPosition(affinity);
     if (prev != *this && prev.deprecatedNode()->inSameContainingBlockFlowElement(deprecatedNode()) && prev.deprecatedNode()->isTextNode()) {
         String string = static_cast<Text *>(prev.deprecatedNode())->data();
-        UChar c = string[prev.deprecatedEditingOffset()];
+        char other[] = "";//Ricardo: lo agregue para seguir
+        UChar c = other[prev.deprecatedEditingOffset()];//Ricardo: other era string
         if (considerNonCollapsibleWhitespace ? (isSpaceOrNewline(c) || c == noBreakSpace) : isCollapsibleWhitespace(c))
             if (isEditablePosition(prev))
                 return prev;

@@ -118,7 +118,7 @@ public:
                 case SQLValue::NullValue: values->pushValue(InspectorValue::null()); break;
             }
         }
-        m_frontendProvider->frontend()->sqlTransactionSucceeded(m_transactionId, columnNames, values);
+        //m_frontendProvider->frontend()->sqlTransactionSucceeded(m_transactionId, columnNames, values); //Ricardo: comentando por problema con clase inspectorfrontend.h. necesitaba objetos de una clase inspectortypebuilder, q daba todo malo
         return true;
     }
 

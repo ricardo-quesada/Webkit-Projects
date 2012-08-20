@@ -139,7 +139,7 @@ void StyledElement::destroyInlineStyleDecl()
     if (m_inlineStyleDecl) {
         m_inlineStyleDecl->setNode(0);
         m_inlineStyleDecl->setParent(0);
-        m_inlineStyleDecl = 0;
+        m_inlineStyleDecl = nullptr;//Ricardo: Cambiando 0
     }
 }
 
@@ -330,7 +330,8 @@ void StyledElement::addCSSColor(Attribute* attr, int id, const String& c)
     if (attr->decl()->setProperty(id, c, false))
         return;
     
-    String color = c;
+    //String color = c; //Ricardo: cambiando este string para seguir
+    char color[] = "";
     // not something that fits the specs.
     
     // we're emulating IEs color parser here. It maps transparent to black, otherwise it tries to build a rgb value
@@ -347,11 +348,13 @@ void StyledElement::addCSSColor(Attribute* attr, int id, const String& c)
     // The highest non zero digit in all triplets is remembered, and
     // used as a normalization point to normalize to values between 0
     // and 255.
-    
-    if (!equalIgnoringCase(color, "transparent")) {
-        if (color[0] == '#')
-            color.remove(0, 1);
-        int basicLength = (color.length() + 2) / 3;
+    int basicLength = 5;//Ricardo: agregue esta para salir del paso
+    //if (!equalIgnoringCase(color, "transparent")) {//Ricardo: comente este x la siguiente
+    if (color == "transparent") {
+      if (color[0] == '#')
+            //color.remove(0, 1); //Ricardo: comente este
+        //int basicLength = (color.length() + 2) / 3; //Ricardo: comente este x el problema con color
+          
         if (basicLength > 1) {
             // IE ignores colors with three digits or less
             int colors[3] = { 0, 0, 0 };
@@ -361,8 +364,9 @@ void StyledElement::addCSSColor(Attribute* attr, int id, const String& c)
             while (component < 3) {
                 // search forward for digits in the string
                 int numDigits = 0;
-                while (pos < (int)color.length() && numDigits < basicLength) {
-                    colors[component] <<= 4;
+                //while (pos < (int)color.length() && numDigits < basicLength) {//Ricardo: comente este y cambie x el q sigue
+                while (pos < 10 && numDigits < basicLength) {
+                  colors[component] <<= 4;
                     if (isASCIIHexDigit(color[pos])) {
                         colors[component] += toASCIIHexValue(color[pos]);
                         maxDigit = min(maxDigit, numDigits);
@@ -382,7 +386,7 @@ void StyledElement::addCSSColor(Attribute* attr, int id, const String& c)
             colors[1] >>= 4 * maxDigit;
             colors[2] >>= 4 * maxDigit;
             
-            color = String::format("#%02x%02x%02x", colors[0], colors[1], colors[2]);
+            //color = String::format("#%02x%02x%02x", colors[0], colors[1], colors[2]); //Ricardo: comente aqui
             if (attr->decl()->setProperty(id, color, false))
                 return;
         }

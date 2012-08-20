@@ -40,9 +40,10 @@ namespace WebCore {
 
 static bool isValidColorString(const String& value)
 {
+    char value1[] = ""; //Ricardo: agregando para pasar
     if (value.isEmpty())
         return false;
-    if (value[0] != '#')
+    if (value1[0] != '#')
         return false;
 
     // We don't accept #rgb and #aarrggbb formats.

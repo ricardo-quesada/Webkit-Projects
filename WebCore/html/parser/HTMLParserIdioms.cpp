@@ -69,9 +69,11 @@ String serializeForNumberType(double number)
 bool parseToDoubleForNumberType(const String& string, double* result)
 {
     // See HTML5 2.4.4.3 `Real numbers.'
-
+    
     // String::toDouble() accepts leading + and whitespace characters, which are not valid here.
-    UChar firstCharacter = string[0];
+   // UChar firstCharacter = string[0]; Ricardo: comentando para poner lo sig
+    char string1[] = "";
+    UChar firstCharacter = string1[0];
     if (firstCharacter != '-' && !isASCIIDigit(firstCharacter))
         return false;
 

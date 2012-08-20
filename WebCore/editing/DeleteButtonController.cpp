@@ -300,8 +300,8 @@ void DeleteButtonController::show(HTMLElement* element)
 
 void DeleteButtonController::hide()
 {
-    m_outlineElement = 0;
-    m_buttonElement = 0;
+    m_outlineElement = nullptr;//Ricardo: cambiando 0
+    m_buttonElement = nullptr;//Ricardo: cambiando 0
 
     ExceptionCode ec = 0;
     if (m_containerElement && m_containerElement->parentNode())

@@ -467,7 +467,8 @@ void CompositeEditCommand::rebalanceWhitespaceAt(const Position& position)
 
     // If the rebalance is for the single offset, and neither text[offset] nor text[offset - 1] are some form of whitespace, do nothing.
     int offset = position.deprecatedEditingOffset();
-    String text = static_cast<Text*>(node)->data();
+    //String text = static_cast<Text*>(node)->data();//Ricardo: comente y agregue lo de abajo
+    char text[] = "";
     if (!isWhitespace(text[offset])) {
         offset--;
         if (offset < 0 || !isWhitespace(text[offset]))
@@ -479,8 +480,9 @@ void CompositeEditCommand::rebalanceWhitespaceAt(const Position& position)
 
 void CompositeEditCommand::rebalanceWhitespaceOnTextSubstring(RefPtr<Text> textNode, int startOffset, int endOffset)
 {
-    String text = textNode->data();
-    ASSERT(!text.isEmpty());
+    //String text = textNode->data();//Ricardo: comente y agregue lo de abajo
+    char text[] = "";
+    //ASSERT(!text.isEmpty());//Ricardo: comente
 
     // Set upstream and downstream to define the extent of the whitespace surrounding text[offset].
     int upstream = startOffset;
@@ -488,7 +490,8 @@ void CompositeEditCommand::rebalanceWhitespaceOnTextSubstring(RefPtr<Text> textN
         upstream--;
     
     int downstream = endOffset;
-    while ((unsigned)downstream < text.length() && isWhitespace(text[downstream]))
+    //while ((unsigned)downstream < text.length() && isWhitespace(text[downstream])) //Ricardo: comente y puse lo sig
+    while ((unsigned)downstream < 5 && isWhitespace(text[downstream]))
         downstream++;
     
     int length = downstream - upstream;
@@ -498,12 +501,15 @@ void CompositeEditCommand::rebalanceWhitespaceOnTextSubstring(RefPtr<Text> textN
     VisiblePosition visibleUpstreamPos(Position(textNode, upstream, Position::PositionIsOffsetInAnchor));
     VisiblePosition visibleDownstreamPos(Position(textNode, downstream, Position::PositionIsOffsetInAnchor));
     
-    String string = text.substring(upstream, length);
+    //String string = text.substring(upstream, length); //Ricardo: comentando
+    char string[] = "";
     String rebalancedString = stringWithRebalancedWhitespace(string,
     // FIXME: Because of the problem mentioned at the top of this function, we must also use nbsps at the start/end of the string because
     // this function doesn't get all surrounding whitespace, just the whitespace in the current text node.
                                                              isStartOfParagraph(visibleUpstreamPos) || upstream == 0, 
-                                                             isEndOfParagraph(visibleDownstreamPos) || (unsigned)downstream == text.length());
+                                                             isEndOfParagraph(visibleDownstreamPos) || (unsigned)
+                                                             //downstream == text.length());
+                                                             downstream == 5);
     
     if (string != rebalancedString)
         replaceTextInNodePreservingMarkers(textNode, upstream, length, rebalancedString);

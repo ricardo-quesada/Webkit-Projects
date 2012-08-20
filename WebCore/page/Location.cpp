@@ -228,12 +228,13 @@ void Location::setSearch(const String& search, DOMWindow* activeWindow, DOMWindo
 
 void Location::setHash(const String& hash, DOMWindow* activeWindow, DOMWindow* firstWindow)
 {
+    char hash1[] =""; //Ricardo: saliendo del paso con String
     if (!m_frame)
         return;
     KURL url = m_frame->document()->url();
     String oldFragmentIdentifier = url.fragmentIdentifier();
     String newFragmentIdentifier = hash;
-    if (hash[0] == '#')
+    if (hash1[0] == '#')
         newFragmentIdentifier = hash.substring(1);
     url.setFragmentIdentifier(newFragmentIdentifier);
     // Note that by parsing the URL and *then* comparing fragments, we are 

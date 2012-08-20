@@ -170,7 +170,7 @@ void IconLoader::finishLoading(const KURL& iconURL, PassRefPtr<SharedBuffer> dat
 
 void IconLoader::clearLoadingState()
 {
-    m_resourceLoader = 0;
+    m_resourceLoader = nullptr; //Ricardo: reemplazando 0
     m_loadIsInProgress = false;
 }
 

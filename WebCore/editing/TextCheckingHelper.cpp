@@ -68,7 +68,7 @@ void TextCheckingParagraph::expandRangeToNextEnd()
 void TextCheckingParagraph::invalidateParagraphRangeValues()
 {
     m_checkingStart = m_checkingEnd = -1;
-    m_offsetAsRange = 0;
+    m_offsetAsRange = nullptr; //Ricardo: cambiando 0
     m_text = String();
 }
 

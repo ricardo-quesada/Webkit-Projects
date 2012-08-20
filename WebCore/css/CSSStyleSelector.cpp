@@ -872,13 +872,13 @@ inline void CSSStyleSelector::initForStyleResolve(Element* e, RenderStyle* paren
     RenderStyle* docStyle = m_checker.m_document->renderStyle();
     m_rootElementStyle = docElement && e != docElement ? docElement->renderStyle() : docStyle;
 
-    m_style = 0;
+    m_style = nullptr;
 
     m_matchedDecls.clear();
 
     m_pendingImageProperties.clear();
 
-    m_ruleList = 0;
+    m_ruleList = nullptr;
 
     m_fontDirty = false;
 }
@@ -1334,7 +1334,7 @@ PassRefPtr<RenderStyle> CSSStyleSelector::styleForElement(Element* e, RenderStyl
                 m_style->setHasPseudoStyle(static_cast<PseudoId>(pseudo));
         }
         if (m_elementLinkState == InsideUnvisitedLink)
-            visitedStyle = 0;  // We made the style to avoid timing attacks. Just throw it away now that we did that, since we don't need it.
+            visitedStyle = nullptr;  // We made the style to avoid timing attacks. Just throw it away now that we did that, since we don't need it.
         else
             visitedStyle->setStyleType(VISITED_LINK);
     }

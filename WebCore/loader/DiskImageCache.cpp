@@ -34,6 +34,7 @@
 #include <errno.h>
 #include <sys/mman.h>
 #include <wtf/text/CString.h>
+#include <fcntl.h> //Ricardo: agregando referencia perdida
 
 namespace WebCore {
 

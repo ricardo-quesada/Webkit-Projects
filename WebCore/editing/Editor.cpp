@@ -1232,7 +1232,7 @@ void Editor::unappliedEditing(PassRefPtr<EditCommand> cmd)
     changeSelectionAfterCommand(newSelection, true, true);
     m_spellingCorrector->respondToUnappliedEditing(cmd.get());
     
-    m_lastEditCommand = 0;
+    m_lastEditCommand = nullptr; //Ricardo: cambiando 0
     if (client())
         client()->registerCommandForRedo(cmd);
     respondToChangedContents(newSelection);
@@ -1247,7 +1247,7 @@ void Editor::reappliedEditing(PassRefPtr<EditCommand> cmd)
     VisibleSelection newSelection(cmd->endingSelection());
     changeSelectionAfterCommand(newSelection, true, true);
     
-    m_lastEditCommand = 0;
+    m_lastEditCommand = nullptr; //Ricardo: cambiando 0
     if (client())
         client()->registerCommandForUndo(cmd);
     respondToChangedContents(newSelection);
@@ -1273,7 +1273,7 @@ Editor::~Editor()
 
 void Editor::clear()
 {
-    m_compositionNode = 0;
+    m_compositionNode = nullptr; //Ricardo: cambiando 0
     m_customCompositionUnderlines.clear();
     m_shouldStyleWithCSS = false;
 }
@@ -1290,6 +1290,7 @@ bool Editor::insertTextForConfirmedComposition(const String& text)
 
 bool Editor::insertTextWithoutSendingTextEvent(const String& text, bool selectInsertedText, TextEvent* triggeringEvent)
 {
+    char text1[] = "test";
     if (text.isEmpty())
         return false;
 
@@ -1302,13 +1303,13 @@ bool Editor::insertTextWithoutSendingTextEvent(const String& text, bool selectIn
         return true;
 
     if (!text.isEmpty())
-        updateMarkersForWordsAffectedByEditing(isSpaceOrNewline(text[0]));
+        updateMarkersForWordsAffectedByEditing(isSpaceOrNewline(text1[0]));
 
     bool shouldConsiderApplyingAutocorrection = false;
     if (text == " " || text == "\t")
         shouldConsiderApplyingAutocorrection = true;
 
-    if (text.length() == 1 && isPunct(text[0]) && !isAmbiguousBoundaryCharacter(text[0]))
+    if (text.length() == 1 && isPunct(text1[0]) && !isAmbiguousBoundaryCharacter(text1[0]))
         shouldConsiderApplyingAutocorrection = true;
 
     bool autocorrectionWasApplied = shouldConsiderApplyingAutocorrection && m_spellingCorrector->applyAutocorrectionBeforeTypingIfAppropriate();
@@ -1730,7 +1731,7 @@ void Editor::confirmComposition(const String& text, bool preserveSelection)
     if (text.isEmpty())
         TypingCommand::deleteSelection(m_frame->document(), 0);
 
-    m_compositionNode = 0;
+    m_compositionNode = nullptr; //Ricardo: cambiando 0
     m_customCompositionUnderlines.clear();
 
     insertTextForConfirmedComposition(text);
@@ -1800,7 +1801,7 @@ void Editor::setComposition(const String& text, const Vector<CompositionUnderlin
     if (text.isEmpty())
         TypingCommand::deleteSelection(m_frame->document(), TypingCommand::PreventSpellChecking);
 
-    m_compositionNode = 0;
+    m_compositionNode = nullptr; //Ricardo: cambiando 0
     m_customCompositionUnderlines.clear();
 
     if (!text.isEmpty()) {

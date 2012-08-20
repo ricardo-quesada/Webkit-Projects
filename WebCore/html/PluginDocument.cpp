@@ -173,7 +173,7 @@ Node* PluginDocument::pluginNode()
 void PluginDocument::detach()
 {
     // Release the plugin node so that we don't have a circular reference.
-    m_pluginNode = 0;
+    m_pluginNode = nullptr; //Ricardo: reemplazando 0
     HTMLDocument::detach();
 }
 

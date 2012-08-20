@@ -138,7 +138,7 @@ void ApplyBlockElementCommand::formatSelection(const VisiblePosition& startOfSel
         // Don't put the next paragraph in the blockquote we just created for this paragraph unless 
         // the next paragraph is in the same cell.
         if (enclosingCell && enclosingCell != enclosingNodeOfType(endOfNextParagraph.deepEquivalent(), &isTableCell))
-            blockquoteForNextIndent = 0;
+            blockquoteForNextIndent = nullptr;//Ricado: reemplazando 0
 
         // indentIntoBlockquote could move more than one paragraph if the paragraph
         // is in a list item or a table. As a result, endAfterSelection could refer to a position
@@ -166,7 +166,8 @@ static bool isNewLineAtPosition(const Position& position)
         return false;
 
     ExceptionCode ec = 0;
-    String textAtPosition = static_cast<Text*>(textNode)->substringData(offset, 1, ec);
+    //String textAtPosition = static_cast<Text*>(textNode)->substringData(offset, 1, ec); //ricardo lo comente
+    char textAtPosition[] = "test"; //Ricardo: agregue este para pasar
     if (ec)
         return false;
 

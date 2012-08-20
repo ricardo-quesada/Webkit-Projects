@@ -157,13 +157,13 @@ void WebGLFramebuffer::removeAttachment(WebGLObject* attachment)
     if (!object())
         return;
     if (attachment == m_colorAttachment.get())
-        m_colorAttachment = 0;
+        m_colorAttachment = nullptr; //Ricardo: reemplazando 0
     else if (attachment == m_depthAttachment.get())
-        m_depthAttachment = 0;
+        m_depthAttachment = nullptr; //Ricardo: reemplazando 0
     else if (attachment == m_stencilAttachment.get())
-        m_stencilAttachment = 0;
+        m_stencilAttachment = nullptr; //Ricardo: reemplazando 0
     else if (attachment == m_depthStencilAttachment.get())
-        m_depthStencilAttachment = 0;
+        m_depthStencilAttachment = nullptr; //Ricardo: reemplazando 0
     else
         return;
 }
@@ -250,10 +250,10 @@ bool WebGLFramebuffer::onAccess(bool needToInitializeRenderbuffers)
 void WebGLFramebuffer::deleteObjectImpl(Platform3DObject object)
 {
     context()->graphicsContext3D()->deleteFramebuffer(object);
-    m_colorAttachment = 0;
-    m_depthAttachment = 0;
-    m_stencilAttachment = 0;
-    m_depthStencilAttachment = 0;
+    m_colorAttachment = nullptr; //Ricardo: reemplazando 0
+    m_depthAttachment = nullptr; //Ricardo: reemplazando 0
+    m_stencilAttachment = nullptr; //Ricardo: reemplazando 0
+    m_depthStencilAttachment = nullptr; //Ricardo: reemplazando 0
 }
 
 bool WebGLFramebuffer::initializeRenderbuffers()

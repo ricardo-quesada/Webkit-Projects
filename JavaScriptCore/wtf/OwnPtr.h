@@ -21,8 +21,10 @@
 #ifndef WTF_OwnPtr_h
 #define WTF_OwnPtr_h
 
-#include "Assertions.h"
+
 #include "NullPtr.h"
+#include "Assertions.h"
+
 #include "OwnPtrCommon.h"
 #include "TypeTraits.h"
 #include <algorithm>

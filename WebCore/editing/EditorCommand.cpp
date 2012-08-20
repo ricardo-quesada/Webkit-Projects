@@ -437,7 +437,8 @@ static bool executeForeColor(Frame* frame, Event*, EditorCommandSource source, c
 static bool executeFormatBlock(Frame* frame, Event*, EditorCommandSource, const String& value)
 {
     String tagName = value.lower();
-    if (tagName[0] == '<' && tagName[tagName.length() - 1] == '>')
+    char tagName1[] = "";
+    if (tagName1[0] == '<' && tagName1[tagName.length() - 1] == '>')
         tagName = tagName.substring(1, tagName.length() - 2);
 
     ExceptionCode ec;

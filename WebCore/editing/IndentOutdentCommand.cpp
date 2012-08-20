@@ -228,7 +228,7 @@ void IndentOutdentCommand::formatSelection(const VisiblePosition& startOfSelecti
 void IndentOutdentCommand::formatRange(const Position& start, const Position& end, const Position&, RefPtr<Element>& blockquoteForNextIndent)
 {
     if (tryIndentingAsListItem(start, end))
-        blockquoteForNextIndent = 0;
+        blockquoteForNextIndent = nullptr; //Ricardo: cambiando 0
     else
         indentIntoBlockquote(start, end, blockquoteForNextIndent);
 }

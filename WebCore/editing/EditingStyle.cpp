@@ -757,7 +757,7 @@ void EditingStyle::mergeStyle(CSSMutableStyleDeclaration* style)
         if ((it->id() == CSSPropertyTextDecoration || it->id() == CSSPropertyWebkitTextDecorationsInEffect) && it->value()->isValueList()) {
             value = m_mutableStyle->getPropertyCSSValue(it->id());
             if (value && !value->isValueList())
-                value = 0;
+                value = nullptr; //Ricardo: cambiando 0
         }
 
         if (!value) {

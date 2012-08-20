@@ -37,7 +37,7 @@ CSSRuleList::CSSRuleList(StyleList* list, bool omitCharsetRules)
 {
     m_list = list;
     if (list && omitCharsetRules) {
-        m_list = 0;
+        m_list = nullptr;
         unsigned len = list->length();
         for (unsigned i = 0; i < len; ++i) {
             StyleBase* style = list->item(i);

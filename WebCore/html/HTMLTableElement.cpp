@@ -437,7 +437,7 @@ void HTMLTableElement::parseMappedAttribute(Attribute* attr)
 
     if (bordersBefore != cellBorders() || oldPadding != m_padding) {
         if (oldPadding != m_padding)
-            m_paddingDecl = 0;
+            m_paddingDecl = nullptr; //Ricardo: reemplazando 0
         bool cellChanged = false;
         for (Node* child = firstChild(); child; child = child->nextSibling())
             cellChanged |= setTableCellsChanged(child);

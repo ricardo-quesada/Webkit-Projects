@@ -168,11 +168,11 @@ void ValidationMessage::requestToHideMessage()
 void ValidationMessage::deleteBubbleTree(Timer<ValidationMessage>*)
 {
     if (m_bubble) {
-        m_bubbleMessage = 0;
+        m_bubbleMessage = nullptr; //Ricardo: reemplazando 0
         HTMLElement* host = toHTMLElement(m_element);
         ExceptionCode ec;
         host->shadowRoot()->removeChild(m_bubble.get(), ec);
-        m_bubble = 0;
+        m_bubble = nullptr; //Ricardo: reemplazando 0
     }
     m_message = String();
 }

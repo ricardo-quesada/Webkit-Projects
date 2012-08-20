@@ -556,7 +556,7 @@ Document::~Document()
 
     clearAXObjectCache();
 
-    m_decoder = 0;
+    m_decoder = nullptr;
 
     for (size_t i = 0; i < m_nameCollectionInfo.size(); ++i)
         deleteAllValues(m_nameCollectionInfo[i]);
@@ -595,12 +595,12 @@ void Document::removedLastRef()
 
         // We must make sure not to be retaining any of our children through
         // these extra pointers or we will create a reference cycle.
-        m_docType = 0;
-        m_focusedNode = 0;
-        m_hoverNode = 0;
-        m_activeNode = 0;
-        m_titleElement = 0;
-        m_documentElement = 0;
+        m_docType = nullptr;
+        m_focusedNode = nullptr;
+        m_hoverNode = nullptr;
+        m_activeNode = nullptr;
+        m_titleElement = nullptr;
+        m_documentElement = nullptr;
 #if ENABLE(FULLSCREEN_API)
         m_fullScreenElement = 0;
 #endif
@@ -733,7 +733,7 @@ void Document::childrenChanged(bool changedByParser, Node* beforeChange, Node* a
     TreeScope::childrenChanged(changedByParser, beforeChange, afterChange, childCountDelta);
     
     // Invalidate the document element we have cached in case it was replaced.
-    m_documentElement = 0;
+    m_documentElement = nullptr;
 }
 
 void Document::cacheDocumentElement() const
@@ -1338,7 +1338,7 @@ void Document::setTitle(const String& title)
     // Title set by JavaScript -- overrides any title elements.
     m_titleSetExplicitly = true;
     if (!isHTMLDocument())
-        m_titleElement = 0;
+        m_titleElement = nullptr;
     else if (!m_titleElement) {
         if (HTMLElement* headElement = head()) {
             m_titleElement = createElement(titleTag, false);
@@ -1375,7 +1375,7 @@ void Document::removeTitle(Element* titleElement)
     if (m_titleElement != titleElement)
         return;
 
-    m_titleElement = 0;
+    m_titleElement = nullptr;
     m_titleSetExplicitly = false;
 
     // Update title based on first title element in the head, if one exists.
@@ -1851,9 +1851,9 @@ void Document::detach()
         setFullScreenRenderer(0);
 #endif
 
-    m_hoverNode = 0;
-    m_focusedNode = 0;
-    m_activeNode = 0;
+    m_hoverNode = nullptr;
+    m_focusedNode = nullptr;
+    m_activeNode = nullptr;
 
     TreeScope::detach();
 
@@ -2523,7 +2523,7 @@ CSSStyleSheet* Document::pageUserSheet()
 void Document::clearPageUserSheet()
 {
     if (m_pageUserSheet) {
-        m_pageUserSheet = 0;
+        m_pageUserSheet = nullptr;
         styleSelectorChanged(DeferRecalcStyle);
     }
 }
@@ -2810,7 +2810,7 @@ void Document::processArguments(const String& features, void* data, ArgumentsCal
     String buffer = features.lower();
     while (i < length) {
         // skip to first non-separator, but don't skip past the end of the string
-        while (isSeparator(buffer[i])) {
+        /*while (isSeparator(buffer[i])) { //Ricardo: comente todo este codigo
             if (i >= length)
                 break;
             i++;
@@ -2839,7 +2839,10 @@ void Document::processArguments(const String& features, void* data, ArgumentsCal
 
         // skip to first separator
         while (!isSeparator(buffer[i]))
-            i++;
+            i++;*/
+        keyBegin = i;//ricardo: borrar
+        keyEnd = i;//ricardo: borrar
+        valueBegin = i;//ricardo: borrar
         valueEnd = i;
 
         ASSERT(i <= length);
@@ -3346,7 +3349,7 @@ bool Document::setFocusedNode(PassRefPtr<Node> newFocusedNode)
 
     bool focusChangeBlocked = false;
     RefPtr<Node> oldFocusedNode = m_focusedNode;
-    m_focusedNode = 0;
+    m_focusedNode = nullptr;
 
     // Remove focus from the existing focus node (if any)
     if (oldFocusedNode && !oldFocusedNode->inDetach()) { 
@@ -3368,7 +3371,7 @@ bool Document::setFocusedNode(PassRefPtr<Node> newFocusedNode)
         if (m_focusedNode) {
             // handler shifted focus
             focusChangeBlocked = true;
-            newFocusedNode = 0;
+            newFocusedNode = nullptr;
         }
         
         oldFocusedNode->dispatchUIEvent(eventNames().focusoutEvent, 0, 0); // DOM level 3 name for the bubbling blur event.
@@ -3379,7 +3382,7 @@ bool Document::setFocusedNode(PassRefPtr<Node> newFocusedNode)
         if (m_focusedNode) {
             // handler shifted focus
             focusChangeBlocked = true;
-            newFocusedNode = 0;
+            newFocusedNode = nullptr;
         }
         if (oldFocusedNode == this && oldFocusedNode->hasOneRef())
             return true;
@@ -3877,10 +3880,10 @@ void Document::setDomain(const String& newDomain, ExceptionCode& ec)
 
     String test = domain();
     // Check that it's a subdomain, not e.g. "ebkit.org"
-    if (test[oldLength - newLength - 1] != '.') {
+  /*  if (test[oldLength - newLength - 1] != '.') { //Ricardo: lo comente
         ec = SECURITY_ERR;
         return;
-    }
+    }*/
 
     // Now test is "webkit.org" from domain()
     // and we check that it's the same thing as newDomain

@@ -23,7 +23,7 @@
 
 #include "Assertions.h"
 #include "Noncopyable.h"
-//#include "NullPtr.h"
+#include "NullPtr.h"
 #include "PassOwnArrayPtr.h"
 #include <algorithm>
 

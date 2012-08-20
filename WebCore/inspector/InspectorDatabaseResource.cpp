@@ -61,7 +61,7 @@ void InspectorDatabaseResource::bind(InspectorFrontend::Database* frontend)
     jsonObject->setString("domain", m_domain);
     jsonObject->setString("name", m_name);
     jsonObject->setString("version", m_version);
-    frontend->addDatabase(jsonObject);
+    //frontend->addDatabase(jsonObject); //Ricardo: Mismo caso de inspectorfrontend.h
 }
 
 } // namespace WebCore

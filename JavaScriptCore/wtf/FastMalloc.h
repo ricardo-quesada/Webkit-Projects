@@ -28,6 +28,8 @@
 
 namespace WTF {
 
+    //Ricardo: agregando isMainThread para wtf
+    bool isMainThread();
     // These functions call CRASH() if an allocation fails.
     void* fastMalloc(size_t);
     void* fastZeroedMalloc(size_t);

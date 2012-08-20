@@ -164,7 +164,7 @@ void HTMLAnchorElement::defaultEventHandler(Event* event)
             } else if (event->type() == eventNames().mouseoverEvent) {
                 // These are cleared on mouseover and not mouseout because their values are needed for drag events,
                 // but drag events happen after mouse out events.
-                m_rootEditableElementForSelectionOnMouseDown = 0;
+                m_rootEditableElementForSelectionOnMouseDown = nullptr; //Ricardo: reemplazando 0
                 m_wasShiftKeyDownOnMouseDown = false;
             }
         }
@@ -310,8 +310,9 @@ String HTMLAnchorElement::hash() const
 
 void HTMLAnchorElement::setHash(const String& value)
 {
+    char value1 [] =""; //Ricardo: agregando para seguir
     KURL url = href();
-    if (value[0] == '#')
+    if (value1[0] == '#')
         url.setFragmentIdentifier(value.substring(1));
     else
         url.setFragmentIdentifier(value);
@@ -392,11 +393,12 @@ String HTMLAnchorElement::pathname() const
 
 void HTMLAnchorElement::setPathname(const String& value)
 {
+    char value1 [] =""; //Ricardo: agregando para seguir
     KURL url = href();
     if (!url.canSetPathname())
         return;
 
-    if (value[0] == '/')
+    if (value1[0] == '/')
         url.setPath(value);
     else
         url.setPath("/" + value);
@@ -460,8 +462,10 @@ String HTMLAnchorElement::getParameter(const String& name) const
 
 void HTMLAnchorElement::setSearch(const String& value)
 {
+    char value1 [] =""; //Ricardo: agregando para seguir
+
     KURL url = href();
-    String newSearch = (value[0] == '?') ? value.substring(1) : value;
+    String newSearch = (value1[0] == '?') ? value.substring(1) : value;
     // Make sure that '#' in the query does not leak to the hash.
     url.setQuery(newSearch.replace('#', "%23"));
 

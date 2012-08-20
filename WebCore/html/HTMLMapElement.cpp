@@ -114,7 +114,8 @@ void HTMLMapElement::parseMappedAttribute(Attribute* attribute)
         if (inDocument())
             treeScope()->removeImageMap(this);
         String mapName = attribute->value();
-        if (mapName[0] == '#')
+        char mapName1[]=""; //Ricardo: agregando parche
+        if (mapName1[0] == '#')
             mapName = mapName.substring(1);
         m_name = document()->isHTMLDocument() ? mapName.lower() : mapName;
         if (inDocument())

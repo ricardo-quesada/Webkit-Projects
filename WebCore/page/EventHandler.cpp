@@ -238,41 +238,41 @@ void EventHandler::clear()
     m_hoverTimer.stop();
     m_fakeMouseMoveEventTimer.stop();
     m_resizeLayer = 0;
-    m_nodeUnderMouse = 0;
-    m_lastNodeUnderMouse = 0;
+    m_nodeUnderMouse = nullptr; //Ricardo: reemplazando 0
+    m_lastNodeUnderMouse = nullptr; //Ricardo: reemplazando 0
 #if ENABLE(SVG)
     m_instanceUnderMouse = 0;
     m_lastInstanceUnderMouse = 0;
 #endif
-    m_lastMouseMoveEventSubframe = 0;
-    m_lastScrollbarUnderMouse = 0;
+    m_lastMouseMoveEventSubframe = nullptr; //Ricardo: reemplazando 0
+    m_lastScrollbarUnderMouse = nullptr; //Ricardo: reemplazando 0
     m_clickCount = 0;
-    m_clickNode = 0;
+    m_clickNode = nullptr; //Ricardo: reemplazando 0
     m_gestureInitialDiameter = GestureUnknown;
     m_gestureLastDiameter = GestureUnknown;
     m_gestureInitialRotation = GestureUnknown;
     m_gestureLastRotation = GestureUnknown;
     m_touches.clear();
     m_gestureTargets.clear();
-    m_touchEventTargetSubframe = 0;
-    m_frameSetBeingResized = 0;
+    m_touchEventTargetSubframe = nullptr; //Ricardo: reemplazando 0
+    m_frameSetBeingResized = nullptr; //Ricardo: reemplazando 0
 #if ENABLE(DRAG_SUPPORT)
     m_dragTarget = 0;
     m_shouldOnlyFireDragOverEvent = false;
 #endif
     m_currentMousePosition = IntPoint();
-    m_mousePressNode = 0;
+    m_mousePressNode = nullptr; //Ricardo: reemplazando 0
     m_mousePressed = false;
     m_capturesDragging = false;
-    m_capturingMouseEventsNode = 0;
-    m_latchedWheelEventNode = 0;
-    m_previousWheelScrolledNode = 0;
+    m_capturingMouseEventsNode = nullptr; //Ricardo: reemplazando 0
+    m_latchedWheelEventNode = nullptr; //Ricardo: reemplazando 0
+    m_previousWheelScrolledNode = nullptr; //Ricardo: reemplazando 0
 }
 
 void EventHandler::nodeWillBeRemoved(Node* nodeToBeRemoved)
 {
     if (nodeToBeRemoved->contains(m_clickNode.get()))
-        m_clickNode = 0;
+        m_clickNode = nullptr; //Ricardo: reemplazando 0;
 }
 
 static void setSelectionIfNeeded(FrameSelection* selection, const VisibleSelection& newSelection)
@@ -1246,7 +1246,7 @@ bool EventHandler::handleMousePressEvent(const PlatformMouseEvent& mouseEvent)
         HitTestRequest request(HitTestRequest::ReadOnly | HitTestRequest::Active);
         mev = m_frame->document()->prepareMouseEvent(request, documentPoint, mouseEvent);
         if (wasLastScrollBar && mev.scrollbar() != m_lastScrollbarUnderMouse.get())
-            m_lastScrollbarUnderMouse = 0;
+            m_lastScrollbarUnderMouse = nullptr; //Ricardo: reemplazando 0;
     }
 
     if (swallowEvent) {
@@ -1298,7 +1298,7 @@ bool EventHandler::handleMouseDoubleClickEvent(const PlatformMouseEvent& mouseEv
     MouseEventWithHitTestResults mev = prepareMouseEvent(request, mouseEvent);
     Frame* subframe = subframeForHitTestResult(mev);
     if (m_eventHandlerWillResetCapturingMouseEventsNode)
-        m_capturingMouseEventsNode = 0;
+        m_capturingMouseEventsNode = nullptr; //Ricardo: reemplazando 0;
     if (subframe && passMousePressEventToSubframe(mev, subframe))
         return true;
 
@@ -1448,8 +1448,8 @@ bool EventHandler::handleMouseMoveEvent(const PlatformMouseEvent& mouseEvent, Hi
 
 void EventHandler::invalidateClick()
 {
-    m_clickCount = 0;
-    m_clickNode = 0;
+    m_clickCount = 0; 
+    m_clickNode = nullptr; //Ricardo: reemplazando 0;
 }
 
 bool EventHandler::handleMouseReleaseEvent(const PlatformMouseEvent& mouseEvent)
@@ -1488,10 +1488,10 @@ bool EventHandler::handleMouseReleaseEvent(const PlatformMouseEvent& mouseEvent)
     MouseEventWithHitTestResults mev = prepareMouseEvent(request, mouseEvent);
     Frame* subframe = m_capturingMouseEventsNode.get() ? subframeForTargetNode(m_capturingMouseEventsNode.get()) : subframeForHitTestResult(mev);
     if (m_eventHandlerWillResetCapturingMouseEventsNode)
-        m_capturingMouseEventsNode = 0;
+        m_capturingMouseEventsNode = nullptr; //Ricardo: reemplazando 0;
     if (subframe && passMouseReleaseEventToSubframe(mev, subframe))
         return true;
-    m_capturingMouseEventsNode = 0;
+    m_capturingMouseEventsNode = nullptr; //Ricardo: reemplazando 0;
 
     bool swallowMouseUpEvent = dispatchMouseEvent(eventNames().mouseupEvent, targetNode(mev), true, m_clickCount, mouseEvent, false);
 
@@ -1759,8 +1759,8 @@ void EventHandler::updateMouseEventTargetNode(Node* targetNode, const PlatformMo
         }
         
         if (m_lastNodeUnderMouse && m_lastNodeUnderMouse->document() != m_frame->document()) {
-            m_lastNodeUnderMouse = 0;
-            m_lastScrollbarUnderMouse = 0;
+            m_lastNodeUnderMouse = nullptr; //Ricardo: reemplazando 0;
+            m_lastScrollbarUnderMouse = nullptr; //Ricardo: reemplazando 0;
 #if ENABLE(SVG)
             m_lastInstanceUnderMouse = 0;
 #endif
@@ -1888,9 +1888,9 @@ bool EventHandler::handleWheelEvent(PlatformWheelEvent& e)
         isOverWidget = m_widgetIsLatched;
     } else {
         if (m_latchedWheelEventNode)
-            m_latchedWheelEventNode = 0;
+            m_latchedWheelEventNode = nullptr; //Ricardo: reemplazando 0;
         if (m_previousWheelScrolledNode)
-            m_previousWheelScrolledNode = 0;
+            m_previousWheelScrolledNode = nullptr; //Ricardo: reemplazando 0;
 
         node = result.innerNode();
         isOverWidget = result.isOverWidget();

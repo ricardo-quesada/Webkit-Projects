@@ -457,7 +457,7 @@ void DocumentLoader::setPrimaryLoadComplete(bool flag)
     if (flag) {
         if (m_mainResourceLoader) {
             m_mainResourceData = m_mainResourceLoader->resourceData();
-            m_mainResourceLoader = 0;
+            m_mainResourceLoader = nullptr; //Ricardo: reemplazando 0
         }
 
         if (this == frameLoader()->activeDocumentLoader())
@@ -844,7 +844,7 @@ bool DocumentLoader::startLoadingMainResource(unsigned long identifier)
         // FIXME: If this should really be caught, we should just ASSERT this doesn't happen;
         // should it be caught by other parts of WebKit or other parts of the app?
         LOG_ERROR("could not create WebResourceHandle for URL %s -- should be caught by policy handler level", m_request.url().string().ascii().data());
-        m_mainResourceLoader = 0;
+        m_mainResourceLoader = nullptr; //Ricardo: reemplazando 0
         return false;
     }
 
@@ -910,7 +910,7 @@ void DocumentLoader::getIconLoadDecisionForIconURL(const String& urlString)
 void DocumentLoader::continueIconLoadWithDecision(IconLoadDecision decision)
 {
     ASSERT(m_iconLoadDecisionCallback);
-    m_iconLoadDecisionCallback = 0;
+    m_iconLoadDecisionCallback = nullptr; //Ricardo: reemplazando 0
     if (m_frame)
         m_frame->loader()->continueIconLoadWithDecision(decision);
 }

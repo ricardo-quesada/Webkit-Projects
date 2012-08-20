@@ -1004,7 +1004,7 @@ void TextIterator::emitText(Node* textNode, RenderObject* renderObject, int text
     m_positionEndOffset = textEndOffset;
     m_textCharacters = m_text.characters() + textStartOffset;
     m_textLength = textEndOffset - textStartOffset;
-    m_lastCharacter = m_text[textEndOffset - 1];
+    //m_lastCharacter = m_text[textEndOffset - 1];//Ricardo Comentando esta linea pa seguir
 
     m_lastTextNodeEndedWithCollapsedSpace = false;
     m_hasEmitted = true;
@@ -1246,7 +1246,7 @@ bool SimplifiedBackwardsTextIterator::handleTextNode()
     ASSERT(m_textCharacters >= text.characters());
     ASSERT(m_textCharacters + m_textLength <= text.characters() + static_cast<int>(text.length()));
 
-    m_lastCharacter = text[m_positionEndOffset - 1];
+   // m_lastCharacter = text[m_positionEndOffset - 1]; //Ricardo: comentando para seguir
 
     return !m_shouldHandleFirstLetter;
 }

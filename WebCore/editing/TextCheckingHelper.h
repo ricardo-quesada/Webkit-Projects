@@ -41,7 +41,8 @@ public:
     int textLength() const { return text().length(); }
     String textSubstring(unsigned pos, unsigned len = UINT_MAX) const { return text().substring(pos, len); }
     const UChar* textCharacters() const { return text().characters(); }
-    UChar textCharAt(int index) const { return text()[index]; }
+    //UChar textCharAt(int index) const { return text()[index]; }//Ricardo: lo comente y lo cambie x el de abajo
+    UChar textCharAt(int index) const { UChar ret; return ret; }
 
     bool isEmpty() const;
     bool isTextEmpty() const { return text().isEmpty(); }

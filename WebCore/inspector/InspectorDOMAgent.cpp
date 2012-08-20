@@ -305,7 +305,7 @@ void InspectorDOMAgent::clearFrontend()
 void InspectorDOMAgent::restore()
 {
     // Reset document to avoid early return from setDocument.
-    m_document = 0;
+    m_document = nullptr; //Ricardo: reemplazando 0
     setDocument(m_pageAgent->mainFrame()->document());
 }
 
@@ -328,7 +328,7 @@ void InspectorDOMAgent::reset()
     discardBindings();
     if (m_revalidateStyleAttrTask)
         m_revalidateStyleAttrTask->reset();
-    m_document = 0;
+    m_document = nullptr; //Ricardo: reemplazando 0
 }
 
 void InspectorDOMAgent::setDOMListener(DOMListener* listener)
@@ -939,7 +939,7 @@ void InspectorDOMAgent::focusNode()
     ASSERT(m_nodeToFocus);
 
     RefPtr<Node> node = m_nodeToFocus.get();
-    m_nodeToFocus = 0;
+    m_nodeToFocus = nullptr; //Ricardo: reemplazando 0
 
     Document* document = node->ownerDocument();
     if (!document)
@@ -1008,7 +1008,7 @@ void InspectorDOMAgent::highlightFrame(ErrorString* error, const String& frameId
 
 void InspectorDOMAgent::hideHighlight(ErrorString*)
 {
-    m_highlightedNode = 0;
+    m_highlightedNode = nullptr; //Ricardo: reemplazando 0
     m_client->hideHighlight();
 }
 
