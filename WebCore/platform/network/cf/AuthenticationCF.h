@@ -40,13 +40,13 @@ class Credential;
 class ProtectionSpace;
 
 CFURLAuthChallengeRef createCF(const AuthenticationChallenge&);
-CFURLCredentialRef createCF(const Credential&);
+//CFURLCredentialRef createCF(const Credential&);
 CFURLProtectionSpaceRef createCF(const ProtectionSpace&);
 
 #if PLATFORM(MAC)
 AuthenticationChallenge core(CFURLAuthChallengeRef);
 #endif
-Credential core(CFURLCredentialRef);
+//Credential core(CFURLCredentialRef);
 ProtectionSpace core(CFURLProtectionSpaceRef);
 
 }

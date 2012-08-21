@@ -450,105 +450,118 @@ String contextMenuItemTagInspectElement()
 
 String searchMenuNoRecentSearchesText()  // Ricardo: las siguientes llamadas no estaban los metodos se pusieron todas a retornar new String()
 {
-    return new String();
+    return *new String();
     //return localizationStrategy()->searchMenuNoRecentSearchesText();
 }
 
 String searchMenuRecentSearchesText ()
 {
-    return new String();
+    return *new String();
     //return localizationStrategy()->searchMenuRecentSearchesText ();
 }
 
 String searchMenuClearRecentSearchesText()
 {
-    return new String();
+    return *new String();
     //return localizationStrategy()->searchMenuClearRecentSearchesText();
 }
 
 String AXWebAreaText()
 {
-    return new String();
+    return *new String();
     //return localizationStrategy()->AXWebAreaText();
 }
 
 String AXLinkText()
 {
-    return new String();   
+    return *new String();
    // return localizationStrategy()->AXLinkText();
 }
 
 String AXListMarkerText()
 {
-    return new String();
+    return *new String();
  //   return localizationStrategy()->AXListMarkerText();
 }
 
 String AXImageMapText()
 {
-    return localizationStrategy()->AXImageMapText();
+    return *new String();
+    // return localizationStrategy()->AXImageMapText();
 }
 
 String AXHeadingText()
 {
-    return localizationStrategy()->AXHeadingText();
+    return *new String();
+    // return localizationStrategy()->AXHeadingText();
 }
 
 String AXDefinitionListTermText()
 {
-    return localizationStrategy()->AXDefinitionListTermText();
+    return *new String();
+    // return localizationStrategy()->AXDefinitionListTermText();
 }
 
 String AXDefinitionListDefinitionText()
 {
-    return localizationStrategy()->AXDefinitionListDefinitionText();
+    return *new String();
+    // return localizationStrategy()->AXDefinitionListDefinitionText();
 }
 
 #if PLATFORM(MAC)
 String AXARIAContentGroupText(const String& ariaType)
 {
-    return localizationStrategy()->AXARIAContentGroupText(ariaType);
+    return *new String();
+    // return localizationStrategy()->AXARIAContentGroupText(ariaType);
 }
 #endif
     
 String AXButtonActionVerb()
 {
-    return localizationStrategy()->AXButtonActionVerb();
+    return *new String();
+    // return localizationStrategy()->AXButtonActionVerb();
 }
 
 String AXRadioButtonActionVerb()
 {
-    return localizationStrategy()->AXRadioButtonActionVerb();
+    return *new String();
+    // return localizationStrategy()->AXRadioButtonActionVerb();
 }
 
 String AXTextFieldActionVerb()
 {
-    return localizationStrategy()->AXTextFieldActionVerb();
+    return *new String();
+    // return localizationStrategy()->AXTextFieldActionVerb();
 }
 
 String AXCheckedCheckBoxActionVerb()
 {
-    return localizationStrategy()->AXCheckedCheckBoxActionVerb();
+    return *new String();
+    // return localizationStrategy()->AXCheckedCheckBoxActionVerb();
 }
 
 String AXUncheckedCheckBoxActionVerb()
 {
-    return localizationStrategy()->AXUncheckedCheckBoxActionVerb();
+    return *new String();
+    // return localizationStrategy()->AXUncheckedCheckBoxActionVerb();
 }
 
 String AXLinkActionVerb()
 {
-    return localizationStrategy()->AXLinkActionVerb();
+    return *new String();
+    // return localizationStrategy()->AXLinkActionVerb();
 }
 
 String AXMenuListPopupActionVerb()
 {
-    return localizationStrategy()->AXMenuListPopupActionVerb();
+    return *new String();
+    // return localizationStrategy()->AXMenuListPopupActionVerb();
 }
 
 String AXMenuListActionVerb()
 {
-    return localizationStrategy()->AXMenuListActionVerb();
+    return *new String();
+    // return localizationStrategy()->AXMenuListActionVerb();
 }
 
 String missingPluginText()

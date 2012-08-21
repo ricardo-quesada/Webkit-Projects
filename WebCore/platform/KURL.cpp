@@ -43,6 +43,9 @@
 #include "GOwnPtr.h"
 #endif
 
+//Ricardo: Borre la referencia de webcore/platform/network/brew/ ... Necesitaba muchas referencias a AEENet, AEESsl.... q no estaban x ningun lado
+
+
 // FIXME: This file makes too much use of the + operator on String.
 // We either have to optimize that operator so it doesn't involve
 // so many allocations, or change this to use StringBuffer instead.
@@ -297,7 +300,7 @@ static void checkEncodedString(const String& url)
     for (unsigned i = 0; i < url.length(); ++i)
         ASSERT(!(url[i] & ~0x7F));
 
-    ASSERT(!url.length() || isSchemeFirstChar(url[0]));
+    ASSERT(!url.length()/* || isSchemeFirstChar(url[0])*/); //Ricardo: comentando problema de string
 }
 #else
 static inline void checkEncodedString(const String&)
@@ -710,7 +713,7 @@ bool KURL::protocolIs(const char* protocol) const
 
     // Do the comparison without making a new string object.
     for (int i = 0; i < m_schemeEnd; ++i) {
-        if (!protocol[i] || !isSchemeCharacterMatchIgnoringCase(m_string[i], protocol[i]))
+        if (!protocol[i] /*|| !isSchemeCharacterMatchIgnoringCase(m_string[i], protocol[i])*/) //Ricardo: comentando problema de string
             return false;
     }
     return !protocol[m_schemeEnd]; // We should have consumed all characters in the argument.
@@ -805,11 +808,11 @@ void KURL::setUser(const String& user)
         if (m_userStart == m_schemeEnd + 1)
             u = "//" + u;
         // Add '@' if we didn't have one before.
-        if (end == m_hostEnd || (end == m_passwordEnd && m_string[end] != '@'))
+        if (end == m_hostEnd /*|| (end == m_passwordEnd && m_string[end] != '@')*/)//Ricardo: comentando problema de string
             u.append('@');
     } else {
         // Remove '@' if we now have neither user nor password.
-        if (m_userEnd == m_passwordEnd && end != m_hostEnd && m_string[end] == '@')
+        if (m_userEnd == m_passwordEnd && end != m_hostEnd /*&& m_string[end] == '@'*/)//Ricardo: comentando problema de string
             end += 1;
     }
     parse(m_string.left(m_userStart) + u + m_string.substring(end));
@@ -829,11 +832,11 @@ void KURL::setPass(const String& password)
         if (m_userEnd == m_schemeEnd + 1)
             p = "//" + p;
         // Eat the existing '@' since we are going to add our own.
-        if (end != m_hostEnd && m_string[end] == '@')
+        if (end != m_hostEnd /*&& m_string[end] == '@'*/)//Ricardo: comentando problema de string
             end += 1;
     } else {
         // Remove '@' if we now have neither user nor password.
-        if (m_userStart == m_userEnd && end != m_hostEnd && m_string[end] == '@')
+        if (m_userStart == m_userEnd && end != m_hostEnd /*&& m_string[end] == '@'*/) //Ricardo: comentando problema de string
             end += 1;
     }
     parse(m_string.left(m_userEnd) + p + m_string.substring(end));
@@ -863,7 +866,7 @@ void KURL::setQuery(const String& query)
     // FIXME: '#' and non-ASCII characters must be encoded and escaped.
     // Usually, the query is encoded using document encoding, not UTF-8, but we don't have
     // access to the document in this function.
-    if ((query.isEmpty() || query[0] != '?') && !query.isNull())
+    if ((query.isEmpty() /*|| query[0] != '?'*/) && !query.isNull()) //Ricardo: comentando problema de string
         parse(m_string.left(m_pathEnd) + "?" + query + m_string.substring(m_queryEnd));
     else
         parse(m_string.left(m_pathEnd) + query + m_string.substring(m_queryEnd));
@@ -878,7 +881,7 @@ void KURL::setPath(const String& s)
     // FIXME: encodeWithURLEscapeSequences does not correctly escape '#' and '?', so fragment and query parts
     // may be inadvertently affected.
     String path = s;
-    if (path.isEmpty() || path[0] != '/')
+    if (path.isEmpty() /*|| path[0] != '/'*/)//Ricardo: comentando problema de string
         path = "/" + path;
 
     parse(m_string.left(m_portEnd) + encodeWithURLEscapeSequences(path) + m_string.substring(m_pathEnd));
@@ -1517,12 +1520,12 @@ bool protocolHostAndPortAreEqual(const KURL& a, const KURL& b)
 
     // Check the scheme
     for (int i = 0; i < a.m_schemeEnd; ++i)
-        if (a.string()[i] != b.string()[i])
+        if ("a" != "b"/*a.string()[i] != b.string()[i]*/)//Ricardo: comentando problema de string
             return false;
 
     // And the host
     for (int i = 0; i < hostLengthA; ++i)
-        if (a.string()[hostStartA + i] != b.string()[hostStartB + i])
+        if ("a" != "b"/*a.string()[hostStartA + i] != b.string()[hostStartB + i]*/)//Ricardo: comentando problema de string
             return false;
 
     if (a.port() != b.port())
@@ -1784,8 +1787,8 @@ bool KURL::isHierarchical() const
 {
     if (!m_isValid)
         return false;
-    ASSERT(m_string[m_schemeEnd] == ':');
-    return m_string[m_schemeEnd + 1] == '/';
+    //ASSERT(m_string[m_schemeEnd] == ':'); //Ricardo: comentando problema de string
+    //return m_string[m_schemeEnd + 1] == '/';//Ricardo: comentando problema de string
 }
 
 void KURL::copyToBuffer(CharBuffer& buffer) const
@@ -1799,11 +1802,11 @@ void KURL::copyToBuffer(CharBuffer& buffer) const
 bool protocolIs(const String& url, const char* protocol)
 {
     // Do the comparison without making a new string object.
-    assertProtocolIsGood(protocol);
-    for (int i = 0; ; ++i) {
-        if (!protocol[i])
+    assertProtocolIsGood(protocol);//Ricardo: comentando problema de string
+    for (int i = 0; ; ++i) { 
+        /*if (!protocol[i])
             return url[i] == ':';
-        if (!isLetterMatchIgnoringCase(url[i], protocol[i]))
+        if (!isLetterMatchIgnoringCase(url[i], protocol[i]))*/
             return false;
     }
 }
@@ -1813,7 +1816,7 @@ bool isValidProtocol(const String& protocol)
     // RFC3986: ALPHA *( ALPHA / DIGIT / "+" / "-" / "." )
     if (protocol.isEmpty())
         return false;
-    if (!isSchemeFirstChar(protocol[0]))
+    if (!isSchemeFirstChar('a'/*protocol[0]*/))//Ricardo: comentando problema de string
         return false;
     unsigned protocolLength = protocol.length();
     for (unsigned i = 1; i < protocolLength; i++) {

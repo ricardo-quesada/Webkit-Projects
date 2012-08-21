@@ -30,7 +30,7 @@
 
 #include "HTTPParsers.h"
 #include "MIMETypeRegistry.h"
-#include <CFNetwork/CFURLResponsePriv.h>
+//#include <CFNetwork/CFURLResponsePriv.h> //Ricardo: comentando xq no aparece x ningun lado este file
 #include <wtf/RetainPtr.h>
 
 using namespace std;
@@ -53,7 +53,7 @@ CFURLResponseRef ResourceResponse::cfURLResponse() const
         RetainPtr<CFURLRef> url(AdoptCF, m_url.createCFURL());
         RetainPtr<CFStringRef> mimeType(AdoptCF, m_mimeType.createCFString());
         RetainPtr<CFStringRef> textEncodingName(AdoptCF, m_textEncodingName.createCFString());
-        m_cfResponse.adoptCF(CFURLResponseCreate(0, url.get(), mimeType.get(), m_expectedContentLength, textEncodingName.get(), kCFURLCacheStorageAllowed));
+        //m_cfResponse.adoptCF(CFURLResponseCreate(0, url.get(), mimeType.get(), m_expectedContentLength, textEncodingName.get(), kCFURLCacheStorageAllowed)); //Ricardo: relacionado con los files de CFNetwork q no estan
     }
 
     return m_cfResponse.get();
@@ -84,20 +84,20 @@ void ResourceResponse::platformLazyInit(InitLevel initLevel)
         return;
 
     if (m_initLevel < CommonFieldsOnly && initLevel >= CommonFieldsOnly) {
-        m_url = CFURLResponseGetURL(m_cfResponse.get());
-        m_mimeType = CFURLResponseGetMIMEType(m_cfResponse.get());
-        m_expectedContentLength = CFURLResponseGetExpectedContentLength(m_cfResponse.get());
-        m_textEncodingName = CFURLResponseGetTextEncodingName(m_cfResponse.get());
+        //m_url = CFURLResponseGetURL(m_cfResponse.get());//Ricardo: relacionado con los files de CFNetwork q no estan
+        //m_mimeType = CFURLResponseGetMIMEType(m_cfResponse.get());//Ricardo: relacionado con los files de CFNetwork q no estan
+        //m_expectedContentLength = CFURLResponseGetExpectedContentLength(m_cfResponse.get());//Ricardo: relacionado con los files de CFNetwork q no estan
+        //m_textEncodingName = CFURLResponseGetTextEncodingName(m_cfResponse.get());//Ricardo: relacionado con los files de CFNetwork q no estan
 
         // Workaround for <rdar://problem/8757088>, can be removed once that is fixed.
         unsigned textEncodingNameLength = m_textEncodingName.length();
         if (textEncodingNameLength >= 2 && m_textEncodingName[0U] == '"' && m_textEncodingName[textEncodingNameLength - 1] == '"')
             m_textEncodingName = m_textEncodingName.substring(1, textEncodingNameLength - 2);
 
-        m_lastModifiedDate = toTimeT(CFURLResponseGetLastModifiedDate(m_cfResponse.get()));
+        //m_lastModifiedDate = toTimeT(CFURLResponseGetLastModifiedDate(m_cfResponse.get()));/Ricardo: relacionado con los files de CFNetwork q no estan
 
-        CFHTTPMessageRef httpResponse = CFURLResponseGetHTTPResponse(m_cfResponse.get());
-        if (httpResponse) {
+       // CFHTTPMessageRef httpResponse = CFURLResponseGetHTTPResponse(m_cfResponse.get()); /Ricardo: relacionado con los files de CFNetwork q no estan
+       /* if (httpResponse) {
             m_httpStatusCode = CFHTTPMessageGetResponseStatusCode(httpResponse);
             
             RetainPtr<CFDictionaryRef> headers(AdoptCF, CFHTTPMessageCopyAllHeaderFields(httpResponse));
@@ -107,11 +107,11 @@ void ResourceResponse::platformLazyInit(InitLevel initLevel)
                 if (CFDictionaryGetValueIfPresent(headers.get(), commonHeaderFields[i], (const void **)&value))
                     m_httpHeaderFields.set(commonHeaderFields[i], value);
             }
-        } else
+        } else*///Ricardo: relacionado con los files de CFNetwork q no estan
             m_httpStatusCode = 0;
     }
 
-    if (m_initLevel < CommonAndUncommonFields && initLevel >= CommonAndUncommonFields) {
+   /* if (m_initLevel < CommonAndUncommonFields && initLevel >= CommonAndUncommonFields) {
         CFHTTPMessageRef httpResponse = CFURLResponseGetHTTPResponse(m_cfResponse.get());
         if (httpResponse) {
             RetainPtr<CFStringRef> statusLine(AdoptCF, CFHTTPMessageCopyResponseStatusLine(httpResponse));
@@ -131,7 +131,7 @@ void ResourceResponse::platformLazyInit(InitLevel initLevel)
         RetainPtr<CFStringRef> suggestedFilename(AdoptCF, CFURLResponseCopySuggestedFilename(m_cfResponse.get()));
         m_suggestedFilename = suggestedFilename.get();
     }
-
+*/ //Ricardo: relacionado con los files de CFNetwork q no estan
     m_initLevel = initLevel;
 }
     

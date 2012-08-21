@@ -474,7 +474,9 @@ bool MIMETypeRegistry::isSupportedImageResourceMIMEType(const String& mimeType)
 
 bool MIMETypeRegistry::isSupportedImageMIMETypeForEncoding(const String& mimeType)
 {
-    ASSERT(isMainThread());
+    //ASSERT(isMainThread()); //Ricardo: asi era, pero lo cambie x el de wtf
+
+    ASSERT(WTF::isMainThread());
 
     if (mimeType.isEmpty())
         return false;
